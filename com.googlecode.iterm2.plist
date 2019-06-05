@@ -1153,14 +1153,14 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {3440, 1440}}</string>
 		<key>topLeft</key>
-		<string>{410, 991}</string>
+		<string>{269, 595}</string>
 	</dict>
 	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>7121ED49-E59F-49DC-AD42-569C5AB642A7</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>43</integer>
+	<integer>44</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>578498743.71586502</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -1794,6 +1794,8 @@
 	</array>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>578093311.13417196</real>
+	<key>OpenBookmark</key>
+	<true/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
