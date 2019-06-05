@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd $(dirname $0)  # Change to script's directory
+
 #-------------------------------------------------------------------------------
 # To do after execution or to automate later
 #-------------------------------------------------------------------------------
@@ -641,6 +643,11 @@ chsh -s /usr/local/bin/zsh
 sudo https_proxy=$https_proxy curl --show-error --silent \
   https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts \
   --output /etc/hosts
+
+# Copy zsh configuration
+for i in zsh/*; do
+  cp -r $i $HOME/.$(basename $i)
+done
 
 
 #-------------------------------------------------------------------------------
