@@ -380,7 +380,7 @@ unset IFS
 # Add login items
 # Separate osascript calls as you otherwise only get output from the last to
 # run and order seems to change
-osascript -e 'tell application "System Events" to make login item at end with properties {name: "Alfred 3", path: "/Applications/Alfred 3.app", hidden: false}' > /dev/null
+osascript -e 'tell application "System Events" to make login item at end with properties {name: "Alfred 4", path: "/Applications/Alfred 4.app", hidden: false}' > /dev/null
 osascript -e 'tell application "System Events" to make login item at end with properties {name: "Amethyst", path: "/Applications/Amethyst.app", hidden: false}' > /dev/null
 osascript -e 'tell application "System Events" to make login item at end with properties {name: "Dozer", path: "/Applications/Dozer.app", hidden: false}' > /dev/null
 osascript -e 'tell application "System Events" to make login item at end with properties {name: "WhichSpace", path: "/Applications/WhichSpace.app", hidden: false}' > /dev/null
