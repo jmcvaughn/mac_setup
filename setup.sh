@@ -649,6 +649,9 @@ for i in zsh/*; do
   cp -r $i $HOME/.$(basename $i)
 done
 
+# Copy Library files
+cp -r Library/* ~/Library/
+
 
 #-------------------------------------------------------------------------------
 # Power management and hardware
