@@ -15,8 +15,6 @@ install_pkgmgmt() {
 
   # Install Mac App Store CLI
   brew install mas && hash -r
-  read -p 'Mac App Store username: ' mas_user
-  mas signin --dialog $mas_user
 }
 
 
