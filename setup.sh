@@ -18,6 +18,8 @@ cd $(dirname $0)  # Change to script's directory
 #   Displays:
 #     Display:
 #       Automatically adjust brightness: False
+#     Night Shift:
+#       Schedule: Sunset to Sunrise
 #     Arrangement: Menu bar to external
 #
 #   Keyboard:
