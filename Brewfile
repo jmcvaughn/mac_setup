@@ -68,3 +68,6 @@ brew 'avr-gcc@7'
 tap 'PX4/homebrew-px4'
 brew 'gcc-arm-none-eabi'
 
+# Mac App Store
+mas 'Helium', id: 1054607607
+
