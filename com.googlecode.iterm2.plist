@@ -412,9 +412,9 @@
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 877 0 0 1440 877 </string>
+	<string>1720 0 1719 1417 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>720 0 718 877 0 0 1440 877 </string>
+	<string>1720 0 1719 1417 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>2387 0 1047 1417 0 0 3440 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_87127D2C-2ED5-48C0-8C09-FFA39D956D6A</key>
@@ -1153,14 +1153,14 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {3440, 1440}}</string>
 		<key>topLeft</key>
-		<string>{269, 595}</string>
+		<string>{1075, 957}</string>
 	</dict>
 	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>7121ED49-E59F-49DC-AD42-569C5AB642A7</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>44</integer>
+	<integer>55</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>578498743.71586502</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -1787,15 +1787,11 @@
 	</dict>
 	<key>NoSyncSearchHistory</key>
 	<array>
-		<string>modeline</string>
-		<string>time</string>
-		<string>google</string>
-		<string>docker</string>
 	</array>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>578093311.13417196</real>
 	<key>OpenBookmark</key>
-	<true/>
+	<false/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
