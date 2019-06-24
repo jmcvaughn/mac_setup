@@ -257,7 +257,7 @@ alias tl="tmux list-sessions"
 alias tk="tmux kill-session -t"
 
 # Homebrew
-alias ud="brew update && brew upgrade && brew cask upgrade && brew cleanup"
+alias ud="brew update && brew upgrade && brew cask upgrade --greedy && brew cleanup"
 
 # Neovim
 alias vi="nvim"
