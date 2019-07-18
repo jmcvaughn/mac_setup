@@ -15,6 +15,7 @@ cask 'dozer'
 cask 'drawio'
 cask 'firefox'
 cask 'flash-npapi'  # Work
+cask 'libreoffice'
 cask 'skim'
 cask 'slack'
 cask 'switchresx'
@@ -22,6 +23,9 @@ cask 'telegram'  # Personal
 cask 'whichspace'
 cask 'osxfuse'  # Required by sshfs
 cask 'wkhtmltopdf'  # Required by pandoc to create files
+
+# Install manually after first run of LibreOffice, then run installer manually
+#cask 'libreoffice-language-pack'
 
 # iTerm2
 tap 'caskroom/versions'
