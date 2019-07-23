@@ -278,8 +278,8 @@ alias tre='tree -C'
 alias tree='tree -C'
 
 # tmux
-alias tm='tmux new-session'
-alias ta='tmux attach-session -t'
+alias tm='tmux -CC'
+alias ta='tmux -CC attach-session -t'
 alias tl='tmux list-sessions'
 alias tk='tmux kill-session -t'
 alias tkd='for i in $(tmux list-sessions | awk -F ":" "!/attached/ { print \$1 }"); do tmux kill-session -t "$i"; done'
