@@ -1,5 +1,18 @@
-# Source global zprofile to set initial PATH
-source /etc/zprofile
+PROMPT_COLOUR="green"
+
+case "$(uname)" in
+    Linux)
+        uname='Linux'
+        os="eval $(grep -E '^PRETTY_NAME' /etc/os-release)"
+        ;;
+    Darwin)
+        uname='Darwin'
+        os='macOS'
+        ;;
+esac
+
+# Mac: Source global zprofile to set initial PATH
+[[ $os == 'macOS' ]] && source /etc/zprofile
 
 
 #-------------------------------------------------------------------------------
@@ -85,15 +98,16 @@ preexec() {
 # Completion [zshcompsys(1)] {{{
 #-------------------------------------------------------------------------------
 
-# Add zsh-completions to function path
-fpath=(
-    "/usr/local/share/zsh-completions"
-    $fpath
-)
+# Mac: Add zsh-completions to function path
+[[ $os == 'macOS' ]] && fpath=('/usr/local/share/zsh-completions' $fpath)
 
 # compinit
 autoload -Uz compinit
-compinit -u
+if [[ $os == 'macOS' ]]; then
+    compinit -u
+else
+    compinit
+fi
 
 # Unconditional menu completion
 zstyle ':completion:*' menu select
@@ -168,15 +182,10 @@ HISTFILE="$HOME/.zsh_history"
 HISTSIZE=15000
 SAVEHIST=10000
 
-# Disable Homebrew analytics
-export HOMEBREW_NO_ANALYTICS=1
-
 # Editors/pagers
 export EDITOR="nvim"
 export MANPAGER="less --line-numbers"
-export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
-# less options
-local less_opts=(
+less_opts=(
     "--quit-if-one-screen"
     "--ignore-case"
     "--RAW-CONTROL-CHARS"
@@ -184,10 +193,22 @@ local less_opts=(
     "--no-init"
 )
 export LESS="$(eval echo $less_opts)"
+unset less_opts
 
-# Add GNU coreutils to paths
-export PATH="/usr/local/sbin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+if [[ $os == 'macOS' ]]; then
+    # source-highlight with less
+    export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
+
+    # Disable Homebrew analytics (https://docs.brew.sh/Analytics)
+    export HOMEBREW_NO_ANALYTICS=1
+
+    # Add GNU coreutils to paths
+    export PATH="/usr/local/sbin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+else
+    # source-highlight with less
+    export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
+fi
 
 export PATH="$HOME/bin:$PATH"
 export CDPATH="$HOME"
@@ -202,85 +223,76 @@ export http_proxy="$https_proxy"
 # Aliases {{{
 #-------------------------------------------------------------------------------
 
+# Notes
+## Use single quotes; double quotes perform parameter expansion when sourced.
+## Regardless of quotes, aliases will be substituted in other aliases.
+
 # Shell built-ins
-alias .="source"
-alias src="source $HOME/.zshrc"
-alias psd="pushd"
-alias pod="popd"
+alias .='source'
+alias src='source "$HOME"/.zshrc'
+alias psd='pushd'
+alias pod='popd'
 
 # sudo
-alias s="sudo "
-alias se="sudo -e"
-alias si="sudo -i"
-alias sudo="sudo "
+alias s='sudo '
+alias se='sudo -e'
+alias si='sudo -i'
+alias sudo='sudo '
 
 # File viewing/editing
-alias diff="diff --color=auto"
-alias grep="grep --color=auto"
-alias les="less"
-alias lesn="less --LINE-NUMBERS"
-alias o="open"
+alias diff='diff --color=auto'
+alias grep='grep --color=auto'
+alias les='less'
+alias lesn='less --LINE-NUMBERS'
+alias o='open'
 
 # Process management
-alias top="htop"
+alias top='htop'
 
 # Applications
-alias aria2c="aria2c --seed-time=0"
-alias ddi="sudo dd bs=16K conv=fsync status=progress"
-alias hist="fc -liD -31"
-alias scpk="scp -o UserKnownHostsFile=/dev/null"
-alias sshk="ssh -o UserKnownHostsFile=/dev/null"
+alias aria2c='aria2c --seed-time=0'
+alias dl='aria2c'
+alias ddi='sudo dd bs=16K conv=fsync status=progress'
+alias gitpullall='for i in "$HOME"/git/*; do git -C "$i" pull; done'
+alias hist='fc -liD -31'
+alias scpk='scp -o UserKnownHostsFile=/dev/null'
+alias sshk='ssh -o UserKnownHostsFile=/dev/null'
 
 # cp
-alias cp="cp --reflink=auto --sparse=always"
-alias cpr="cp --recursive --reflink=auto --sparse=always"
+alias cpr='cp --recursive --reflink=auto --sparse=always'
+alias cp='cp --reflink=auto --sparse=always'
 
 # ls
-alias l="ls --color=auto"
-alias la="ls --all --color=auto"
-alias lal="ls -l --all --color=auto --human-readable"
-alias lA="ls --almost-all --color=auto"
-alias lAl="ls -l --almost-all --color=auto --human-readable"
-alias ll="ls -l --color=auto --human-readable"
-alias lla="ls -l --all --color=auto --human-readable"
-alias llA="ls -l --almost-all --color=auto --human-readable"
-alias ls="ls --color=auto"
+alias l='ls --color=auto'
+alias la='ls --all --color=auto'
+alias lal='ls -l --all --color=auto --human-readable'
+alias lA='ls --almost-all --color=auto'
+alias lAl='ls -l --almost-all --color=auto --human-readable'
+alias ll='ls -l --color=auto --human-readable'
+alias lla='ls -l --all --color=auto --human-readable'
+alias llA='ls -l --almost-all --color=auto --human-readable'
+alias ls='ls --color=auto'
 
 # tree
-alias tre="tree -C"
-alias tree="tree -C"
+alias tre='tree -C'
+alias tree='tree -C'
 
 # tmux
-alias tm="tmux new-session"
-alias ta="tmux attach-session -t"
-alias tl="tmux list-sessions"
-alias tk="tmux kill-session -t"
-
-# Homebrew
-alias ud="brew update && brew upgrade && brew cask upgrade --greedy && brew cleanup"
+alias tm='tmux new-session'
+alias ta='tmux attach-session -t'
+alias tl='tmux list-sessions'
+alias tk='tmux kill-session -t'
+alias tkd='for i in $(tmux list-sessions | awk -F ":" "!/attached/ { print \$1 }"); do tmux kill-session -t "$i"; done'
 
 # Neovim
-alias vi="nvim"
-alias vim="nvim"
-alias vimdiff="nvim -d"
-# }}}
+alias vi='nvim'
+alias vim='nvim'
+alias vimdiff='nvim -d'
 
-
-#-------------------------------------------------------------------------------
-# User functions {{{
-#-------------------------------------------------------------------------------
-
-# Add functions directory to fpath
-fpath=(
-    "$HOME/.zsh_functions/"
-    $fpath
-)
-
-# Autoload user functions
-if [ -d "$HOME/.zsh_functions/" ]; then
-    for function in "$HOME/.zsh_functions/*"; do
-        autoload -Uz "${function##*/}"
-    done
+if [[ $os == 'macOS' ]]; then
+    alias ud='brew update && brew upgrade && brew cask upgrade --greedy && brew cleanup'
+elif [[ $os == 'Arch Linux' ]]; then
+    alias ud='pikaur -Syu $@ && sudo pacman -Rsn --noconfirm $(pacman -Qdtq) 2> /dev/null'
 fi
 # }}}
 
@@ -289,10 +301,14 @@ fi
 # Prompts {{{
 #-------------------------------------------------------------------------------
 
+# Prompt colour set at top of .zshrc
 # "~ % " or "~ (root) # "
-PROMPT_COLOUR="green"
 PROMPT='%B%F{$PROMPT_COLOUR}%3~%f%b ${vcs_info_msg_0_}%B%(!.%F{red}(root) %#%f.%#)%b '
 # }}}
+
+
+# pkgfile - shows which missing package provides command
+[[ $os == 'Arch Linux' ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
 
 
 #-------------------------------------------------------------------------------
@@ -300,8 +316,14 @@ PROMPT='%B%F{$PROMPT_COLOUR}%3~%f%b ${vcs_info_msg_0_}%B%(!.%F{red}(root) %#%f.%
 # zsh-syntax-highlighting must be at end of zshrc
 #-------------------------------------------------------------------------------
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ $os == 'macOS' ]]; then
+    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+else
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 # }}}
+
+unset uname os
 
 # vim: set expandtab shiftwidth=0 tabstop=4 foldmethod=marker:
 

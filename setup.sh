@@ -646,10 +646,8 @@ sudo https_proxy=$https_proxy curl --show-error --silent \
   https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts \
   --output /etc/hosts
 
-# Copy zsh configuration
-for i in zsh/*; do
-  cp -r $i $HOME/.$(basename $i)
-done
+# Copy Zsh configuration
+cp zshrc "$HOME/.zshrc"
 
 # Copy Library files
 cp -r Library/* ~/Library/
