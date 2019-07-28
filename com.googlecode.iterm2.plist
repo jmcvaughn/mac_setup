@@ -424,11 +424,11 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 877 0 0 1440 877 </string>
+	<string>1079 0 1278 1417 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 0 1440 877 0 0 1440 877 </string>
+	<string>0 0 1720 1417 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>2580 0 858 1417 0 0 3440 1417 </string>
+	<string>1053 543 718 874 0 0 3440 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_87127D2C-2ED5-48C0-8C09-FFA39D956D6A</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_87127D2C-2ED5-48C0-8C09-FFA39D956D6A_selection</key>
@@ -1821,7 +1821,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1894,16 +1894,16 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1440, 900}}</string>
+		<string>{{0, 0}, {3440, 1440}}</string>
 		<key>topLeft</key>
-		<string>{222, 766}</string>
+		<string>{1175, 986}</string>
 	</dict>
 	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>7121ED49-E59F-49DC-AD42-569C5AB642A7</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>63</integer>
+	<integer>67</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>578498743.71586502</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2626,6 +2626,7 @@
 	</dict>
 	<key>NoSyncSearchHistory</key>
 	<array>
+		<string>header</string>
 		<string>keyring</string>
 		<string>openstackclient</string>
 		<string>snappy</string>
@@ -2635,7 +2636,6 @@
 		<string>public</string>
 		<string>fast</string>
 		<string>fgas</string>
-		<string>chrony</string>
 	</array>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>578093311.13417196</real>

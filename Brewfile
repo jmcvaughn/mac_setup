@@ -7,7 +7,6 @@ cask 'font-source-code-pro'
 # caskroom/cask
 tap 'caskroom/cask'
 cask 'alfred'
-cask 'amethyst'
 cask 'android-platform-tools'
 cask 'displaycal'
 cask 'docker'
@@ -24,8 +23,10 @@ cask 'whichspace'
 cask 'osxfuse'  # Required by sshfs
 cask 'wkhtmltopdf'  # Required by pandoc to create files
 
-# Install manually after first run of LibreOffice, then run installer manually
-#cask 'libreoffice-language-pack'
+# yabai
+tap 'koekeishiya/formulae'
+brew 'yabai'
+brew 'skhd'
 
 # iTerm2
 tap 'caskroom/versions'

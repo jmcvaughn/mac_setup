@@ -202,9 +202,21 @@ if [[ $os == 'macOS' ]]; then
     # Disable Homebrew analytics (https://docs.brew.sh/Analytics)
     export HOMEBREW_NO_ANALYTICS=1
 
-    # Add GNU coreutils to paths
-    export PATH="/usr/local/sbin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+    # Paths
+    PATH="/usr/local/sbin:$PATH"  # Mainly for brew doctor
+    # GNU coreutils
+    PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+    # GNU findutils
+    PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+    MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
+    # GNU sed
+    PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+    MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
+    # GNU tar
+    PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+    MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
+    export PATH MANPATH
 else
     # source-highlight with less
     export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
@@ -275,6 +287,7 @@ alias ls='ls --color=auto'
 
 # tree
 alias tre='tree -C'
+alias trea='tree -aC'
 alias tree='tree -C'
 
 # tmux

@@ -1,0 +1,12 @@
+[user]
+	name = James Vaughn
+	email = v0rngit@gmail.com
+[merge]
+	tool = vimdiff
+[mergetool]
+	path = nvim
+	prompt = false
+[alias]
+	df = diff
+	dt = difftool
+	stat = status

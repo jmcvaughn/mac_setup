@@ -1,0 +1,118 @@
+# The following tasks must be performed manually after all other scripts have
+# been run.
+
+System Preferences:
+  Desktop \& Screen Saver:
+    Desktop:
+      Custom Colour: '#282828'  # gruvbox bg0
+
+  Security \& Privacy:
+    Advanced:
+      Require an administrator password to access system-wide preferences: True
+
+  Displays:
+    Display:
+      Automatically adjust brightness: False
+    Night Shift:
+      Schedule: Sunset to Sunrise
+    Arrangement: Menu bar to external
+
+  Keyboard:
+    Keyboard:
+      Adjust keyboard brightness in low light: False
+      Modifier Keys:
+        Apple Internal Keyboard/Trackpad:
+          Caps Lock: Control
+          Control: False
+    Shortcuts:
+      Mission Control:
+        Move left a space: False
+        Move right a space: False
+        Switch to Desktop [1-10]: Alt + [q-p]
+      Spotlight:
+        Show Spotlight search: Alt + Space
+
+  Users \& Groups:
+    Password:
+      Picture: Piano
+
+Menu bar:
+  - Dozer:
+    - ...
+    - Spotlight
+  - WhichSpace
+  - Cisco AnyConnect
+  - System icons
+
+Notification Centre:
+  World Clock:
+    - Hillsboro
+
+Applications:
+  Cisco AnyConnect:
+    Start VPN when AnyConnect is started: True
+
+  CrashPlan:
+    Preferences:
+      Show Code42 CrashPlan status in menu bar: False
+    jmvaughn-mac01 Backup:
+      Manage Files:
+        - /Users/jmvaughn/Documents/
+      Backup Set Settings:
+        File Exclusions:
+          - $RECYCLE.BIN
+          - desktop.ini
+          - .DS_Store
+
+  Finder:
+    Home:
+      View Options:
+        # ~/Library/ is hidden using the com.apple.FinderInfo extended
+        # attribute, but `xattr -d com.apple.FinderInfo ~/Library/` doesn't
+        # work.
+        Show Library Folder: True
+
+  iTerm2:
+    General:
+      Preferences:
+        Load preferences from a custom folder or URL: (path to mac_setup)
+
+  Office:
+    Cloud Storage: Skip
+    Preferences:
+      Privacy:
+        Office Intelligent Services: False
+
+  Skype for Business:
+    General:
+      # Need to do this manually, `defaults delete` doesn't work
+      Show chats with same person in a single pop-up window: True
+    Switch to (audio device):
+      DisplayPort:
+        Switch: False
+        Don't show again for this device: True
+      WH-1000XM3:
+        Switch: True
+        Don't show again for this device: True
+
+  Word:
+    Preferences:
+      AutoCorrect:
+        Capitalize first letter of sentences: False
+      User Information:
+        - Complete all
+
+  Slack:
+    Messages \& Media:
+      Theme: Compact
+      Show times with 24-hour clock: True
+
+  SwitchResX:
+    Helper Modules:
+      - Update System Integrity Protection
+    Acer B346CK:
+      Custom Resolutions:
+        3440 x 1440, 50Hz:
+          Use simplified settings: CVT-RB
+          Vertical Scan Rate (Hz): 49.999
+
