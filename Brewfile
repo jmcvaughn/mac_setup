@@ -1,11 +1,4 @@
-tap 'beeftornado/rmtree'  # Installs rmtree
-
-# Fonts
-tap 'caskroom/fonts'
-cask 'font-source-code-pro'
-
-# caskroom/cask
-tap 'caskroom/cask'
+# Casks
 cask 'alfred'
 cask 'android-platform-tools'
 cask 'displaycal'
@@ -23,14 +16,13 @@ cask 'whichspace'
 cask 'osxfuse'  # Required by sshfs
 cask 'wkhtmltopdf'  # Required by pandoc to create files
 
-# yabai
-tap 'koekeishiya/formulae'
-brew 'yabai'
-brew 'skhd'
-
-# iTerm2
-tap 'caskroom/versions'
+# Alternative Cask versions
+tap 'homebrew/cask-versions'
 cask 'iterm2-beta'
+
+# Fonts
+tap 'homebrew/cask-fonts'
+cask 'font-source-code-pro'
 
 # Homebrew packages
 # GNU utilities
@@ -53,6 +45,7 @@ brew 'aria2'
 brew 'atool'
 brew 'htop'
 brew 'ipmitool'
+brew 'mas'
 brew 'neovim'
 brew 'openssh'
 brew 'p7zip'
@@ -64,13 +57,18 @@ brew 'wget'
 # Utilities with Cask dependencies
 brew 'sshfs'
 
+# yabai
+tap 'koekeishiya/formulae'
+brew 'yabai'
+brew 'skhd'
+
 # QMK build tools
 # https://docs.qmk.fm/#/getting_started_build_tools?id=macos
 brew 'avrdude'
 brew 'dfu-programmer'
 brew 'dfu-util'
 tap 'osx-cross/avr'
-brew 'avr-gcc@7'
+brew 'avr-gcc@8'
 tap 'PX4/homebrew-px4'
 brew 'gcc-arm-none-eabi'
 

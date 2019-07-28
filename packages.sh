@@ -27,7 +27,7 @@ install_packages() {
   fi
 
   # Symlink avr-gcc 7 to avr-gcc (QMK)
-  brew link --force avr-gcc@7
+  brew link --force avr-gcc@8
 
   # Install LibreOffice Language Pack
   if ! brew cask list | ggrep -q libreoffice-language-pack; then
