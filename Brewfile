@@ -1,4 +1,5 @@
 # Casks
+tap 'homebrew/cask'  # Explicitly tap to keep during `brew bundle cleanup`
 cask 'alfred'
 cask 'android-platform-tools'
 cask 'displaycal'
@@ -57,7 +58,9 @@ brew 'wget'
 # Utilities with Cask dependencies
 brew 'sshfs'
 
-# yabai
+# Services
+tap 'homebrew/services'  # Explicitly tap to keep during `brew bundle cleanup`
+# Window manager
 tap 'koekeishiya/formulae'
 brew 'yabai'
 brew 'skhd'
