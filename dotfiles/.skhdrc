@@ -22,6 +22,12 @@ alt + shift - j: yabai -m window --swap south
 alt + shift - k: yabai -m window --swap north
 alt + shift - l: yabai -m window --swap east
 
+# Warp
+ctrl + alt - h: yabai -m window --warp west
+ctrl + alt - j: yabai -m window --warp south
+ctrl + alt - k: yabai -m window --warp north
+ctrl + alt - l: yabai -m window --warp east
+
 # Space
 alt + shift - q: yabai -m window --space 1
 alt + shift - w: yabai -m window --space 2

@@ -48,9 +48,6 @@ system_preferences() {  # {{{
   ## Size
   defaults write com.apple.dock tilesize -int 52
 
-  ## Position on screen: Left
-  defaults write com.apple.dock orientation -string 'left'
-
   ## Minimise windows using: Scale effect
   defaults write com.apple.dock mineffect -string 'scale'
 
