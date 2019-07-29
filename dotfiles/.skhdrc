@@ -21,7 +21,7 @@ alt + shift - j: yabai -m window --swap south
 alt + shift - k: yabai -m window --swap north
 alt + shift - l: yabai -m window --swap east
 
-# Send
+# Space
 alt + shift - q: yabai -m window --space 1
 alt + shift - w: yabai -m window --space 2
 alt + shift - e: yabai -m window --space 3
@@ -34,5 +34,6 @@ alt + shift - o: yabai -m window --space 9
 alt + shift - p: yabai -m window --space 10
 
 # Toggle fullscreen
+alt - z: yabai -m window --toggle float
 alt - f: yabai -m window --toggle zoom-fullscreen
 

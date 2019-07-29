@@ -29,6 +29,8 @@ System Preferences:
         Move left a space: False
         Move right a space: False
         Switch to Desktop [1-10]: Alt + [q-p]
+      Keyboard:
+        Move focus to the next window: Alt + Tab
       Spotlight:
         Show Spotlight search: Alt + Space
 

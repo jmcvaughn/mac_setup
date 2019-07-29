@@ -20,36 +20,15 @@ yabai -m config layout bsp
 # Rule domain
 #-------------------------------------------------------------------------------
 
-# Launch to Display 1, Space 1
+# Launch to Display 1, Space 1 and float
 yabai -m rule --add label=anyconnect_d1s1 \
   app='Cisco AnyConnect Secure Mobility Client' \
-  space=1
-
-# Launch to Display 1, Space 3
-yabai -m rule --add label=outlook_d1s3 \
-  app='Microsoft Outlook' \
-  space=3
-
-# Launch to Display 1, Space 4
-yabai -m rule --add label=webex_d1s4 \
-  app='Cisco Webex Meetings' \
-  space=4
-
-yabai -m rule --add label=skype_d1s4 \
-  app='Skype for Business' \
-  space=4
-
-yabai -m rule --add label=slack_d1s4 \
-  app='Slack' \
-  space=4
+  space=1 \
+  manage=off
 
 # Float applications
 yabai -m rule --add label=alfredprefs_float \
   app='Alfred Preferences' \
-  manage=off
-
-yabai -m rule --add label=anyconnect_float \
-  app='Cisco AnyConnect Secure Mobility Client' \
   manage=off
 
 yabai -m rule --add label=finder_float \
@@ -65,18 +44,19 @@ yabai -m rule --add label=sysprefs_float \
   manage=off
 
 # Float windows
-yabai -m rule --add label=webexmain_float \
-  app='Cisco Webex Meetings' \
-  title='^$' \
-  manage=off
-
-yabai -m rule --add label=webexsplash_float \
-  app='Cisco Webex Meetings' \
-  title='Cisco Webex Meetings' \
+yabai -m rule --add label=outlookmain_float \
+  app='Microsoft Outlook' \
+  title='^(Inbox|Calendar$|People$|Tasks$|Notes$)' \
   manage=off
 
 yabai -m rule --add label=skypemain_float \
   app='Skype for Business' \
   title='Skype for Business' \
+  manage=off
+
+## Both splash screen and main window
+yabai -m rule --add label=webexmain_float \
+  app='Cisco Webex Meetings' \
+  title='^(Cisco Webex Meetings|$)' \
   manage=off
 
