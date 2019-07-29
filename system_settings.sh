@@ -45,9 +45,6 @@ system_preferences() {  # {{{
   #-----------------------------------------------------------------------------
 
   # System Preferences
-  ## Size
-  defaults write com.apple.dock tilesize -int 52
-
   ## Minimise windows using: Scale effect
   defaults write com.apple.dock mineffect -string 'scale'
 
