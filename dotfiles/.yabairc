@@ -49,9 +49,9 @@ yabai -m rule --add label=outlookmain_float \
   title='^(Inbox|Calendar$|People$|Tasks$|Notes$)' \
   manage=off
 
-yabai -m rule --add label=skypemain_float \
+yabai -m rule --add label=skypemainsplash_float \
   app='Skype for Business' \
-  title='Skype for Business' \
+  title='^(Skype for Business|Sign In)$' \
   manage=off
 
 ## Both splash screen and main window
