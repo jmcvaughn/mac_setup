@@ -292,7 +292,8 @@ alias tree='tree -C'
 
 # tmux
 alias tm='tmux -CC'
-alias ta='tmux -CC attach-session -t'
+alias ta='tmux -CC attach-session -dt'  # Detach other clients
+alias taa='tmux -CC attach-session -t'
 alias tl='tmux list-sessions'
 alias tk='tmux kill-session -t'
 alias tkd='for i in $(tmux list-sessions | awk -F ":" "!/attached/ { print \$1 }"); do tmux kill-session -t "$i"; done'
