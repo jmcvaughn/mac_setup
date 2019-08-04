@@ -155,6 +155,50 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores true
 
 
 #-------------------------------------------------------------------------------
+# LaunchBar {{{
+#-------------------------------------------------------------------------------
+
+# Preferences
+## General > Retype Delay: 1.0 seconds
+defaults write at.obdev.LaunchBar RetypeDelay -float 1
+
+## General > Open Location > Prefer secure URL schemes: True
+defaults write at.obdev.LaunchBar OpenLocationPreferSecureSchemes -bool true
+
+## General > Open Location > Automatically prefix hostname with 'www': False
+defaults write at.obdev.LaunchBar OpenLocationPrependWWW -bool false
+
+## Appearance > Theme: Dark
+defaults write at.obdev.LaunchBar Theme -string 'at.obdev.LaunchBar.theme.Dark'
+
+## Shortcuts > Modifier Taps > Instant Send: Double Command
+defaults write at.obdev.LaunchBar ModifierTapInstantSend -int 21
+
+## Shortcuts > Browsing > Instant Info Browsing: True
+defaults write at.obdev.LaunchBar InstantInfoBrowsing -bool true
+
+## Actions > Preferred Terminal application: iTerm
+defaults write at.obdev.LaunchBar PreferredTerminal -int 1
+
+## Actions > Create emails with: Microsoft Outlook
+defaults write at.obdev.LaunchBar EmailHandler -string 'com.microsoft.Outlook'
+
+## Update > Automatically check for updates: False
+defaults write at.obdev.LaunchBar SoftwareUpdateCheckAutomatically -bool false
+
+## Advanced > Show Dock Icon: False
+defaults write at.obdev.LaunchBar ShowDockIcon -bool false
+
+# Other
+## Set user defaults version (otherwise theme needs to be set manually)
+defaults write at.obdev.LaunchBar UserDefaultsVersion -int 6
+
+## Skip welcome screen
+defaults write at.obdev.LaunchBar WelcomeWindowVersion -int 2
+# }}}
+
+
+#-------------------------------------------------------------------------------
 # Skype for Business {{{
 #-------------------------------------------------------------------------------
 

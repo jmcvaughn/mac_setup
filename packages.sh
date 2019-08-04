@@ -3,6 +3,7 @@
 login_items=(
   'Alfred 4'
   Dozer
+  LaunchBar
   WhichSpace
 )
 
@@ -55,9 +56,6 @@ set_login_items() {
   # Add login items
   # Separate osascript calls as you otherwise only get output from the last to
   # run and order seems to change
-#  osascript -e 'tell application "System Events" to make login item at end with properties {name: "Alfred 4", path: "/Applications/Alfred 4.app", hidden: false}' > /dev/null
-#  osascript -e 'tell application "System Events" to make login item at end with properties {name: "Dozer", path: "/Applications/Dozer.app", hidden: false}' > /dev/null
-#  osascript -e 'tell application "System Events" to make login item at end with properties {name: "WhichSpace", path: "/Applications/WhichSpace.app", hidden: false}' > /dev/null
   for app in "${login_items[@]}"; do
     osascript -e \
       "tell application \"System Events\" to make login item at end with properties {name: \"$app\", path: \"/Applications/$app.app\", hidden: false}" \
