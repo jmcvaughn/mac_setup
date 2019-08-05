@@ -8,6 +8,7 @@ cask 'dozer'
 cask 'drawio'
 cask 'firefox'
 cask 'flash-npapi'  # Work
+cask 'iterm2'
 cask 'launchbar'
 cask 'libreoffice'
 cask 'skim'
@@ -17,10 +18,6 @@ cask 'telegram'  # Personal
 cask 'whichspace'
 cask 'osxfuse'  # Required by sshfs
 cask 'wkhtmltopdf'  # Required by pandoc to create files
-
-# Alternative Cask versions
-tap 'homebrew/cask-versions'
-cask 'iterm2-beta'
 
 # Fonts
 tap 'homebrew/cask-fonts'
