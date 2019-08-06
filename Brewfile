@@ -14,7 +14,6 @@ cask 'libreoffice'
 cask 'skim'
 cask 'slack'
 cask 'switchresx'
-cask 'telegram'  # Personal
 cask 'whichspace'
 cask 'osxfuse'  # Required by sshfs
 cask 'wkhtmltopdf'  # Required by pandoc to create files
@@ -75,4 +74,5 @@ brew 'gcc-arm-none-eabi'
 
 # Mac App Store
 mas 'Helium', id: 1054607607
+mas 'Telegram', id: 747648890
 

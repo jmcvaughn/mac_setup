@@ -43,6 +43,10 @@ yabai -m rule --add label=sysprefs_float \
   app='System Preferences' \
   manage=off
 
+yabai -m rule --add label=telegram_float \
+  app='Telegram' \
+  manage=off
+
 # Float windows
 yabai -m rule --add label=outlookmain_float \
   app='Microsoft Outlook' \

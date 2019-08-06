@@ -97,6 +97,31 @@ Applications:
         Switch: True
         Don't show again for this device: True
 
+  Telegram:
+    # First sign-in doesn't work with proxy
+    General:
+      In-App Sounds: False
+      Big Emoji: False
+      Menu Bar Item: False
+    Notifications and Sounds:
+      Message Preview: False
+      Notification Tone: Pop
+      Show notifications (when app is in focus): True
+    Privacy and Security:
+      Use Proxy:
+        Type: SOCKS5
+        Server: proxy-ir.intel.com
+        Port: 1080
+    Data and Storage:
+      Auto-Download Media: False
+      Auto-Play Media:
+        GIFs: False
+        Videos: False
+        Sound on Hover: False
+    Appearance:
+      System Dark Mode: Dark Mojave
+      Chat View: Bubbles
+
   Word:
     Preferences:
       AutoCorrect:
