@@ -108,10 +108,11 @@ Applications:
       Notification Tone: Pop
       Show notifications (when app is in focus): True
     Privacy and Security:
-      Use Proxy:
-        Type: SOCKS5
-        Server: proxy-ir.intel.com
-        Port: 1080
+      Proxy:
+        proxy-ir.intel.com:
+          Type: SOCKS5
+          Port: 1080
+        Use for Calls: True  # Doesn't seem to work, but stops crash when trying
     Data and Storage:
       Auto-Download Media: False
       Auto-Play Media:
