@@ -46,6 +46,19 @@ Menu bar:
   - Cisco AnyConnect
   - System icons
 
+# Using 'All Desktops' instead of yabai rules means no SIP changes needed
+# Using PlistBuddy/defaults to set com.apple.spaces[app-bindings] doesn't work
+Dock:
+  Skype for Business:
+    Options:
+      Assign To: All Desktops
+  Slack:
+    Options:
+      Assign To: All Desktops
+  Telegram:
+    Options:
+      Assign To: All Desktops
+
 Notification Centre:
   World Clock:
     - Hillsboro
@@ -86,9 +99,6 @@ Applications:
         Office Intelligent Services: False
 
   Skype for Business:
-    General:
-      # Need to do this manually, `defaults delete` doesn't work
-      Show chats with same person in a single pop-up window: True
     Switch to (audio device):
       DisplayPort:
         Switch: False

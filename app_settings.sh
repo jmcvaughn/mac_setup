@@ -203,9 +203,6 @@ defaults write at.obdev.LaunchBar WelcomeWindowVersion -int 2
 #-------------------------------------------------------------------------------
 
 # Preferences
-## General > Show chats in separate pop-up windows: True
-defaults write com.microsoft.SkypeForBusiness isSingleWindowMode -bool false
-
 ## General > Prompt me before leaving a call: False
 defaults write com.microsoft.SkypeForBusiness showEndCallDialog -bool false
 

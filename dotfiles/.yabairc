@@ -26,6 +26,12 @@ yabai -m rule --add label=anyconnect_d1s1 \
   space=1 \
   manage=off
 
+# Launch main window to Display 1, Space 3
+yabai -m rule --add label=outlookmain_d1s3 \
+  app='Microsoft Outlook' \
+  title='^(Inbox .+\@.+$|Calendar$|People$|Tasks$|Notes$)' \
+  space=3
+
 # Float applications
 yabai -m rule --add label=alfredprefs_float \
   app='Alfred Preferences' \
@@ -43,16 +49,15 @@ yabai -m rule --add label=sysprefs_float \
   app='System Preferences' \
   manage=off
 
+yabai -m rule --add label=slack_float \
+  app='Slack' \
+  manage=off
+
 yabai -m rule --add label=telegram_float \
   app='Telegram' \
   manage=off
 
 # Float windows
-yabai -m rule --add label=outlookmain_float \
-  app='Microsoft Outlook' \
-  title='^(Inbox|Calendar$|People$|Tasks$|Notes$)' \
-  manage=off
-
 yabai -m rule --add label=skypemainsplash_float \
   app='Skype for Business' \
   title='^(Skype for Business|Sign In)$' \
