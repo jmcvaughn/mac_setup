@@ -70,9 +70,9 @@ Applications:
   CrashPlan:
     Preferences:
       Show Code42 CrashPlan status in menu bar: False
-    jmvaughn-mac01 Backup:
+    (System Name) Backup:
       Manage Files:
-        - /Users/jmvaughn/Documents/
+        - ~/Documents/
       Backup Set Settings:
         File Exclusions:
           - $RECYCLE.BIN

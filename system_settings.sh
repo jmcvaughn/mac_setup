@@ -6,8 +6,8 @@ system_preferences() {  # {{{
   #-----------------------------------------------------------------------------
 
   # Clear menu bar array
-  /usr/libexec/PlistBuddy -c 'Delete :menuExtras' /Users/jmvaughn/Library/Preferences/com.apple.systemuiserver.plist
-  /usr/libexec/PlistBuddy -c 'Add :menuExtras array' /Users/jmvaughn/Library/Preferences/com.apple.systemuiserver.plist
+  /usr/libexec/PlistBuddy -c 'Delete :menuExtras' ~/Library/Preferences/com.apple.systemuiserver.plist
+  /usr/libexec/PlistBuddy -c 'Add :menuExtras array' ~/Library/Preferences/com.apple.systemuiserver.plist
   # }}}
 
 
