@@ -134,7 +134,6 @@ Applications:
       Auto-Play Media:
         GIFs: False
         Videos: False
-      Download Folder: ~/Downloads/Telegram/
     Appearance:
       System Dark Mode: Dark Mojave
       Chat View: Bubbles
