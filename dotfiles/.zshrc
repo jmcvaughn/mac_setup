@@ -224,7 +224,7 @@ less_opts=(
     "--hilite-unread"
     "--no-init"
 )
-export less="$(eval echo $less_opts)"
+export LESS="$(eval echo $less_opts)"
 unset less_opts
 ## Set LESSOPEN if source-highlight is found
 src_hilite_path="$(which src-hilite-lesspipe.sh)" &> /dev/null \
