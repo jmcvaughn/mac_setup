@@ -61,6 +61,9 @@ Dock:
   Slack:
     Options:
       Assign To: All Desktops
+  Spotify:
+    Options:
+      Assign To: All Desktops
   Telegram:
     Options:
       Assign To: All Desktops
@@ -112,6 +115,18 @@ Applications:
       WH-1000XM3:
         Switch: True
         Don't show again for this device: True
+
+  Spotify:
+    Settings:
+      Streaming Quality: Very High
+      Make my new playlists public: False
+      Show announcements about new releases: False
+      Autoplay similar songs when your music ends: False
+      Open Spotify automatically after you log into the computer: False
+      Proxy:
+        proxy-ir.intel.com:
+          Type: SOCKS5
+          Port: 1080
 
   Telegram:
     # First sign-in doesn't work with proxy
