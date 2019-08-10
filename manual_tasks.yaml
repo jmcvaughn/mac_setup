@@ -38,6 +38,12 @@ System Preferences:
     Password:
       Picture: Piano
 
+App Store:
+  Preferences:
+    In-App Ratings \& Reviews: False
+  Install:
+    Helium: https://apps.apple.com/gb/app/helium/id1054607607
+
 Menu bar:
   - Dozer:
     - ...
@@ -128,7 +134,7 @@ Applications:
       Auto-Play Media:
         GIFs: False
         Videos: False
-        Sound on Hover: False
+      Download Folder: ~/Downloads/Telegram/
     Appearance:
       System Dark Mode: Dark Mojave
       Chat View: Bubbles

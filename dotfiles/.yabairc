@@ -37,6 +37,10 @@ yabai -m rule --add label=alfredprefs_float \
   app='Alfred Preferences' \
   manage=off
 
+yabai -m rule --add label=appstore_float \
+  app='App Store' \
+  manage=off
+
 yabai -m rule --add label=finder_float \
   app='Finder' \
   manage=off
