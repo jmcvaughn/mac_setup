@@ -36,6 +36,18 @@ install_packages() {
 }
 
 
+install_launchbar_actions() {
+  gmkdir -p ~/Library/Application\ Support/LaunchBar/Actions/ &> /dev/null
+  cd ~/Library/Application\ Support/LaunchBar/Actions/
+
+  # https://github.com/bswinnerton/launchbar-github
+  [[ -d github.lbaction ]] \
+    || git clone https://github.com/bswinnerton/launchbar-github github.lbaction
+
+  cd -
+}
+
+
 set_login_items() {
   # Note: AppleScript (not the osascript utility) requires double quotes
 
@@ -72,6 +84,7 @@ main() {
   fi
 
   install_packages
+  install_launchbar_actions
   set_login_items
 }
 
