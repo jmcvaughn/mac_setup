@@ -177,28 +177,8 @@ bindkey -M main " " magic-space  # History expansion on space
 # Variables {{{
 #-------------------------------------------------------------------------------
 
-# Zsh history
-HISTFILE="$HOME/.zsh_history"
-HISTSIZE=15000
-SAVEHIST=10000
-
-# Editors/pagers
-export EDITOR="nvim"
-export MANPAGER="less --line-numbers"
-less_opts=(
-    "--quit-if-one-screen"
-    "--ignore-case"
-    "--RAW-CONTROL-CHARS"
-    "--HILITE-UNREAD"
-    "--no-init"
-)
-export LESS="$(eval echo $less_opts)"
-unset less_opts
-
+# Paths
 if [[ $os == 'macOS' ]]; then
-    # source-highlight with less
-    export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
-
     # Disable Homebrew analytics (https://docs.brew.sh/Analytics)
     export HOMEBREW_NO_ANALYTICS=1
 
@@ -217,17 +197,45 @@ if [[ $os == 'macOS' ]]; then
     PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
     MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
     export PATH MANPATH
-else
-    # source-highlight with less
-    export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
 fi
-
 export PATH="$HOME/bin:$PATH"
 export CDPATH="$HOME"
 
-# Intel
-export http_proxy="http://proxy-chain.intel.com:911"
-export https_proxy="http://proxy-chain.intel.com:912"
+# Zsh history
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=15000
+SAVEHIST=10000
+
+# Editor
+if which nvim &> /dev/null; then
+    export EDITOR="nvim"
+elif which nvim &> /dev/null; then
+    export EDITOR="nvim"
+else
+    export EDITOR="vi"
+fi
+
+# less
+export manpager="less --line-numbers"
+less_opts=(
+    "--quit-if-one-screen"
+    "--ignore-case"
+    "--raw-control-chars"
+    "--hilite-unread"
+    "--no-init"
+)
+export less="$(eval echo $less_opts)"
+unset less_opts
+## Set LESSOPEN if source-highlight is found
+src_hilite_path="$(which src-hilite-lesspipe.sh)" &> /dev/null \
+    && export LESSOPEN="| $src_hilite_path %s"
+unset src_hilite_path
+
+# Intel proxies
+if [[ $HOST == *'.intel.com' ]]; then
+    export http_proxy="http://proxy-chain.intel.com:911"
+    export https_proxy="http://proxy-chain.intel.com:912"
+fi
 # }}}
 
 
@@ -298,10 +306,10 @@ alias tl='tmux list-sessions'
 alias tk='tmux kill-session -t'
 alias tkd='for i in $(tmux list-sessions | awk -F ":" "!/attached/ { print \$1 }"); do tmux kill-session -t "$i"; done'
 
-# Neovim
-alias vi='nvim'
-alias vim='nvim'
-alias vimdiff='nvim -d'
+# Editor
+alias vi='$EDITOR'
+alias vim='$EDITOR'
+[[ -z $EDITOR ]] && alias vimdiff='$EDITOR -d'
 
 if [[ $os == 'macOS' ]]; then
     alias ud='brew update && brew upgrade && brew cask upgrade --greedy && brew cleanup'
@@ -315,9 +323,14 @@ fi
 # Prompts {{{
 #-------------------------------------------------------------------------------
 
-# Prompt colour set at top of .zshrc
-# "~ % " or "~ (root) # "
-PROMPT='%B%F{$PROMPT_COLOUR}%3~%f%b ${vcs_info_msg_0_}%B%(!.%F{red}(root) %#%f.%#)%b '
+# Prompt colour set at line 1
+if [[ $os == 'macOS' ]]; then
+    # Presume Mac is local machine, don't show hostname
+    PROMPT='%F{$PROMPT_COLOUR}%B%3~%b%f ${vcs_info_msg_0_}%B%#%b '
+else
+    # Show full hostname
+    PROMPT='%F{$PROMPT_COLOUR}%B%M:%3~%b%f ${vcs_info_msg_0_}%B%#%b '
+fi
 # }}}
 
 
@@ -332,7 +345,7 @@ PROMPT='%B%F{$PROMPT_COLOUR}%3~%f%b ${vcs_info_msg_0_}%B%(!.%F{red}(root) %#%f.%
 
 if [[ $os == 'macOS' ]]; then
     source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-else
+elif [[ $os == 'Arch Linux' ]]; then
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 # }}}
