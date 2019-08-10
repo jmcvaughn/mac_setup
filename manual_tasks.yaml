@@ -116,7 +116,6 @@ Applications:
   Telegram:
     # First sign-in doesn't work with proxy
     General:
-      In-App Sounds: False
       Big Emoji: False
       Menu Bar Item: False
     Notifications and Sounds:
