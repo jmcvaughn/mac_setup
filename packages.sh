@@ -1,7 +1,6 @@
 #!/bin/bash
 
 login_items=(
-  'Alfred 4'
   Dozer
   LaunchBar
   WhichSpace

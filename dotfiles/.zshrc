@@ -3,7 +3,9 @@ PROMPT_COLOUR="green"
 case "$(uname)" in
     Linux)
         uname='Linux'
-        os="eval $(grep -E '^PRETTY_NAME' /etc/os-release)"
+        eval "$(grep -E '^PRETTY_NAME=' /etc/os-release)"
+        os="$PRETTY_NAME"
+        unset PRETTY_NAME
         ;;
     Darwin)
         uname='Darwin'
@@ -29,7 +31,7 @@ setopt list_packed
 # Expansion and Globbing
 setopt brace_ccl
 setopt extended_glob
-setopt glob_star_short
+[[ $os != 'CentOS Linux 7 (Core)' ]] && setopt glob_star_short
 setopt hist_subst_pattern
 setopt mark_dirs
 setopt numeric_glob_sort
@@ -42,7 +44,7 @@ setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_no_store
 setopt hist_reduce_blanks
-setopt inc_append_history_time
+[[ $os != 'CentOS Linux 7 (Core)' ]] && setopt inc_append_history_time
 # Following will probably be desirable if hist_ignore_dups is unset
 #setopt hist_expire_dups_first
 #setopt hist_find_no_dups
