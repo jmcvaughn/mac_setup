@@ -209,6 +209,9 @@ defaults write com.microsoft.SkypeForBusiness showEndCallDialog -bool false
 ## General > Show my video for incoming calls: False
 defaults write com.microsoft.SkypeForBusiness showVideoPreviewForIncomingCalls -bool false
 
+## Contacts > Prompt me before deleting a contact group
+defaults write com.microsoft.SkypeForBusiness showDeleteGroupDialog -bool false
+
 ## Calls > Before joining a meeting, ask me which audio device I want to use: False, Use Skype for Business
 defaults write com.microsoft.SkypeForBusiness shouldPromptForJoinMeetingType -bool false
 defaults write com.microsoft.SkypeForBusiness joinWithAudioKind -int 0
