@@ -1,0 +1,59 @@
+# For reference when recreating the configuration manually. Settings
+# synchronised; see com.googlecode.iterm2.plist
+
+General:
+  Closing:
+    Confirm \"Quit iTerm2 (⌘ Q)": False
+  Magic:
+    GPU rendering:
+      Advanced:
+        Maximize throughput (may increase latency): False
+  Services:
+    Check for updates automatically: False
+  Selection:
+    Copy to pasteboard on selection: False
+  Window:
+    Adjust window when changing font size: False
+  Preferences:
+    Load preferences from a custom folder or URL: ~/git/mac_setup/
+  tmux:
+    Automatically bury the tmux client session after connecting: True
+
+Appearance:
+  General:
+    Theme: Minimal
+  Windows:
+    Show line under title bar when the tab bar is not visible: False
+  Tabs:
+    Preserve window size when tab bar shows or hides: True
+  Dimming:
+    Dim inactive split panes: False
+
+Profiles:
+  Default:
+    Colors:
+      Preset: https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Gruvbox%20Dark.itermcolors
+      Cursor: Foreground
+      Cursor text: Background Text:
+      Font: Source Code Pro Regular 12
+    Window:
+      Use transparency: False
+    Terminal:
+      Unlimited scrollback: True
+      Notification Center Alerts: False
+    Session:
+      \"Undo" can revive a session that has been closed for up to: 10 seconds
+      # This option seems backwards. Should be "Only if the following jobs"
+      Prompt before closing: If there are jobs besides  # Use default list
+
+Keys:
+  Ctrl + Shift + Tab: Cycle Tabs Forward
+  Ctrl + Tab: Cycle Tabs Backward
+
+Pointer:
+  General:
+    Double-click performs smart selection: True
+
+Advanced:
+  Swap Find Next and Find Previous: False
+
