@@ -168,7 +168,7 @@ system_preferences() {  # {{{
   defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
   defaults write -g NSAutomaticDashSubstitutionEnabled -bool false
 
-  ## Shortcuts > Full keyboard access: All controls
+  ## Shortcuts > Full Keyboard Access: All controls
   defaults write -g AppleKeyboardUIMode -int 3
 
   # Other
