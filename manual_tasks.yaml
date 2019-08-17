@@ -10,6 +10,14 @@ System Preferences:
     Advanced:
       Require an administrator password to access system-wide preferences: True
 
+  Notifications:
+    Microsoft AU Daemon:
+      Alert style: False
+      Show notifications on lock screen: False
+      Show notification preview: False
+      Show in Notification Center: False
+      Play sound for notifications: False
+
   Displays:
     Display:
       Automatically adjust brightness: False
@@ -105,7 +113,10 @@ Applications:
     bswinnerton/launchbar-github:
       - Grant access: https://github.com/bswinnerton/launchbar-github#github-access-token
 
-  Office:
+  Microsoft AutoUpdate:
+    How would you like updates to be installed?: Manually Check
+
+  Microsoft Office:
     Cloud Storage: Skip
     Preferences:
       Privacy:
