@@ -188,3 +188,13 @@ Applications:
           Use simplified settings: CVT-RB
           Vertical Scan Rate (Hz): 49.999
 
+File associations:
+  termedit.app:
+    - .cfg
+    - .ini
+    - .md
+    - .txt
+    - .xml
+    - .yaml
+    - .yml
+
