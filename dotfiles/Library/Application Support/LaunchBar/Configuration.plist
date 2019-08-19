@@ -183,27 +183,9 @@
 				</dict>
 				<dict>
 					<key>name</key>
-					<string>Search Amazon for Books</string>
+					<string>Amazon Deutschland</string>
 					<key>templateURL</key>
-					<string>http://www.amazon.com/s?ie=UTF8&amp;index=books&amp;keywords=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Search Amazon for DVDs</string>
-					<key>templateURL</key>
-					<string>http://www.amazon.com/s?ie=UTF8&amp;index=dvd&amp;keywords=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Search Amazon for Music</string>
-					<key>templateURL</key>
-					<string>http://www.amazon.com/s?ie=UTF8&amp;index=music&amp;keywords=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Search Amazon.com</string>
-					<key>templateURL</key>
-					<string>http://www.amazon.com/s?ie=UTF8&amp;index=blended&amp;keywords=*</string>
+					<string>http://www.amazon.de/s?ie=UTF8&amp;index=blended&amp;keywords=*</string>
 				</dict>
 				<dict>
 					<key>name</key>
@@ -222,12 +204,6 @@
 					<string>Amazon Deutschland (Musik)</string>
 					<key>templateURL</key>
 					<string>http://www.amazon.de/s?ie=UTF8&amp;index=music&amp;keywords=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Amazon Deutschland</string>
-					<key>templateURL</key>
-					<string>http://www.amazon.de/s?ie=UTF8&amp;index=blended&amp;keywords=*</string>
 				</dict>
 				<dict>
 					<key>name</key>
@@ -285,12 +261,6 @@
 				</dict>
 				<dict>
 					<key>name</key>
-					<string>Lucky Google</string>
-					<key>templateURL</key>
-					<string>https://www.google.com/search?btnI&amp;q=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
 					<string>Google Blog Search</string>
 					<key>templateURL</key>
 					<string>http://blogsearch.google.com/blogsearch?q=*</string>
@@ -339,6 +309,18 @@
 				</dict>
 				<dict>
 					<key>name</key>
+					<string>Intel ARK</string>
+					<key>templateURL</key>
+					<string>https://ark.intel.com/content/www/us/en/ark/search.html?_charset_=UTF-8&amp;q=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Intel MARK</string>
+					<key>templateURL</key>
+					<string>https://mark.intel.com/search?q=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
 					<string>last.fm</string>
 					<key>templateURL</key>
 					<string>http://www.last.fm/music/?q=*</string>
@@ -351,15 +333,15 @@
 				</dict>
 				<dict>
 					<key>name</key>
-					<string>Mac OS X Hints</string>
+					<string>Lucky Google</string>
 					<key>templateURL</key>
-					<string>http://www.macosxhints.com/search.php?query=*&amp;type=stories&amp;mode=search&amp;keyType=all</string>
+					<string>https://www.google.com/search?btnI&amp;q=*</string>
 				</dict>
 				<dict>
 					<key>name</key>
-					<string>Manual Page</string>
+					<string>Mac OS X Hints</string>
 					<key>templateURL</key>
-					<string>x-man-page://*</string>
+					<string>http://www.macosxhints.com/search.php?query=*&amp;type=stories&amp;mode=search&amp;keyType=all</string>
 				</dict>
 				<dict>
 					<key>name</key>
@@ -369,9 +351,45 @@
 				</dict>
 				<dict>
 					<key>name</key>
+					<string>Manual Page</string>
+					<key>templateURL</key>
+					<string>x-man-page://*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>OpenStack Docs</string>
+					<key>templateURL</key>
+					<string>https://www.google.com/search?q=site:docs.openstack.org+*</string>
+				</dict>
+				<dict>
+					<key>name</key>
 					<string>OpenThesaurus</string>
 					<key>templateURL</key>
 					<string>http://www.openthesaurus.de/overview.php?search=1&amp;word=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Search Amazon for Books</string>
+					<key>templateURL</key>
+					<string>http://www.amazon.com/s?ie=UTF8&amp;index=books&amp;keywords=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Search Amazon for DVDs</string>
+					<key>templateURL</key>
+					<string>http://www.amazon.com/s?ie=UTF8&amp;index=dvd&amp;keywords=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Search Amazon for Music</string>
+					<key>templateURL</key>
+					<string>http://www.amazon.com/s?ie=UTF8&amp;index=music&amp;keywords=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Search Amazon.com</string>
+					<key>templateURL</key>
+					<string>http://www.amazon.com/s?ie=UTF8&amp;index=blended&amp;keywords=*</string>
 				</dict>
 				<dict>
 					<key>name</key>
@@ -411,15 +429,15 @@
 				</dict>
 				<dict>
 					<key>name</key>
-					<string>Wolfram Alpha</string>
+					<string>TLDP</string>
 					<key>templateURL</key>
-					<string>http://www.wolframalpha.com/input/?i=*</string>
+					<string>https://www.google.com/search?q=site:tldp.org+*</string>
 				</dict>
 				<dict>
 					<key>name</key>
-					<string>Yahoo! Japan</string>
+					<string>Wolfram Alpha</string>
 					<key>templateURL</key>
-					<string>http://search.yahoo.co.jp/search?ei=UTF-8&amp;p=*</string>
+					<string>http://www.wolframalpha.com/input/?i=*</string>
 				</dict>
 				<dict>
 					<key>name</key>
@@ -432,6 +450,12 @@
 					<string>Yahoo! Images</string>
 					<key>templateURL</key>
 					<string>http://images.search.yahoo.com/search/images?p=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Yahoo! Japan</string>
+					<key>templateURL</key>
+					<string>http://search.yahoo.co.jp/search?ei=UTF-8&amp;p=*</string>
 				</dict>
 				<dict>
 					<key>name</key>
