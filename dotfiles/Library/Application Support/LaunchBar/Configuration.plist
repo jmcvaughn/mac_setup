@@ -357,6 +357,12 @@
 				</dict>
 				<dict>
 					<key>name</key>
+					<string>LaunchBar Help</string>
+					<key>templateURL</key>
+					<string>https://www.google.com/search?q=site:obdev.at/resources/launchbar/help/+*</string>
+				</dict>
+				<dict>
+					<key>name</key>
 					<string>OpenStack Docs</string>
 					<key>templateURL</key>
 					<string>https://www.google.com/search?q=site:docs.openstack.org+*</string>
