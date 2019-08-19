@@ -207,6 +207,12 @@
 				</dict>
 				<dict>
 					<key>name</key>
+					<string>Ansible Docs</string>
+					<key>templateURL</key>
+					<string>https://www.google.com/search?q=site:docs.ansible.com+*</string>
+				</dict>
+				<dict>
+					<key>name</key>
 					<string>Ask.com</string>
 					<key>templateURL</key>
 					<string>http://www.ask.com/web?q=*</string>
@@ -327,6 +333,12 @@
 				</dict>
 				<dict>
 					<key>name</key>
+					<string>LaunchBar Help</string>
+					<key>templateURL</key>
+					<string>https://www.google.com/search?q=site:obdev.at/resources/launchbar/help/+*</string>
+				</dict>
+				<dict>
+					<key>name</key>
 					<string>LEO English-German Dictionary</string>
 					<key>templateURL</key>
 					<string>https://dict.leo.org/?search=*</string>
@@ -357,12 +369,6 @@
 				</dict>
 				<dict>
 					<key>name</key>
-					<string>LaunchBar Help</string>
-					<key>templateURL</key>
-					<string>https://www.google.com/search?q=site:obdev.at/resources/launchbar/help/+*</string>
-				</dict>
-				<dict>
-					<key>name</key>
 					<string>OpenStack Docs</string>
 					<key>templateURL</key>
 					<string>https://www.google.com/search?q=site:docs.openstack.org+*</string>
@@ -372,6 +378,12 @@
 					<string>OpenThesaurus</string>
 					<key>templateURL</key>
 					<string>http://www.openthesaurus.de/overview.php?search=1&amp;word=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Salt Docs</string>
+					<key>templateURL</key>
+					<string>https://www.google.com/search?q=site:docs.saltstack.com+*</string>
 				</dict>
 				<dict>
 					<key>name</key>
