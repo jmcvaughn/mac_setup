@@ -19,6 +19,9 @@ cask 'telegram'
 cask 'whichspace'
 cask 'osxfuse'  # Required by sshfs
 cask 'wkhtmltopdf'  # Required by pandoc to create files
+# Drivers
+tap 'homebrew/cask-drivers'
+cask 'linn-konfig'  # Not a driver, here due to Cask rules: https://git.io/fjb4S
 
 # Fonts
 tap 'homebrew/cask-fonts'
