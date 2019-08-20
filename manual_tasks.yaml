@@ -191,6 +191,7 @@ Applications:
 File associations:
   termedit.app:
     - .cfg
+    - .csv
     - .ini
     - .md
     - .txt
