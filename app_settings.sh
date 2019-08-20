@@ -159,9 +159,6 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores true
 #-------------------------------------------------------------------------------
 
 # Preferences
-## General > Retype Delay: 1.0 seconds
-defaults write at.obdev.LaunchBar RetypeDelay -float 1
-
 ## General > Open Location > Prefer secure URL schemes: True
 defaults write at.obdev.LaunchBar OpenLocationPreferSecureSchemes -bool true
 
