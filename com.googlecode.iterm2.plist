@@ -365,7 +365,7 @@
 	<key>DimInactiveSplitPanes</key>
 	<false/>
 	<key>DoubleClickPerformsSmartSelection</key>
-	<true/>
+	<false/>
 	<key>EnableDivisionView</key>
 	<false/>
 	<key>GlobalKeyMap</key>
@@ -523,9 +523,9 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>720 13 718 426 0 0 1440 877 </string>
+	<string>720 0 718 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1720 0 1719 1417 0 0 3440 1417 </string>
+	<string>0 3 718 874 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>1146 15 1145 1402 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -1591,7 +1591,7 @@
 				<real>0.90061241388320923</real>
 			</dict>
 			<key>Guid</key>
-			<string>12D9921F-B29A-4DC7-B454-7A42951D4BE2</string>
+			<string>1983E418-9CBB-43A0-B0B4-3854CD47B208</string>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>Idle Code</key>
@@ -2001,12 +2001,12 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{269, 595}</string>
+		<string>{107, 872}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>3D830185-C97B-4414-9EE8-82EB7B9EEFA1</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>14</integer>
+	<integer>17</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>587984299.68548405</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2825,8 +2825,6 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SUSendProfileInfo</key>
-	<false/>
-	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>SoundForEsc</key>
 	<false/>

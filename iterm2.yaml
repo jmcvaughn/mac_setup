@@ -50,10 +50,6 @@ Keys:
   Ctrl + Shift + Tab: Cycle Tabs Forward
   Ctrl + Tab: Cycle Tabs Backward
 
-Pointer:
-  General:
-    Double-click performs smart selection: True
-
 Advanced:
   Swap Find Next and Find Previous: False
 
