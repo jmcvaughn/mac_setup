@@ -122,6 +122,10 @@ Applications:
       Privacy:
         Office Intelligent Services: False
 
+  Microsoft Teams:
+    General:
+      Theme: Dark
+
   Skype for Business:
     Switch to (audio device):
       DisplayPort:

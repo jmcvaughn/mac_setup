@@ -11,6 +11,7 @@ cask 'flash-npapi'  # Work
 cask 'iterm2'
 cask 'launchbar'
 cask 'libreoffice'
+cask 'microsoft-teams'
 cask 'skim'
 cask 'slack'
 cask 'spotify'
