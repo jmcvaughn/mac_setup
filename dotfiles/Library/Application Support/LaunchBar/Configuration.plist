@@ -252,6 +252,12 @@
 				</dict>
 				<dict>
 					<key>name</key>
+					<string>Reddit</string>
+					<key>templateURL</key>
+					<string>https://www.reddit.com/search/?q=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
 					<string>Salt Docs</string>
 					<key>templateURL</key>
 					<string>https://www.google.com/search?q=site:docs.saltstack.com+*</string>
