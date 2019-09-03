@@ -42,6 +42,15 @@ System Preferences:
       Spotlight:
         Show Spotlight search: Alt + Space
 
+  Extensions:
+    Share Menu:
+      - Add to Reading List  # Always first in Safari Share Menu
+      - Open in Helium
+      - AirDrop
+      - Mail
+      - Messages
+      - Add People
+
   Users \& Groups:
     Password:
       Picture: Piano
