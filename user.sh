@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 cd "$(dirname $0)"  # Change to script's directory
 
