@@ -8,6 +8,7 @@ cask 'dozer'
 cask 'drawio'
 cask 'firefox'
 cask 'flash-npapi'  # Work
+cask 'google-chrome'
 cask 'iterm2'
 cask 'launchbar'
 cask 'libreoffice'
