@@ -27,11 +27,27 @@
 	<array>
 		<dict>
 			<key>className</key>
-			<string>ODLBCategoriesRule</string>
+			<string>ODLBPrefPanesRule</string>
+		</dict>
+		<dict>
+			<key>abbreviatedPath</key>
+			<string>_safariBookmarksPath</string>
+			<key>className</key>
+			<string>ODLBBookmarksRule</string>
+		</dict>
+		<dict>
+			<key>abbreviatedPath</key>
+			<string>~/Documents</string>
+			<key>className</key>
+			<string>ODLBFolderContentsRule</string>
+			<key>skipQualifiers</key>
+			<array>
+				<string>iTunes Music</string>
+			</array>
 		</dict>
 		<dict>
 			<key>className</key>
-			<string>ODLBThemesRule</string>
+			<string>ODLBTagsRule</string>
 		</dict>
 		<dict>
 			<key>aliasName</key>
@@ -240,6 +256,12 @@
 				</dict>
 				<dict>
 					<key>name</key>
+					<string>Subreddit</string>
+					<key>templateURL</key>
+					<string>https://www.reddit.com/r/*</string>
+				</dict>
+				<dict>
+					<key>name</key>
 					<string>OpenStack Docs</string>
 					<key>templateURL</key>
 					<string>https://www.google.com/search?q=site:docs.openstack.org+*</string>
@@ -374,80 +396,7 @@
 		</dict>
 		<dict>
 			<key>className</key>
-			<string>ODLBSnippetsRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBMusicRule</string>
-			<key>includeLovedSongsInBestOfLists</key>
-			<integer>0</integer>
-			<key>removeFormationFromArtistName</key>
-			<integer>0</integer>
-			<key>removeParenthesizedTextFromArtistName</key>
-			<integer>0</integer>
-			<key>splitArtists</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>abbreviatedPath</key>
-			<string>~/Documents</string>
-			<key>className</key>
-			<string>ODLBFolderContentsRule</string>
-			<key>skipQualifiers</key>
-			<array>
-				<string>iTunes Music</string>
-			</array>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBUserAccountsRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBNetworkLocationsRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBSafariCloudTabsRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBDockRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBSafariTopSitesRule</string>
-		</dict>
-		<dict>
-			<key>aliasName</key>
-			<string>Unix Directories</string>
-			<key>className</key>
-			<string>ODLBListRule</string>
-			<key>list</key>
-			<array>
-				<string>/bin</string>
-				<string>/etc</string>
-				<string>/sbin</string>
-				<string>/tmp</string>
-				<string>/usr</string>
-				<string>/usr/bin</string>
-				<string>/usr/sbin</string>
-				<string>/usr/local</string>
-				<string>/usr/local/bin</string>
-				<string>/var</string>
-			</array>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBMountedVolumesRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBPrefPanesRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBTagsRule</string>
+			<string>ODLBCategoriesRule</string>
 		</dict>
 		<dict>
 			<key>aliasName</key>
@@ -527,36 +476,8 @@
 			</array>
 		</dict>
 		<dict>
-			<key>abbreviatedPath</key>
-			<string>_safariHistoryPath</string>
 			<key>className</key>
-			<string>ODLBHistoryRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBSafariReadingListRule</string>
-		</dict>
-		<dict>
-			<key>abbreviatedSpecificPlaces</key>
-			<array>
-				<string>/Applications</string>
-				<string>/Library/Application Support/Microsoft/MAU2.0</string>
-				<string>/System/Library/CoreServices</string>
-				<string>~/Applications</string>
-				<string>~/Library/Printers</string>
-			</array>
-			<key>className</key>
-			<string>ODLBApplicationsRule</string>
-		</dict>
-		<dict>
-			<key>abbreviatedPath</key>
-			<string>_safariBookmarksPath</string>
-			<key>className</key>
-			<string>ODLBBookmarksRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBServicesRule</string>
+			<string>ODLBSnippetsRule</string>
 		</dict>
 		<dict>
 			<key>abbreviatedPath</key>
@@ -567,16 +488,6 @@
 			<integer>0</integer>
 			<key>typeCollectionIdentifier</key>
 			<string>@folder</string>
-		</dict>
-		<dict>
-			<key>abbreviatedPath</key>
-			<string>~/Desktop</string>
-			<key>className</key>
-			<string>ODLBFolderContentsRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBWorkflowsRule</string>
 		</dict>
 		<dict>
 			<key>aliasName</key>
@@ -604,6 +515,30 @@
 			</array>
 		</dict>
 		<dict>
+			<key>className</key>
+			<string>ODLBSafariCloudTabsRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBSafariReadingListRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBUserAccountsRule</string>
+		</dict>
+		<dict>
+			<key>abbreviatedSpecificPlaces</key>
+			<array>
+				<string>/Applications</string>
+				<string>/Library/Application Support/Microsoft/MAU2.0</string>
+				<string>/System/Library/CoreServices</string>
+				<string>~/Applications</string>
+				<string>~/Library/Printers</string>
+			</array>
+			<key>className</key>
+			<string>ODLBApplicationsRule</string>
+		</dict>
+		<dict>
 			<key>allowsActionURLs</key>
 			<integer>0</integer>
 			<key>className</key>
@@ -611,20 +546,91 @@
 		</dict>
 		<dict>
 			<key>className</key>
+			<string>ODLBDockRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
 			<string>ODLBEmojiRule</string>
 			<key>subsearchOnly</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBNetworkLocationsRule</string>
+		</dict>
+		<dict>
+			<key>abbreviatedPath</key>
+			<string>_safariHistoryPath</string>
+			<key>className</key>
+			<string>ODLBHistoryRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBSafariTopSitesRule</string>
+		</dict>
+		<dict>
+			<key>abbreviatedPath</key>
+			<string>~/Desktop</string>
+			<key>className</key>
+			<string>ODLBFolderContentsRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBWorkflowsRule</string>
+		</dict>
+		<dict>
+			<key>aliasName</key>
+			<string>Unix Directories</string>
+			<key>className</key>
+			<string>ODLBListRule</string>
+			<key>list</key>
+			<array>
+				<string>/bin</string>
+				<string>/etc</string>
+				<string>/sbin</string>
+				<string>/tmp</string>
+				<string>/usr</string>
+				<string>/usr/bin</string>
+				<string>/usr/sbin</string>
+				<string>/usr/local</string>
+				<string>/usr/local/bin</string>
+				<string>/var</string>
+			</array>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBThemesRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBMountedVolumesRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBMusicRule</string>
+			<key>includeLovedSongsInBestOfLists</key>
+			<integer>0</integer>
+			<key>removeFormationFromArtistName</key>
+			<integer>0</integer>
+			<key>removeParenthesizedTextFromArtistName</key>
+			<integer>0</integer>
+			<key>splitArtists</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBServicesRule</string>
 		</dict>
 	</array>
 	<key>typeCollections</key>
 	<array>
 		<dict>
 			<key>definition</key>
-			<string>'CWWP', cwk</string>
+			<string>htm, html, htmld</string>
 			<key>identifier</key>
-			<string>3</string>
+			<string>1</string>
 			<key>name</key>
-			<string>AppleWorks Documents</string>
+			<string>HTML Files</string>
 		</dict>
 		<dict>
 			<key>definition</key>
@@ -636,19 +642,19 @@
 		</dict>
 		<dict>
 			<key>definition</key>
-			<string>htm, html, htmld</string>
-			<key>identifier</key>
-			<string>1</string>
-			<key>name</key>
-			<string>HTML Files</string>
-		</dict>
-		<dict>
-			<key>definition</key>
 			<string>c, cpp, h, java, m, nib, php, php3, php4, pl</string>
 			<key>identifier</key>
 			<string>2</string>
 			<key>name</key>
 			<string>Source Files</string>
+		</dict>
+		<dict>
+			<key>definition</key>
+			<string>'CWWP', cwk</string>
+			<key>identifier</key>
+			<string>3</string>
+			<key>name</key>
+			<string>AppleWorks Documents</string>
 		</dict>
 	</array>
 	<key>version</key>
