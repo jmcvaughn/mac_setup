@@ -135,6 +135,9 @@ Applications:
     General:
       Theme: Dark
 
+  Safari:
+    Favourites: Delete defaults
+
   Skype for Business:
     Switch to (audio device):
       DisplayPort:
