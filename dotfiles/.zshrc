@@ -1,4 +1,4 @@
-PROMPT_COLOUR="green"
+PROMPT_COLOUR="green"  # Must remain set, evaluated every prompt
 
 case "$(uname)" in
     Linux)
@@ -100,22 +100,22 @@ preexec() {
 # Completion [zshcompsys(1)] {{{
 #-------------------------------------------------------------------------------
 
-# Mac: Add zsh-completions to function path
+# Initialisation
+## Mac: Add zsh-completions to function path
 [[ $os == 'macOS' ]] && fpath=('/usr/local/share/zsh-completions' $fpath)
 
-# compinit
 autoload -Uz compinit
-if [[ $os == 'macOS' ]]; then
-    compinit -u
-else
-    compinit
-fi
+[[ $os == 'macOS' ]] && compinit -u || compinit
 
-# Unconditional menu completion
+# Completion system configuration
+## Case-insensitive matching for lowercase only
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+## Unconditional menu completion
 zstyle ':completion:*' menu select
 
-# Case insensitive matching for lowercase
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+## Mac: Disable hosts file completion; only used for blocking, not manual hosts
+## entries
+[[ $os == 'macOS' ]] && zstyle ':completion:*' hosts false
 # }}}
 
 
@@ -126,6 +126,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 bindkey -v  # Set 'main' keymap to viins 
 
 # User-defined widgets, declarations and bindings
+## Widgets
 historyup-vicmd() {  # Switch to vicmd and search on up arrow
     zle -K vicmd
     zle history-beginning-search-backward
@@ -141,37 +142,37 @@ expandorcomplete-vicmd() {  # Switch to main and expand/complete on tab
     zle expand-or-complete
 }
 
-# Declarations
+## Declarations
 zle -N historyup-vicmd
 zle -N historydown-vicmd
 zle -N expandorcomplete-vicmd
 
-# Bindings
-bindkey -M main  "^[[A" historyup-vicmd  # Up Arrow
+## Bindings
+bindkey -M main "^[[A" historyup-vicmd  # Up Arrow
 bindkey -M vicmd "^[[A" historyup-vicmd  # Up Arrow
-bindkey -M vicmd "k"    historyup-vicmd 
-bindkey -M main  "^[[B" historydown-vicmd  # Down Arrow
+bindkey -M vicmd "k" historyup-vicmd
+bindkey -M main "^[[B" historydown-vicmd  # Down Arrow
 bindkey -M vicmd "^[[B" historydown-vicmd  # Down Arrow
-bindkey -M vicmd "j"    historydown-vicmd
-bindkey -M vicmd "\t"   expandorcomplete-vicmd  # Tab
-
+bindkey -M vicmd "j" historydown-vicmd
+bindkey -M vicmd "\t" expandorcomplete-vicmd  # Tab
 
 # Standard Widgets
-# Movement
+## Movement
 bindkey -M main "^[[1;2D" vi-backward-word  # Shift-Left Arrow
 bindkey -M main "^[[1;5D" vi-backward-word  # Ctrl-Left Arrow
 bindkey -M main "^[[1;2C" vi-forward-word  # Shift-Right Arrow
 bindkey -M main "^[[1;5C" vi-forward-word  # Ctrl-Right Arrow
-bindkey -M main "^[[H"    vi-digit-or-beginning-of-line  # Home
-bindkey -M main "^[[F"    vi-end-of-line  # End
+bindkey -M main "^[[H" vi-digit-or-beginning-of-line  # Home
+bindkey -M main "^[[F" vi-end-of-line  # End
 
-# Modifying Text
-bindkey -M main "^?"     backward-delete-char  # Backspace
-bindkey -M main  "^[[3~" delete-char  # Delete
+## Modifying Text
+bindkey -M main "^?" backward-delete-char  # Backspace
+bindkey -M main "^[[3~" delete-char  # Delete
 bindkey -M vicmd "^[[3~" delete-char  # Delete
 
-# Completion
+## Completion
 bindkey -M main " " magic-space  # History expansion on space
+bindkey -M main "^[[Z" reverse-menu-complete  # Shift-Tab
 # }}}
 
 
