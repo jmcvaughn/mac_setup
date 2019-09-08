@@ -28,10 +28,6 @@ System Preferences:
   Keyboard:
     Keyboard:
       Adjust keyboard brightness in low light: False
-      Modifier Keys:
-        Apple Internal Keyboard/Trackpad:
-          Caps Lock: Control
-          Control: False
     Shortcuts:
       Mission Control:
         Move left a space: False

@@ -10,6 +10,7 @@ cask 'firefox'
 cask 'flash-npapi'  # Work
 cask 'google-chrome'
 cask 'iterm2'
+cask 'karabiner-elements'
 cask 'launchbar'
 cask 'libreoffice'
 cask 'microsoft-teams'
