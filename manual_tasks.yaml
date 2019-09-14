@@ -28,6 +28,10 @@ System Preferences:
   Keyboard:
     Keyboard:
       Adjust keyboard brightness in low light: False
+      Modifier Keys:
+        Planck:
+          Option: Command
+          Command: Option
     Shortcuts:
       Mission Control:
         Move left a space: False
