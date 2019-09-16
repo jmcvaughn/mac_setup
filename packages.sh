@@ -46,6 +46,10 @@ install_launchbar_actions() {
   [[ -d github.lbaction ]] \
     || git clone https://github.com/bswinnerton/launchbar-github github.lbaction
 
+  # https://github.com/v0rn/xkcdpass.lbaction
+  [[ -d xkcdpass.lbaction ]] \
+    || git clone https://github.com/v0rn/xkcdpass.lbaction xkcdpass.lbaction
+
   cd -
 }
 
