@@ -342,15 +342,12 @@ ad_blocking(){  # {{{
     --output /etc/hosts
 }  # }}}
 
-main() {
-  cd "$(dirname $0)"  # Change to script's directory
 
-  system_preferences
-  other_preferences
-  ad_blocking
-}
+cd "$(dirname $0)"  # Change to script's directory
 
-main
+system_preferences
+other_preferences
+ad_blocking
 
 # vim: set foldmethod=marker:
 

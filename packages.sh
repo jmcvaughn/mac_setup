@@ -6,15 +6,16 @@ login_items=(
   WhichSpace
 )
 
-install_brew() {
+install_brew() {  # {{{
   # Homebrew install command, see https://brew.sh
   /usr/bin/ruby -e "$(
     curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install
   )" && rehash
 }
+# }}}
 
 
-install_packages() {
+install_packages() {  # {{{
   # Install packages
   brew bundle && rehash
 
@@ -36,9 +37,10 @@ install_packages() {
   # Install Python 3 packages
   /usr/local/bin/python3 -m pip install -r requirements.txt
 }
+# }}}
 
 
-install_launchbar_actions() {
+install_launchbar_actions() {  # {{{
   gmkdir -p ~/Library/Application\ Support/LaunchBar/Actions/ &> /dev/null
   cd ~/Library/Application\ Support/LaunchBar/Actions/
 
@@ -52,9 +54,10 @@ install_launchbar_actions() {
 
   cd -
 }
+# }}}
 
 
-set_login_items() {
+set_login_items() {  # {{{
   # Note: AppleScript (not the osascript utility) requires double quotes
 
   # Login items
@@ -77,22 +80,21 @@ set_login_items() {
       > /dev/null
   done
 }
+# }}}
 
 
-main() {
-  cd "$(dirname $0)"  # Change to script's directory
+cd "$(dirname $0)"  # Change to script's directory
 
-  export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_ANALYTICS=1
 
-  # Install Homebrew and mas
-  if ! which brew > /dev/null; then
-    install_brew
-  fi
+# Install Homebrew
+if ! which brew > /dev/null; then
+  install_brew
+fi
 
-  install_packages
-  install_launchbar_actions
-  set_login_items
-}
+install_packages
+install_launchbar_actions
+set_login_items
 
-main
+# vim: set foldmethod=marker:
 

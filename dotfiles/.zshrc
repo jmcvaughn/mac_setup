@@ -353,6 +353,7 @@ elif [[ $os == 'Arch Linux' ]]; then
 fi
 # }}}
 
+
 unset uname os
 
 # vim: set expandtab shiftwidth=0 tabstop=4 foldmethod=marker:
