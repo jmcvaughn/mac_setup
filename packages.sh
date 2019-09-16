@@ -10,13 +10,13 @@ install_brew() {
   # Homebrew install command, see https://brew.sh
   /usr/bin/ruby -e "$(
     curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install
-  )"
+  )" && rehash
 }
 
 
 install_packages() {
   # Install packages
-  brew bundle
+  brew bundle && rehash
 
   # Add Homebrew Zsh to /etc/shells
   if ! ggrep -qE '^/usr/local/bin/zsh$' /etc/shells; then
