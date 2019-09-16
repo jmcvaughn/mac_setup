@@ -32,6 +32,9 @@ install_packages() {
     open "$(brew cask install libreoffice-language-pack | awk -F "'" \
       '/\/usr\/local\/Caskroom\/libreoffice-language-pack\/.*\.app/ {print $2}')"
   fi
+
+  # Install Python 3 packages
+  /usr/local/bin/python3 -m pip install -r requirements.txt
 }
 
 
