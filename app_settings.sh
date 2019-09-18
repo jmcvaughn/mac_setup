@@ -177,6 +177,9 @@ defaults write at.obdev.LaunchBar OpenLocationPrependWWW -bool false
 ## Appearance > Theme: Dark
 defaults write at.obdev.LaunchBar Theme -string 'at.obdev.LaunchBar.theme.Dark'
 
+## Shortcuts > Keyboard Shortcuts > Search in Spotlight: False
+defaults write at.obdev.LaunchBar SpotlightHotKeyEnabled -bool false
+
 ## Shortcuts > Modifier Taps > Instant Send: Double Command
 defaults write at.obdev.LaunchBar ModifierTapInstantSend -int 21
 
