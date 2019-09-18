@@ -1,6 +1,15 @@
 #!/usr/bin/env zsh
 
 #-------------------------------------------------------------------------------
+# Dozer {{{
+#-------------------------------------------------------------------------------
+
+# Hide status bar icons after 10 seconds: True
+defaults write com.mortennn.Dozer hideAfterDelayEnabled -bool true
+# }}}
+
+
+#-------------------------------------------------------------------------------
 # Finder {{{
 # Defaults are set explicitly to revert on script run if changed
 #-------------------------------------------------------------------------------
@@ -230,7 +239,7 @@ apps_disable_update_check=(
   'net.sourceforge.skim-app.skim'
 )
 for app in $apps_disable_update_check; do
-  defaults write $app SUEnableAutomaticChecks -bool true
+  defaults write $app SUEnableAutomaticChecks -bool false
   defaults write $app SUHasLaunchedBefore -bool true
 done
 # }}}
