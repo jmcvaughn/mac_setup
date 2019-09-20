@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 
 login_items=(
+  BitBar
   Dozer
   LaunchBar
-  WhichSpace
 )
 
 install_brew() {  # {{{

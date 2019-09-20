@@ -2,6 +2,7 @@
 tap 'homebrew/cask'  # Explicitly tap to keep during `brew bundle cleanup`
 cask 'alfred'
 cask 'android-platform-tools'
+cask 'bitbar'
 cask 'displaycal'
 cask 'docker'
 cask 'dozer'
@@ -18,7 +19,6 @@ cask 'skim'
 cask 'slack'
 cask 'switchresx'
 cask 'telegram'
-cask 'whichspace'
 cask 'osxfuse'  # Required by sshfs
 cask 'wkhtmltopdf'  # Required by pandoc to create files
 # Drivers

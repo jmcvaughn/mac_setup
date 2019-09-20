@@ -1,6 +1,15 @@
 #!/usr/bin/env zsh
 
 #-------------------------------------------------------------------------------
+# BitBar {{{
+#-------------------------------------------------------------------------------
+
+# Plugin folder
+defaults write com.matryer.BitBar pluginsDirectory -string '/Users/jmvaughn/git/mac_setup/bitbar/'
+# }}}
+
+
+#-------------------------------------------------------------------------------
 # Dozer {{{
 #-------------------------------------------------------------------------------
 
@@ -237,8 +246,8 @@ defaults write com.microsoft.SkypeForBusiness firstRun -bool false
 
 apps_disable_update_check=(
   'com.docker.docker'
+  'com.matryer.BitBar'
   'com.mortennn.Dozer'
-  'io.gechr.WhichSpace'
   'net.sourceforge.skim-app.skim'
 )
 for app in $apps_disable_update_check; do
