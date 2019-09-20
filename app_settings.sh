@@ -246,7 +246,6 @@ defaults write com.microsoft.SkypeForBusiness firstRun -bool false
 
 apps_disable_update_check=(
   'com.docker.docker'
-  'com.matryer.BitBar'
   'com.mortennn.Dozer'
   'net.sourceforge.skim-app.skim'
 )
