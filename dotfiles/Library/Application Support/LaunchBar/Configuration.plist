@@ -243,9 +243,9 @@
 				</dict>
 				<dict>
 					<key>name</key>
-					<string>Subreddit</string>
+					<string>Google Translate</string>
 					<key>templateURL</key>
-					<string>https://www.reddit.com/r/*</string>
+					<string>https://translate.google.com/#view=home&amp;op=translate&amp;sl=auto&amp;tl=en&amp;text=*</string>
 				</dict>
 				<dict>
 					<key>name</key>
@@ -324,6 +324,12 @@
 					<string>Search iTunes Store for Song</string>
 					<key>templateURL</key>
 					<string>itms://phobos.apple.com/WebObjects/MZSearch.woa/wa/advancedSearchResults?songTerm=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Subreddit</string>
+					<key>templateURL</key>
+					<string>https://www.reddit.com/r/*</string>
 				</dict>
 				<dict>
 					<key>name</key>
