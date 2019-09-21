@@ -16,7 +16,7 @@ def main():
         if space['visible'] == 1:
             output.extend(str(space['index']))
 
-    print(', '.join(output))
+    print('/'.join(output))
 
 if __name__ == '__main__':
     main()
