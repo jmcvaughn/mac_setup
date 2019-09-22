@@ -29,7 +29,7 @@ install_packages() {  # {{{
 
   # Install LibreOffice Language Pack
   if ! brew cask list | ggrep -q libreoffice-language-pack; then
-    open /Applications/LibreOffice.app/ && sleep 10 && pkill soffice
+    open /Applications/LibreOffice.app/ && sleep 10 && pkill -x soffice
     open "$(brew cask install libreoffice-language-pack | awk -F "'" \
       '/\/usr\/local\/Caskroom\/libreoffice-language-pack\/.*\.app/ {print $2}')"
   fi
