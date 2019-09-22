@@ -112,6 +112,8 @@ Applications:
         # attribute, but `xattr -d com.apple.FinderInfo ~/Library/` doesn't
         # work.
         Show Library Folder: True
+    Sidebar:
+      - Add Home folder above default user folders
 
   iTerm2:
     General:
