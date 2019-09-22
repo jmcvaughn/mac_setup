@@ -217,6 +217,51 @@ defaults write at.obdev.LaunchBar WelcomeWindowVersion -int 2
 
 
 #-------------------------------------------------------------------------------
+# Safari {{{
+#-------------------------------------------------------------------------------
+
+# Start Safari to create fresh plist, required for toolbar configuration
+open /Applications/Safari.app/ && sleep 10 && pkill -x Safari
+
+# Preferences
+## General > New windows/tabs open with: Empty Page
+defaults write com.apple.Safari NewWindowBehavior -int 1
+defaults write com.apple.Safari NewTabBehavior -int 1
+
+## General > Homepage: Intel Circuit
+[[ $HOST == *'.intel.com' ]] && defaults write com.apple.Safari HomePage -string 'https://employeecontent.intel.com/content/news/home/circuithome.html'
+
+## General > Open "safe" files after downloading: False
+defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
+
+## General > Remove download list items: When Safari quits
+defaults write com.apple.Safari DownloadsClearingPolicy -int 1
+
+## Search > Enable Quick Website search
+defaults write com.apple.Safari WebsiteSpecificSearchEnabled -bool false
+
+# Menu options
+## View > Show status bar: True
+defaults write com.apple.Safari ShowOverlayStatusBar -bool true
+
+# Other
+## Toolbar:
+### Clear toolbar array
+/usr/libexec/PlistBuddy -c 'Delete :"NSToolbar Configuration BrowserToolbarIdentifier-v2":"TB Item Identifiers"' ~/Library/Containers/com.apple.Safari/Data/Library/Preferences/com.apple.Safari.plist&> /dev/null
+/usr/libexec/PlistBuddy -c 'Add :"NSToolbar Configuration BrowserToolbarIdentifier-v2":"TB Item Identifiers" array' ~/Library/Containers/com.apple.Safari/Data/Library/Preferences/com.apple.Safari.plist
+
+### Add toolbar items:
+# Back/Forward, Home, Flexible Space, Address and Search, Flexible Space, Share
+/usr/libexec/PlistBuddy -c 'Add :"NSToolbar Configuration BrowserToolbarIdentifier-v2":"TB Item Identifiers": string BackForwardToolbarIdentifier' ~/Library/Containers/com.apple.Safari/Data/Library/Preferences/com.apple.Safari.plist
+/usr/libexec/PlistBuddy -c 'Add :"NSToolbar Configuration BrowserToolbarIdentifier-v2":"TB Item Identifiers": string HomeToolbarIdentifier' ~/Library/Containers/com.apple.Safari/Data/Library/Preferences/com.apple.Safari.plist
+/usr/libexec/PlistBuddy -c 'Add :"NSToolbar Configuration BrowserToolbarIdentifier-v2":"TB Item Identifiers": string NSToolbarFlexibleSpaceItem' ~/Library/Containers/com.apple.Safari/Data/Library/Preferences/com.apple.Safari.plist
+/usr/libexec/PlistBuddy -c 'Add :"NSToolbar Configuration BrowserToolbarIdentifier-v2":"TB Item Identifiers": string InputFieldsToolbarIdentifier' ~/Library/Containers/com.apple.Safari/Data/Library/Preferences/com.apple.Safari.plist
+/usr/libexec/PlistBuddy -c 'Add :"NSToolbar Configuration BrowserToolbarIdentifier-v2":"TB Item Identifiers": string NSToolbarFlexibleSpaceItem' ~/Library/Containers/com.apple.Safari/Data/Library/Preferences/com.apple.Safari.plist
+/usr/libexec/PlistBuddy -c 'Add :"NSToolbar Configuration BrowserToolbarIdentifier-v2":"TB Item Identifiers": string ShareToolbarIdentifier' ~/Library/Containers/com.apple.Safari/Data/Library/Preferences/com.apple.Safari.plist
+# }}}
+
+
+#-------------------------------------------------------------------------------
 # Skype for Business {{{
 #-------------------------------------------------------------------------------
 
