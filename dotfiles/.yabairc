@@ -30,10 +30,6 @@ yabai -m rule --add label=outlookmain_d1s3 \
   space=3
 
 # Float applications
-yabai -m rule --add label=alfredprefs_float \
-  app='Alfred Preferences' \
-  manage=off
-
 yabai -m rule --add label=appstore_float \
   app='App Store' \
   manage=off

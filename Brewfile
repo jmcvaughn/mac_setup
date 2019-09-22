@@ -1,6 +1,5 @@
 # Casks
 tap 'homebrew/cask'  # Explicitly tap to keep during `brew bundle cleanup`
-cask 'alfred'
 cask 'android-platform-tools'
 cask 'bitbar'
 cask 'displaycal'
