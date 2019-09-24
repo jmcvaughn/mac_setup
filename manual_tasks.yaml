@@ -58,8 +58,10 @@ System Preferences:
 App Store:
   Preferences:
     In-App Ratings \& Reviews: False
+    Free Downloads: Save Password
   Install:
     Helium: https://apps.apple.com/gb/app/helium/id1054607607
+    Linn Kazoo: https://apps.apple.com/gb/app/linn-kazoo/id848937349
 
 Menu bar:
   - Dozer:
