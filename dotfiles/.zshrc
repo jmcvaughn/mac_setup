@@ -289,6 +289,7 @@ fi
 # https://github.com/zsh-users/zsh-autosuggestions
 #-------------------------------------------------------------------------------
 
+autosuggestions=1
 if [[ $os == 'macOS' ]]; then
     source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
     autosuggestions=$?
@@ -317,6 +318,7 @@ fi
 # https://github.com/zsh-users/zsh-history-substring-search
 #-------------------------------------------------------------------------------
 
+history_substring_search=1
 if [[ $os == 'macOS' ]]; then
     source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
     history_substring_search=$?
@@ -407,7 +409,7 @@ bindkey -M vicmd '\t' expandorcomplete-vicmd  # Tab
 # }}}
 
 
-unset uname os
+unset uname os autosuggestions history_substring_search
 
 # vim: set expandtab shiftwidth=0 tabstop=4 foldmethod=marker:
 
