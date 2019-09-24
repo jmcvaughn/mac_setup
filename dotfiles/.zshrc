@@ -120,71 +120,6 @@ zstyle ':completion:*' menu select
 
 
 #-------------------------------------------------------------------------------
-# ZLE [zshzle(1)] {{{
-#-------------------------------------------------------------------------------
-
-bindkey -v  # Set 'main' keymap to viins 
-
-# User-defined widgets, declarations and bindings
-## Widgets
-autosuggest-accept-space() {
-    zle autosuggest-accept
-    # Using magic-space as it doesn't print '^@'. Ideally wouldn't use this.
-    zle magic-space
-}
-
-historyup-vicmd() {  # Switch to vicmd and search on up arrow
-    zle -K vicmd
-    zle history-beginning-search-backward
-}
-
-historydown-vicmd() {  # Switch to vicmd and search on down arrow
-    zle -K vicmd
-    zle history-beginning-search-forward
-}
-
-expandorcomplete-vicmd() {  # Switch to main and expand/complete on tab
-    zle -K main
-    zle expand-or-complete
-}
-
-## Declarations
-zle -N autosuggest-accept-space
-zle -N historyup-vicmd
-zle -N historydown-vicmd
-zle -N expandorcomplete-vicmd
-
-## Bindings
-bindkey -M main '^ ' autosuggest-accept-space  # Ctrl-Space
-bindkey -M main "^[[A" historyup-vicmd  # Up Arrow
-bindkey -M vicmd "^[[A" historyup-vicmd  # Up Arrow
-bindkey -M vicmd "k" historyup-vicmd
-bindkey -M main "^[[B" historydown-vicmd  # Down Arrow
-bindkey -M vicmd "^[[B" historydown-vicmd  # Down Arrow
-bindkey -M vicmd "j" historydown-vicmd
-bindkey -M vicmd "\t" expandorcomplete-vicmd  # Tab
-
-# Standard Widgets
-## Movement
-bindkey -M main "^[[1;2D" vi-backward-word  # Shift-Left Arrow
-bindkey -M main "^[[1;5D" vi-backward-word  # Ctrl-Left Arrow
-bindkey -M main "^[[1;2C" vi-forward-word  # Shift-Right Arrow
-bindkey -M main "^[[1;5C" vi-forward-word  # Ctrl-Right Arrow
-bindkey -M main "^[[H" vi-digit-or-beginning-of-line  # Home
-bindkey -M main "^[[F" vi-end-of-line  # End
-
-## Modifying Text
-bindkey -M main "^?" backward-delete-char  # Backspace
-bindkey -M main "^[[3~" delete-char  # Delete
-bindkey -M vicmd "^[[3~" delete-char  # Delete
-
-## Completion
-bindkey -M main " " magic-space  # History expansion on space
-bindkey -M main "^[[Z" reverse-menu-complete  # Shift-Tab
-# }}}
-
-
-#-------------------------------------------------------------------------------
 # Variables {{{
 #-------------------------------------------------------------------------------
 
@@ -351,19 +286,22 @@ fi
 
 #-------------------------------------------------------------------------------
 # Autosuggestions {{{
+# https://github.com/zsh-users/zsh-autosuggestions
 #-------------------------------------------------------------------------------
 
 if [[ $os == 'macOS' ]]; then
     source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    autosuggestions=$?
 elif [[ $os == 'Arch Linux' ]]; then
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    autosuggestions=$?
 fi
 # }}}
 
 
 #-------------------------------------------------------------------------------
 # Syntax highlighting {{{
-# zsh-syntax-highlighting must be at end of zshrc
+# https://github.com/zsh-users/zsh-syntax-highlighting
 #-------------------------------------------------------------------------------
 
 if [[ $os == 'macOS' ]]; then
@@ -371,6 +309,101 @@ if [[ $os == 'macOS' ]]; then
 elif [[ $os == 'Arch Linux' ]]; then
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+# }}}
+
+
+#-------------------------------------------------------------------------------
+# History substring search {{{
+# https://github.com/zsh-users/zsh-history-substring-search
+#-------------------------------------------------------------------------------
+
+if [[ $os == 'macOS' ]]; then
+    source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+    history_substring_search=$?
+elif [[ $os == 'Arch Linux' ]]; then
+    source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+    history_substring_search=$?
+fi
+# }}}
+
+
+#-------------------------------------------------------------------------------
+# ZLE [zshzle(1)] {{{
+#-------------------------------------------------------------------------------
+
+bindkey -v  # Set 'main' keymap to viins
+
+# Standard Widgets
+## Movement
+bindkey -M main "^[[1;2D" vi-backward-word  # Shift-Left Arrow
+bindkey -M main "^[[1;5D" vi-backward-word  # Ctrl-Left Arrow
+bindkey -M main "^[[1;2C" vi-forward-word  # Shift-Right Arrow
+bindkey -M main "^[[1;5C" vi-forward-word  # Ctrl-Right Arrow
+bindkey -M main "^[[H" vi-digit-or-beginning-of-line  # Home
+bindkey -M main "^[[F" vi-end-of-line  # End
+## Modifying Text
+bindkey -M main "^?" backward-delete-char  # Backspace
+bindkey -M main "^[[3~" delete-char  # Delete
+bindkey -M vicmd "^[[3~" delete-char  # Delete
+## Completion
+bindkey -M main " " magic-space  # History expansion on space
+bindkey -M main "^[[Z" reverse-menu-complete  # Shift-Tab
+
+# User-defined/external widgets
+if [[ autosuggestions -eq 0 ]]; then
+    autosuggest-accept-space() {
+        zle autosuggest-accept
+        # Using magic-space as it doesn't print '^@'. Ideally wouldn't use this.
+        zle magic-space
+    }
+    zle -N autosuggest-accept-space
+    bindkey -M main "^ " autosuggest-accept-space  # Ctrl-Space
+fi
+
+if [[ history_substring_search -eq 0 ]]; then
+    historysubstringup-vicmd() {
+        zle -K vicmd
+        zle history-substring-search-up
+    }
+    zle -N historysubstringup-vicmd
+    bindkey -M main "^[[A" historysubstringup-vicmd  # Up Arrow
+    bindkey -M vicmd "^[[A" historysubstringup-vicmd  # Up Arrow
+    bindkey -M vicmd "k" historysubstringup-vicmd
+
+    historysubstringdown-vicmd() {  # Switch to vicmd and search on down arrow
+        zle -K vicmd
+        zle history-substring-search-down
+    }
+    zle -N historysubstringdown-vicmd
+    bindkey -M main "^[[B" historysubstringdown-vicmd  # Down Arrow
+    bindkey -M vicmd "^[[B" historysubstringdown-vicmd  # Down Arrow
+    bindkey -M vicmd "j" historysubstringdown-vicmd
+else
+    historyup-vicmd() {  # Switch to vicmd and search on up arrow
+        zle -K vicmd
+        zle history-beginning-search-backward
+    }
+    zle -N historyup-vicmd
+    bindkey -M main "^[[A" historyup-vicmd  # Up Arrow
+    bindkey -M vicmd "^[[A" historyup-vicmd  # Up Arrow
+    bindkey -M vicmd "k" historyup-vicmd
+
+    historydown-vicmd() {  # Switch to vicmd and search on down arrow
+        zle -K vicmd
+        zle history-beginning-search-forward
+    }
+    zle -N historydown-vicmd
+    bindkey -M main "^[[B" historydown-vicmd  # Down Arrow
+    bindkey -M vicmd "^[[B" historydown-vicmd  # Down Arrow
+    bindkey -M vicmd "j" historydown-vicmd
+fi
+
+expandorcomplete-vicmd() {  # Switch to main and expand/complete on tab
+    zle -K main
+    zle expand-or-complete
+}
+zle -N expandorcomplete-vicmd
+bindkey -M vicmd "\t" expandorcomplete-vicmd  # Tab
 # }}}
 
 
