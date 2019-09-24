@@ -127,6 +127,12 @@ bindkey -v  # Set 'main' keymap to viins
 
 # User-defined widgets, declarations and bindings
 ## Widgets
+autosuggest-accept-space() {
+    zle autosuggest-accept
+    # Using magic-space as it doesn't print '^@'. Ideally wouldn't use this.
+    zle magic-space
+}
+
 historyup-vicmd() {  # Switch to vicmd and search on up arrow
     zle -K vicmd
     zle history-beginning-search-backward
@@ -143,11 +149,13 @@ expandorcomplete-vicmd() {  # Switch to main and expand/complete on tab
 }
 
 ## Declarations
+zle -N autosuggest-accept-space
 zle -N historyup-vicmd
 zle -N historydown-vicmd
 zle -N expandorcomplete-vicmd
 
 ## Bindings
+bindkey -M main '^ ' autosuggest-accept-space  # Ctrl-Space
 bindkey -M main "^[[A" historyup-vicmd  # Up Arrow
 bindkey -M vicmd "^[[A" historyup-vicmd  # Up Arrow
 bindkey -M vicmd "k" historyup-vicmd
@@ -339,6 +347,18 @@ fi
 
 # pkgfile - shows which missing package provides command
 [[ $os == 'Arch Linux' ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
+
+
+#-------------------------------------------------------------------------------
+# Autosuggestions {{{
+#-------------------------------------------------------------------------------
+
+if [[ $os == 'macOS' ]]; then
+    source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+elif [[ $os == 'Arch Linux' ]]; then
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+# }}}
 
 
 #-------------------------------------------------------------------------------

@@ -39,6 +39,7 @@ brew 'gnu-tar'
 brew 'grep'
 # Shell utilities
 brew 'zsh'
+brew 'zsh-autosuggestions'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
 brew 'source-highlight'
