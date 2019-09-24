@@ -337,10 +337,10 @@ bindkey -v  # Set 'main' keymap to viins
 
 # Standard Widgets
 ## Movement
-bindkey -M main '^[[1;2D' vi-backward-word  # Shift-Left Arrow
-bindkey -M main '^[[1;5D' vi-backward-word  # Ctrl-Left Arrow
-bindkey -M main '^[[1;2C' vi-forward-word  # Shift-Right Arrow
-bindkey -M main '^[[1;5C' vi-forward-word  # Ctrl-Right Arrow
+bindkey -M main '^[[1;2D' vi-backward-word  # Shift-Left
+bindkey -M main '^[[1;5D' vi-backward-word  # Ctrl-Left
+bindkey -M main '^[[1;2C' vi-forward-word  # Shift-Right
+bindkey -M main '^[[1;5C' vi-forward-word  # Ctrl-Right
 bindkey -M main '^[[H' vi-digit-or-beginning-of-line  # Home
 bindkey -M main '^[[F' vi-end-of-line  # End
 ## Modifying Text
@@ -368,39 +368,39 @@ if [[ history_substring_search -eq 0 ]]; then
         zle history-substring-search-up
     }
     zle -N historysubstringup-vicmd
-    bindkey -M main '^[[A' historysubstringup-vicmd  # Up Arrow
-    bindkey -M vicmd '^[[A' historysubstringup-vicmd  # Up Arrow
-    bindkey -M vicmd 'k' historysubstringup-vicmd
+    bindkey -M main '^[[1;2A' historysubstringup-vicmd  # Shift-Up
+    bindkey -M vicmd '^[[1;2A' historysubstringup-vicmd  # Shift-Up
+    bindkey -M vicmd 'K' historysubstringup-vicmd
 
-    historysubstringdown-vicmd() {  # Switch to vicmd and search on down arrow
+    historysubstringdown-vicmd() {
         zle -K vicmd
         zle history-substring-search-down
     }
     zle -N historysubstringdown-vicmd
-    bindkey -M main '^[[B' historysubstringdown-vicmd  # Down Arrow
-    bindkey -M vicmd '^[[B' historysubstringdown-vicmd  # Down Arrow
-    bindkey -M vicmd 'j' historysubstringdown-vicmd
-else
-    historyup-vicmd() {  # Switch to vicmd and search on up arrow
-        zle -K vicmd
-        zle history-beginning-search-backward
-    }
-    zle -N historyup-vicmd
-    bindkey -M main '^[[A' historyup-vicmd  # Up Arrow
-    bindkey -M vicmd '^[[A' historyup-vicmd  # Up Arrow
-    bindkey -M vicmd 'k' historyup-vicmd
-
-    historydown-vicmd() {  # Switch to vicmd and search on down arrow
-        zle -K vicmd
-        zle history-beginning-search-forward
-    }
-    zle -N historydown-vicmd
-    bindkey -M main '^[[B' historydown-vicmd  # Down Arrow
-    bindkey -M vicmd '^[[B' historydown-vicmd  # Down Arrow
-    bindkey -M vicmd 'j' historydown-vicmd
+    bindkey -M main '^[[1;2B' historysubstringdown-vicmd  # Shift-Down
+    bindkey -M vicmd '^[[1;2B' historysubstringdown-vicmd  # Shift-Down
+    bindkey -M vicmd 'J' historysubstringdown-vicmd
 fi
 
-expandorcomplete-vicmd() {  # Switch to main and expand/complete on tab
+historyup-vicmd() {
+    zle -K vicmd
+    zle history-beginning-search-backward
+}
+zle -N historyup-vicmd
+bindkey -M main '^[[A' historyup-vicmd  # Up
+bindkey -M vicmd '^[[A' historyup-vicmd  # Up
+bindkey -M vicmd 'k' historyup-vicmd
+
+historydown-vicmd() {
+    zle -K vicmd
+    zle history-beginning-search-forward
+}
+zle -N historydown-vicmd
+bindkey -M main '^[[B' historydown-vicmd  # Down
+bindkey -M vicmd '^[[B' historydown-vicmd  # Down
+bindkey -M vicmd 'j' historydown-vicmd
+
+expandorcomplete-vicmd() {
     zle -K main
     zle expand-or-complete
 }
