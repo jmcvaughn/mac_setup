@@ -18,7 +18,7 @@ cask 'slack'
 cask 'switchresx'
 cask 'telegram'
 cask 'osxfuse'  # Required by sshfs
-cask 'wkhtmltopdf'  # Required by pandoc to create files
+cask 'wkhtmltopdf'  # Used by pandoc to create files
 # Drivers
 tap 'homebrew/cask-drivers'
 cask 'linn-konfig'  # Not a driver, here due to Cask rules: https://git.io/fjb4S
@@ -28,6 +28,25 @@ tap 'homebrew/cask-fonts'
 cask 'font-source-code-pro'
 
 # Homebrew packages
+brew 'ansible'
+brew 'aria2'
+brew 'atool'
+brew 'git'
+brew 'htop'
+brew 'ipmitool'
+brew 'jq'
+brew 'less'
+brew 'neovim'
+brew 'openssh'
+brew 'p7zip'
+brew 'pandoc'
+brew 'picocom'
+brew 'python'
+brew 'sipcalc'
+brew 'source-highlight'
+brew 'speedtest-cli'
+brew 'tree'
+brew 'wget'
 # GNU utilities
 brew 'coreutils'
 brew 'diffutils'
@@ -36,31 +55,12 @@ brew 'gawk'
 brew 'gnu-sed'
 brew 'gnu-tar'
 brew 'grep'
-# Shell utilities
+# Zsh
 brew 'zsh'
 brew 'zsh-autosuggestions'
 brew 'zsh-completions'
 brew 'zsh-history-substring-search'
 brew 'zsh-syntax-highlighting'
-brew 'source-highlight'
-brew 'tree'
-# Utilities without Cask dependencies
-brew 'ansible'
-brew 'aria2'
-brew 'atool'
-brew 'git'
-brew 'htop'
-brew 'ipmitool'
-brew 'jq'
-brew 'neovim'
-brew 'openssh'
-brew 'p7zip'
-brew 'pandoc'
-brew 'picocom'
-brew 'python'
-brew 'sipcalc'
-brew 'speedtest-cli'
-brew 'wget'
 # Utilities with Cask dependencies
 brew 'sshfs'
 
