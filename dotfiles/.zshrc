@@ -45,7 +45,7 @@ setopt hist_ignore_space
 setopt hist_no_store
 setopt hist_reduce_blanks
 [[ $os != 'CentOS Linux 7 (Core)' ]] && setopt inc_append_history_time
-# Following will probably be desirable if hist_ignore_dups is unset
+## Following will probably be desirable if hist_ignore_dups is unset
 #setopt hist_expire_dups_first
 #setopt hist_find_no_dups
 
@@ -130,16 +130,19 @@ if [[ $os == 'macOS' ]]; then
 
     # Paths
     PATH="/usr/local/sbin:$PATH"  # Mainly for brew doctor
-    # GNU coreutils
+    ## GNU coreutils
     PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-    # GNU findutils
+    ## GNU findutils
     PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
     MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
-    # GNU sed
+    ## GNU grep
+    PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+    MANPATH="/usr/local/opt/grep/libexec/gnuman:$MANPATH"
+    ## GNU sed
     PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
     MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
-    # GNU tar
+    ## GNU tar
     PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
     MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
     export PATH MANPATH
@@ -208,6 +211,7 @@ alias sudo='sudo '
 # File viewing/editing
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
+alias igrep='grep --ignore-case --color=auto'
 alias les='less'
 alias lesn='less --LINE-NUMBERS'
 alias o='open'
