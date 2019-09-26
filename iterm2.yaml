@@ -1,6 +1,8 @@
 # For reference when recreating the configuration manually. Settings
 # synchronised; see com.googlecode.iterm2.plist
 
+# NOTE: Clear search history _before_ saving and committing
+
 General:
   Closing:
     Confirm \"Quit iTerm2 (⌘ Q)": False
@@ -31,6 +33,8 @@ Appearance:
 
 Profiles:
   Default:
+    General:
+      Working Directory: Reuse previous session's directory
     Colors:
       Preset: https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Gruvbox%20Dark.itermcolors
       Cursor: Foreground

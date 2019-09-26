@@ -523,13 +523,13 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>720 0 718 877 0 0 1440 877 </string>
+	<string>0 0 1440 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 3 718 874 0 0 1440 877 </string>
+	<string>0 0 1719 1417 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>1146 15 1145 1402 0 0 3440 1417 </string>
+	<string>1720 0 1719 1417 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>2293 11 1145 698 0 0 3440 1417 </string>
+	<string>2580 0 858 1417 0 0 3440 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -842,7 +842,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>No</string>
+			<string>Recycle</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -1987,8 +1987,10 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.1</string>
 		<string>3.3.2</string>
+		<string>3.3.1</string>
+		<string>3.3.4</string>
+		<string>3.3.3</string>
 	</array>
 	<key>NoSyncAutoBurialReveal</key>
 	<true/>
@@ -1999,14 +2001,14 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1440, 900}}</string>
+		<string>{{0, 0}, {3440, 1440}}</string>
 		<key>topLeft</key>
-		<string>{107, 872}</string>
+		<string>{681, 1085}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>3D830185-C97B-4414-9EE8-82EB7B9EEFA1</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>17</integer>
+	<integer>29</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>587984299.68548405</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2534,7 +2536,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentSession</string>
+				<string>tmuxWindow</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -2591,6 +2593,14 @@
 				<true/>
 				<key>name</key>
 				<string>iterm2.localhostName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.jobPid</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -2732,19 +2742,19 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
 				<false/>
 				<key>name</key>
 				<string>currentSession</string>
 				<key>nonterminalContext</key>
 				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>tmuxWindow</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
 			</dict>
 		</array>
 		<key>4</key>
@@ -2775,6 +2785,8 @@
 			</dict>
 		</array>
 	</dict>
+	<key>NoSyncSearchHistory2</key>
+	<array/>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>587671119.72396398</real>
 	<key>PointerActions</key>
@@ -2814,6 +2826,8 @@
 	<string>~/git/mac_setup/</string>
 	<key>PreserveWindowSizeWhenTabBarVisibilityChanges</key>
 	<true/>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>SUEnableAutomaticChecks</key>
@@ -2826,6 +2840,8 @@
 	<true/>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>ShowFullScreenTabBar</key>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SwapFindNextPrevious</key>
@@ -2836,8 +2852,10 @@
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.2</string>
+	<string>3.3.4</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
