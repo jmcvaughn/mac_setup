@@ -15,8 +15,26 @@ install_brew() {  # {{{
 
 
 install_packages() {  # {{{
+  # Check LibreOffice Language Pack installed before brew bundle
+  brew cask list libreoffice-language-pack &> /dev/null
+  lolang_instbefore=$?
+
   # Install packages
   brew bundle && rehash
+
+  # Get LibreOffice Language Pack version and check if installed after
+  # brew bundle
+  lolang_vers="$(
+    brew cask list --versions libreoffice-language-pack 2> /dev/null \
+      | gawk 'BEGIN {rc=1} {rc=0; print $2} END {exit rc}')"
+  lolang_instafter=$?
+
+  # If the Cask has just been installed, run LibreOffice Language Pack
+  # installer. Also skips if package not in Brewfile.
+  if [[ $lolang_instbefore -ne 0 ]] && [[ $lolang_instafter -eq 0 ]]; then
+    open -j /Applications/LibreOffice.app/ && sleep 10 && pkill -x soffice
+    open /usr/local/Caskroom/libreoffice-language-pack/"$lolang_vers"/'LibreOffice Language Pack.app'/
+  fi
 
   # Add Homebrew Zsh to /etc/shells
   if ! ggrep -qE '^/usr/local/bin/zsh$' /etc/shells; then
@@ -25,13 +43,6 @@ install_packages() {  # {{{
 
   # Symlink avr-gcc 7 to avr-gcc (QMK)
   brew link --force avr-gcc@8
-
-  # Install LibreOffice Language Pack
-  if ! brew cask list | ggrep -q libreoffice-language-pack; then
-    open /Applications/LibreOffice.app/ && sleep 10 && pkill -x soffice
-    open "$(brew cask install libreoffice-language-pack | awk -F "'" \
-      '/\/usr\/local\/Caskroom\/libreoffice-language-pack\/.*\.app/ {print $2}')"
-  fi
 
   # Install Python 3 packages
   /usr/local/bin/python3 -m pip install -r requirements.txt
