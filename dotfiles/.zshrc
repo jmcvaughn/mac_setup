@@ -130,6 +130,9 @@ if [[ $os == 'macOS' ]]; then
 
     # Paths
     PATH="/usr/local/sbin:$PATH"  # Mainly for brew doctor
+    ## curl
+    PATH="/usr/local/opt/curl/bin:$PATH"
+    MANPATH="/usr/local/opt/curl/share/man:$MANPATH"
     ## GNU coreutils
     PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
