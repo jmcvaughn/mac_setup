@@ -87,7 +87,7 @@ cd "$(dirname $0)"  # Change to script's directory
 export HOMEBREW_NO_ANALYTICS=1
 
 # Install Homebrew
-if ! which brew > /dev/null; then
+if ! type -p brew &> /dev/null; then
   install_brew
 fi
 
