@@ -32,6 +32,7 @@ cask 'font-source-code-pro'
 # Homebrew packages
 brew 'ansible'
 brew 'aria2'
+brew 'bash'
 brew 'curl'
 brew 'git'
 brew 'htop'

@@ -36,6 +36,11 @@ install_packages() {  # {{{
     open /usr/local/Caskroom/libreoffice-language-pack/"$lolang_vers"/'LibreOffice Language Pack.app'/
   fi
 
+  # Add Homebrew bash to /etc/shells
+  if ! ggrep -qE '^/usr/local/bin/bash$' /etc/shells; then
+    echo '/usr/local/bin/bash' | sudo gtee -a /etc/shells
+  fi
+
   # Add Homebrew Zsh to /etc/shells
   if ! ggrep -qE '^/usr/local/bin/zsh$' /etc/shells; then
     echo '/usr/local/bin/zsh' | sudo gtee -a /etc/shells
