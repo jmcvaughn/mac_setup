@@ -18,6 +18,40 @@ esac
 
 
 #-------------------------------------------------------------------------------
+# Paths {{{
+#-------------------------------------------------------------------------------
+
+# Paths
+if [[ $os == 'macOS' ]]; then
+    # Disable Homebrew analytics (https://docs.brew.sh/Analytics)
+    export HOMEBREW_NO_ANALYTICS=1
+
+    PATH="/usr/local/sbin:$PATH"  # Mainly for brew doctor
+    # curl
+    PATH="/usr/local/opt/curl/bin:$PATH"
+    MANPATH="/usr/local/opt/curl/share/man:$MANPATH"
+    # GNU coreutils
+    PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+    # GNU findutils
+    PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+    MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
+    # GNU grep
+    PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+    MANPATH="/usr/local/opt/grep/libexec/gnuman:$MANPATH"
+    # GNU sed
+    PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+    MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
+    # GNU tar
+    PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+    MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
+    export MANPATH
+fi
+export PATH="$HOME/bin:$PATH"
+# }}}
+
+
+#-------------------------------------------------------------------------------
 # Options [zshoptions(1)] {{{
 #-------------------------------------------------------------------------------
 
@@ -31,7 +65,7 @@ setopt list_packed
 # Expansion and Globbing
 setopt brace_ccl
 setopt extended_glob
-[[ $os != 'CentOS Linux 7 (Core)' ]] && setopt glob_star_short
+setopt glob_star_short 2> /dev/null  # zsh 5.2 or newer
 setopt hist_subst_pattern
 setopt mark_dirs
 setopt numeric_glob_sort
@@ -44,7 +78,7 @@ setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_no_store
 setopt hist_reduce_blanks
-[[ $os != 'CentOS Linux 7 (Core)' ]] && setopt inc_append_history_time
+setopt inc_append_history_time 2> /dev/null  # zsh 5.0.6 or newer
 ## Following will probably be desirable if hist_ignore_dups is unset
 #setopt hist_expire_dups_first
 #setopt hist_find_no_dups
@@ -120,38 +154,8 @@ zstyle ':completion:*' menu select
 
 
 #-------------------------------------------------------------------------------
-# Variables {{{
+# Environment variables {{{
 #-------------------------------------------------------------------------------
-
-# Paths
-if [[ $os == 'macOS' ]]; then
-    # Disable Homebrew analytics (https://docs.brew.sh/Analytics)
-    export HOMEBREW_NO_ANALYTICS=1
-
-    # Paths
-    PATH="/usr/local/sbin:$PATH"  # Mainly for brew doctor
-    ## curl
-    PATH="/usr/local/opt/curl/bin:$PATH"
-    MANPATH="/usr/local/opt/curl/share/man:$MANPATH"
-    ## GNU coreutils
-    PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-    MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-    ## GNU findutils
-    PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
-    MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
-    ## GNU grep
-    PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
-    MANPATH="/usr/local/opt/grep/libexec/gnuman:$MANPATH"
-    ## GNU sed
-    PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-    MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
-    ## GNU tar
-    PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
-    MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
-    export PATH MANPATH
-fi
-export PATH="$HOME/bin:$PATH"
-export CDPATH="$HOME"
 
 # Zsh history
 HISTFILE="$HOME/.zsh_history"
