@@ -163,9 +163,9 @@ HISTSIZE=15000
 SAVEHIST=10000
 
 # Editor
-if type -p nvim &> /dev/null; then
+if whence -p nvim &> /dev/null; then
     export EDITOR="nvim"
-elif type -p nvim &> /dev/null; then
+elif whence -p nvim &> /dev/null; then
     export EDITOR="nvim"
 else
     export EDITOR="vi"
@@ -183,7 +183,7 @@ less_opts=(
 export LESS="$(eval echo $less_opts)"
 unset less_opts
 ## Set LESSOPEN if source-highlight is found
-src_hilite_path="$(type -p src-hilite-lesspipe.sh)" &> /dev/null \
+src_hilite_path="$(whence -p src-hilite-lesspipe.sh 2> /dev/null)" \
     && export LESSOPEN="| $src_hilite_path %s"
 unset src_hilite_path
 
