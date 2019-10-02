@@ -138,6 +138,36 @@ Applications:
       Privacy:
         Office Intelligent Services: False
 
+  Microsoft Outlook:
+    Organise:
+      Conversations: True
+    Preferences:
+      Fonts:
+        Plain text:
+          Font: Source Code Pro
+          Size: 10
+      Auto-correct:
+        Auto-correct:
+          Capitalise first letter of sentences: False
+        Auto-format:
+          Dashes with en dashes and em dashes: False
+          Internet and network paths with links: False
+          Straight quotation marks with smart quotation marks: False
+      Reading:
+        Mark emails as read: When viewed in the reading pane
+      Composing:
+        When sending messages, automatically Bcc myself: True
+      Signatures:
+        Signatures:
+          - Default: Create and set as appropriate
+        New messages: Default
+        Replies/forwards: Default
+      Calendar:
+        Work day ends: 1730
+        First day of week: Monday
+        Show week numbers: True
+        Show current weather on calendar: False
+
   Microsoft Teams:
     General:
       Theme: Dark
