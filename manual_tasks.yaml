@@ -156,7 +156,13 @@ Applications:
       Reading:
         Mark emails as read: When viewed in the reading pane
       Composing:
+        Plain Text:
+          Indent each line of the original message: False
+          Attribution of original message: Include From, Date, To and Subject lines from original message
+        Compose message in HTML by default: False
+        When replying or forwarding, use the format of the original message: False
         When sending messages, automatically Bcc myself: True
+        Only reply to selected text: True
       Signatures:
         Signatures:
           - Default: Create and set as appropriate
