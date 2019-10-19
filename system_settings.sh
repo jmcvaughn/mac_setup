@@ -1,13 +1,15 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 
 system_preferences() {  # {{{
+  systemuiserver_plist="$HOME/Library/Preferences/com.apple.systemuiserver.plist"
+
   #-----------------------------------------------------------------------------
   # Pre-tasks {{{
   #-----------------------------------------------------------------------------
 
   # Clear menu bar array
-  /usr/libexec/PlistBuddy -c 'Delete :menuExtras' ~/Library/Preferences/com.apple.systemuiserver.plist
-  /usr/libexec/PlistBuddy -c 'Add :menuExtras array' ~/Library/Preferences/com.apple.systemuiserver.plist
+  /usr/libexec/PlistBuddy -c 'Delete :menuExtras' "$systemuiserver_plist"
+  /usr/libexec/PlistBuddy -c 'Add :menuExtras array' "$systemuiserver_plist"
   # }}}
 
 
@@ -110,7 +112,7 @@ system_preferences() {  # {{{
   # System Preferences
   ## Show battery status in menu bar
   defaults write com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.battery' -bool true
-  /usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Battery.menu' ~/Library/Preferences/com.apple.systemuiserver.plist
+  /usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Battery.menu' "$systemuiserver_plist"
 
   ## Battery > Turn display off after: 5 minutes
   sudo pmset -b displaysleep 5
@@ -227,7 +229,7 @@ system_preferences() {  # {{{
 
   ## Show volume in menu bar
   defaults write com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.volume' -bool true
-  /usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Volume.menu' ~/Library/Preferences/com.apple.systemuiserver.plist
+  /usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Volume.menu' "$systemuiserver_plist"
 
   # Volume menu position
   defaults write com.apple.systemuiserver "NSStatusItem Preferred Position com.apple.menuextra.volume" -float 352
@@ -241,7 +243,7 @@ system_preferences() {  # {{{
   # System Preferences
   ## Wi-Fi > Show Wi-Fi status in menu bar: True
   defaults write com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.airport' -bool true
-  /usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/AirPort.menu' ~/Library/Preferences/com.apple.systemuiserver.plist
+  /usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/AirPort.menu' "$systemuiserver_plist"
 
   # Wi-Fi menu position
   defaults write com.apple.systemuiserver "NSStatusItem Preferred Position com.apple.menuextra.airport" -float 322
@@ -255,7 +257,7 @@ system_preferences() {  # {{{
   # System Preferences
   ## Show Bluetooth in menu bar
   defaults write com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.bluetooth' -bool true
-  /usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu' ~/Library/Preferences/com.apple.systemuiserver.plist
+  /usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu' "$systemuiserver_plist"
 
   # Bluetooth menu position
   defaults write com.apple.systemuiserver "NSStatusItem Preferred Position com.apple.menuextra.bluetooth" -float 292
@@ -269,7 +271,7 @@ system_preferences() {  # {{{
   # System Preferences
   ## Clock > Show date and time in menu bar: True
   defaults write com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.clock' -bool true
-  /usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Clock.menu' ~/Library/Preferences/com.apple.systemuiserver.plist
+  /usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Clock.menu' "$systemuiserver_plist"
 
   ## * indicates default
   ## Clock:
@@ -336,18 +338,21 @@ other_preferences(){  # {{{
 
 
 ad_blocking(){  # {{{
+  adblock_url='https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts'
+
   # Download blocking hosts file
-  sudo https_proxy=$https_proxy curl --show-error --silent \
-    https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts \
-    --output /etc/hosts
+  sudo https_proxy=$https_proxy curl --show-error --silent "$adblock_url" --output /etc/hosts
 }  # }}}
 
 
-cd "$(dirname $0)"  # Change to script's directory
+main() {  # {{{
+  cd "$(dirname "$0")"  # Change to script's directory
 
-system_preferences
-other_preferences
-ad_blocking
+  system_preferences
+  other_preferences
+  ad_blocking
+}  # }}}
 
-# vim: set foldmethod=marker:
+main
 
+# vim: set filetype=bash foldmethod=marker:
