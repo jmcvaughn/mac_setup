@@ -69,4 +69,3 @@ yabai -m rule --add label=webexmain_float \
   app='Cisco Webex Meetings' \
   title='^(Cisco Webex Meetings|$)' \
   manage=off
-

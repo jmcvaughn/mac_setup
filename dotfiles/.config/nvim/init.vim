@@ -103,4 +103,3 @@ command Gitmd2pdf :write |
 
 " LaTeX to PDF
 command Latex2pdf !latexmk -output-directory=aux -pdf main.tex
-

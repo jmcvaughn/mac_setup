@@ -87,4 +87,3 @@ tap 'osx-cross/avr'
 brew 'avr-gcc@8'
 tap 'PX4/homebrew-px4'
 brew 'gcc-arm-none-eabi'
-

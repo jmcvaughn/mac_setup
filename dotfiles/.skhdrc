@@ -43,4 +43,3 @@ alt + shift - p: yabai -m window --space 10
 alt + shift - f: yabai -m window --toggle float
 alt - s: yabai -m window --toggle split
 alt - f: yabai -m window --toggle zoom-fullscreen
-
