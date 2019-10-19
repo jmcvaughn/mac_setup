@@ -9,4 +9,5 @@
 [alias]
 	df = diff
 	dt = difftool
+	igrep = grep -i
 	stat = status
