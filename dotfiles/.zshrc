@@ -1,16 +1,16 @@
-PROMPT_COLOUR="green"  # Must remain set, evaluated every prompt
+PROMPT_COLOUR='green'  # Must remain set, evaluated every prompt
 
-case "$(uname)" in
-    Linux)
-        uname='Linux'
-        eval "$(grep -E '^PRETTY_NAME=' /etc/os-release)"
-        os="$PRETTY_NAME"
-        unset PRETTY_NAME
-        ;;
-    Darwin)
-        uname='Darwin'
-        os='macOS'
-        ;;
+case $(uname) in
+  Linux)
+    uname='Linux'
+    eval $(grep -E '^PRETTY_NAME=' /etc/os-release)
+    os=$PRETTY_NAME
+    unset PRETTY_NAME
+    ;;
+  Darwin)
+    uname='Darwin'
+    os='macOS'
+    ;;
 esac
 
 # Mac: Source global zprofile to set initial PATH
@@ -23,29 +23,29 @@ esac
 
 # Paths
 if [[ $os == 'macOS' ]]; then
-    # Disable Homebrew analytics (https://docs.brew.sh/Analytics)
-    export HOMEBREW_NO_ANALYTICS=1
+  # Disable Homebrew analytics (https://docs.brew.sh/Analytics)
+  export HOMEBREW_NO_ANALYTICS=1
 
-    PATH="/usr/local/sbin:$PATH"  # Mainly for brew doctor
-    # curl
-    PATH="/usr/local/opt/curl/bin:$PATH"
-    MANPATH="/usr/local/opt/curl/share/man:$MANPATH"
-    # GNU coreutils
-    PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-    MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-    # GNU findutils
-    PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
-    MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
-    # GNU grep
-    PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
-    MANPATH="/usr/local/opt/grep/libexec/gnuman:$MANPATH"
-    # GNU sed
-    PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-    MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
-    # GNU tar
-    PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
-    MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
-    export MANPATH
+  PATH="/usr/local/sbin:$PATH"  # Mainly for brew doctor
+  # curl
+  PATH="/usr/local/opt/curl/bin:$PATH"
+  MANPATH="/usr/local/opt/curl/share/man:$MANPATH"
+  # GNU coreutils
+  PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+  # GNU findutils
+  PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+  MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
+  # GNU grep
+  PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+  MANPATH="/usr/local/opt/grep/libexec/gnuman:$MANPATH"
+  # GNU sed
+  PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+  MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
+  # GNU tar
+  PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+  MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
+  export MANPATH
 fi
 export PATH="$HOME/bin:$PATH"
 # }}}
@@ -115,17 +115,13 @@ zstyle ':vcs_info:*' unstagedstr '%F{red}●%f'  # dot: Unicode U+25CF
 
 # Run before displaying prompt
 precmd() {
-    # Window title
-    print -nP '\033]2;%n@%m:%3~\007'
-
-    # Version control system prompt
-    vcs_info
+  print -nP '\033]2;%n@%m:%3~\007'  # Window title
+  vcs_info  # Version control system prompt
 }
 
 # Run before running command
 preexec() {
-    # Window title
-    print -nP '\033]2;$1 (%n@%m:%3~)\007'
+  print -nP '\033]2;$1 (%n@%m:%3~)\007'  # Window title
 }
 # }}}
 
@@ -164,33 +160,34 @@ SAVEHIST=10000
 
 # Editor
 if whence -p nvim &> /dev/null; then
-    export EDITOR="nvim"
+  export EDITOR='nvim'
 elif whence -p nvim &> /dev/null; then
-    export EDITOR="nvim"
+  export EDITOR='nvim'
 else
-    export EDITOR="vi"
+  export EDITOR='vi'
 fi
 
 # less
-export manpager="less --line-numbers"
+export manpager='less --line-numbers'
 less_opts=(
-    "--quit-if-one-screen"
-    "--ignore-case"
-    "--raw-control-chars"
-    "--hilite-unread"
-    "--no-init"
+  '--quit-if-one-screen'
+  '--ignore-case'
+  '--raw-control-chars'
+  '--hilite-unread'
+  '--no-init'
 )
-export LESS="$(eval echo $less_opts)"
+export LESS=$(eval echo $less_opts)
 unset less_opts
 ## Set LESSOPEN if source-highlight is found
-src_hilite_path="$(whence -p src-hilite-lesspipe.sh 2> /dev/null)" \
-    && export LESSOPEN="| $src_hilite_path %s"
+if src_hilite_path=$(whence -p src-hilite-lesspipe.sh 2> /dev/null); then
+  export LESSOPEN="| $src_hilite_path %s"
+fi
 unset src_hilite_path
 
 # Intel proxies
 if [[ $HOST == *'.intel.com' ]]; then
-    export http_proxy="http://proxy-chain.intel.com:911"
-    export https_proxy="http://proxy-chain.intel.com:912"
+  export http_proxy='http://proxy-chain.intel.com:911'
+  export https_proxy='http://proxy-chain.intel.com:912'
 fi
 # }}}
 
@@ -205,7 +202,7 @@ fi
 
 # Shell built-ins
 alias .='source'
-alias src='source "$HOME"/.zshrc'
+alias src='source $HOME/.zshrc'
 alias psd='pushd'
 alias pod='popd'
 
@@ -230,7 +227,9 @@ alias top='htop'
 alias aria2c='aria2c --seed-time=0'
 alias dl='aria2c'
 alias ddi='sudo dd bs=16K conv=fsync status=progress'
-alias gitpullall='for i in "$HOME"/git/*; do git -C "$i" pull; done'
+alias gitpullall='for i in $HOME/git/*; do
+  git -C $i pull
+done'
 alias hist='fc -liD -31'
 alias scpk='scp -o UserKnownHostsFile=/dev/null StrictHostKeyChecking=off'
 alias sshk='ssh -o UserKnownHostsFile=/dev/null StrictHostKeyChecking=off'
@@ -257,11 +256,13 @@ alias tree='tree -C'
 
 # tmux
 alias tm='tmux -CC'
-alias ta='tmux -CC attach-session -dt'  # Detach other clients
+alias ta='tmux -CC attach-session -dt' # Detach other clients
 alias taa='tmux -CC attach-session -t'
 alias tl='tmux list-sessions'
 alias tk='tmux kill-session -t'
-alias tkd='for i in $(tmux list-sessions | awk -F ":" "!/attached/ { print \$1 }"); do tmux kill-session -t "$i"; done'
+alias tkd='for i in $(tmux list-sessions | awk -F ":" "!/attached/ { print \$1 }"); do
+  tmux kill-session -t $i
+done'
 
 # Editor
 alias vi='$EDITOR'
@@ -269,9 +270,9 @@ alias vim='$EDITOR'
 [[ -z $EDITOR ]] && alias vimdiff='$EDITOR -d'
 
 if [[ $os == 'macOS' ]]; then
-    alias ud='"$HOME"/git/mac_setup/update.sh'
+  alias ud='$HOME/git/mac_setup/update.sh'
 elif [[ $os == 'Arch Linux' ]]; then
-    alias ud='pikaur -Syu $@ && sudo pacman -Rsn --noconfirm $(pacman -Qdtq) 2> /dev/null'
+  alias ud='pikaur -Syu $@ && sudo pacman -Rsn --noconfirm $(pacman -Qdtq) 2> /dev/null'
 fi
 # }}}
 
@@ -282,11 +283,11 @@ fi
 
 # Prompt colour set at line 1
 if [[ $os == 'macOS' ]]; then
-    # Presume Mac is local machine, don't show hostname
-    PROMPT='%F{$PROMPT_COLOUR}%B%3~%b%f ${vcs_info_msg_0_}%B%#%b '
+  # Presume Mac is local machine, don't show hostname
+  PROMPT='%F{$PROMPT_COLOUR}%B%3~%b%f ${vcs_info_msg_0_}%B%#%b '
 else
-    # Show full hostname
-    PROMPT='%F{$PROMPT_COLOUR}%B%M:%3~%b%f ${vcs_info_msg_0_}%B%#%b '
+  # Show full hostname
+  PROMPT='%F{$PROMPT_COLOUR}%B%M:%3~%b%f ${vcs_info_msg_0_}%B%#%b '
 fi
 # }}}
 
@@ -302,11 +303,11 @@ fi
 
 autosuggestions=1
 if [[ $os == 'macOS' ]]; then
-    source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-    autosuggestions=$?
+  source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  autosuggestions=$?
 elif [[ $os == 'Arch Linux' ]]; then
-    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-    autosuggestions=$?
+  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+  autosuggestions=$?
 fi
 # }}}
 
@@ -317,9 +318,9 @@ fi
 #-------------------------------------------------------------------------------
 
 if [[ $os == 'macOS' ]]; then
-    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 elif [[ $os == 'Arch Linux' ]]; then
-    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 # }}}
 
@@ -331,11 +332,11 @@ fi
 
 history_substring_search=1
 if [[ $os == 'macOS' ]]; then
-    source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-    history_substring_search=$?
+  source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+  history_substring_search=$?
 elif [[ $os == 'Arch Linux' ]]; then
-    source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-    history_substring_search=$?
+  source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+  history_substring_search=$?
 fi
 # }}}
 
@@ -364,38 +365,38 @@ bindkey -M main '^[[Z' reverse-menu-complete  # Shift-Tab
 
 # User-defined/external widgets
 if [[ autosuggestions -eq 0 ]]; then
-    autosuggest-accept-space() {
-        zle autosuggest-accept
-        # Using magic-space as it doesn't print '^@'. Ideally wouldn't use this.
-        zle magic-space
-    }
-    zle -N autosuggest-accept-space
-    bindkey -M main "^ " autosuggest-accept-space  # Ctrl-Space
+  autosuggest-accept-space() {
+    zle autosuggest-accept
+    # Using magic-space as it doesn't print '^@'. Ideally wouldn't use this.
+    zle magic-space
+  }
+  zle -N autosuggest-accept-space
+  bindkey -M main '^ ' autosuggest-accept-space  # Ctrl-Space
 fi
 
 if [[ history_substring_search -eq 0 ]]; then
-    historysubstringup-vicmd() {
-        zle -K vicmd
-        zle history-substring-search-up
-    }
-    zle -N historysubstringup-vicmd
-    bindkey -M main '^[[1;2A' historysubstringup-vicmd  # Shift-Up
-    bindkey -M vicmd '^[[1;2A' historysubstringup-vicmd  # Shift-Up
-    bindkey -M vicmd 'K' historysubstringup-vicmd
+  historysubstringup-vicmd() {
+    zle -K vicmd
+    zle history-substring-search-up
+  }
+  zle -N historysubstringup-vicmd
+  bindkey -M main '^[[1;2A' historysubstringup-vicmd  # Shift-Up
+  bindkey -M vicmd '^[[1;2A' historysubstringup-vicmd  # Shift-Up
+  bindkey -M vicmd 'K' historysubstringup-vicmd
 
-    historysubstringdown-vicmd() {
-        zle -K vicmd
-        zle history-substring-search-down
-    }
-    zle -N historysubstringdown-vicmd
-    bindkey -M main '^[[1;2B' historysubstringdown-vicmd  # Shift-Down
-    bindkey -M vicmd '^[[1;2B' historysubstringdown-vicmd  # Shift-Down
-    bindkey -M vicmd 'J' historysubstringdown-vicmd
+  historysubstringdown-vicmd() {
+    zle -K vicmd
+    zle history-substring-search-down
+  }
+  zle -N historysubstringdown-vicmd
+  bindkey -M main '^[[1;2B' historysubstringdown-vicmd  # Shift-Down
+  bindkey -M vicmd '^[[1;2B' historysubstringdown-vicmd  # Shift-Down
+  bindkey -M vicmd 'J' historysubstringdown-vicmd
 fi
 
 historyup-vicmd() {
-    zle -K vicmd
-    zle history-beginning-search-backward
+  zle -K vicmd
+  zle history-beginning-search-backward
 }
 zle -N historyup-vicmd
 bindkey -M main '^[[A' historyup-vicmd  # Up
@@ -403,8 +404,8 @@ bindkey -M vicmd '^[[A' historyup-vicmd  # Up
 bindkey -M vicmd 'k' historyup-vicmd
 
 historydown-vicmd() {
-    zle -K vicmd
-    zle history-beginning-search-forward
+  zle -K vicmd
+  zle history-beginning-search-forward
 }
 zle -N historydown-vicmd
 bindkey -M main '^[[B' historydown-vicmd  # Down
@@ -412,8 +413,8 @@ bindkey -M vicmd '^[[B' historydown-vicmd  # Down
 bindkey -M vicmd 'j' historydown-vicmd
 
 expandorcomplete-vicmd() {
-    zle -K main
-    zle expand-or-complete
+  zle -K main
+  zle expand-or-complete
 }
 zle -N expandorcomplete-vicmd
 bindkey -M vicmd '\t' expandorcomplete-vicmd  # Tab
@@ -422,5 +423,4 @@ bindkey -M vicmd '\t' expandorcomplete-vicmd  # Tab
 
 unset uname os autosuggestions history_substring_search
 
-# vim: set expandtab shiftwidth=0 tabstop=4 foldmethod=marker:
-
+# vim: set foldmethod=marker:
