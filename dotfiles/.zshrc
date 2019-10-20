@@ -169,15 +169,7 @@ fi
 
 # less
 export manpager='less --line-numbers'
-less_opts=(
-  '--quit-if-one-screen'
-  '--ignore-case'
-  '--raw-control-chars'
-  '--hilite-unread'
-  '--no-init'
-)
-export LESS=$(eval echo $less_opts)
-unset less_opts
+export LESS='--quit-if-one-screen --ignore-case --raw-control-chars --hilite-unread --no-init'
 ## Set LESSOPEN if source-highlight is found
 if src_hilite_path=$(whence -p src-hilite-lesspipe.sh 2> /dev/null); then
   export LESSOPEN="| $src_hilite_path %s"
