@@ -20,6 +20,7 @@
 	<key>disabledItems</key>
 	<array>
 		<string>ODLBPathItem:@</string>
+		<string>ODLBPathItem:/Applications/Launchpad.app</string>
 		<string>ODLBPathItem:/Applications/Maps.app</string>
 	</array>
 	<key>itemIdentifierVersion</key>
@@ -118,6 +119,12 @@
 					<string>Convert USD to EUR</string>
 					<key>templateURL</key>
 					<string>http://www.oanda.com/currency/classic-converter?exch=USD&amp;expr=EUR&amp;value=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Docker Hub</string>
+					<key>templateURL</key>
+					<string>https://hub.docker.com/search/?q=*&amp;type=image</string>
 				</dict>
 				<dict>
 					<key>name</key>
@@ -256,12 +263,6 @@
 					<string>Manual Page</string>
 					<key>templateURL</key>
 					<string>x-man-page://*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Docker Hub</string>
-					<key>templateURL</key>
-					<string>https://hub.docker.com/search/?q=*&amp;type=image</string>
 				</dict>
 				<dict>
 					<key>name</key>
