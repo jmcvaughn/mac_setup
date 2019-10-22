@@ -222,6 +222,9 @@ safari() {
   ## General > Remove download list items: When Safari quits
   defaults write com.apple.Safari DownloadsClearingPolicy -int 1
 
+  ## Search > Search engine: DuckDuckGo
+  defaults write com.apple.Safari SearchProviderIdentifier -string 'com.duckduckgo'
+
   ## Search > Enable Quick Website search
   defaults write com.apple.Safari WebsiteSpecificSearchEnabled -bool false
 
