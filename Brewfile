@@ -5,6 +5,7 @@ cask 'displaycal'
 cask 'docker'
 cask 'dozer'
 cask 'drawio'
+cask 'firefox'
 cask 'flash-npapi'  # Work
 cask 'google-chrome'
 cask 'iterm2'
@@ -23,9 +24,6 @@ cask 'wkhtmltopdf'  # Used by pandoc to create files
 # Drivers
 tap 'homebrew/cask-drivers'
 cask 'linn-konfig'  # Not a driver, here due to Cask rules: https://git.io/fjb4S
-# Alternate versions
-tap 'homebrew/cask-versions'
-cask 'firefox-beta'
 
 # Fonts
 tap 'homebrew/cask-fonts'
