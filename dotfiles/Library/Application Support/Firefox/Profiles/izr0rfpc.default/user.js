@@ -1,3 +1,7 @@
+/******************************************************************************
+ * about:preferences                                                          *
+ ******************************************************************************/
+
 // General > Always check if Firefox is your default browser: False
 user_pref("browser.shell.checkDefaultBrowser", false);
 
@@ -20,6 +24,9 @@ user_pref("browser.startup.homepage", "about:blank");
 // Home > New tabs: Blank Page
 user_pref("browser.newtabpage.enabled", false);
 
+// Search > Default Search Engine: DuckDuckGo
+user_pref("browser.urlbar.placeholderName", "DuckDuckGo");
+
 // Privacy > Enhanced Tracking Protection: Strict
 user_pref("privacy.trackingprotection.enabled", true);
 user_pref("privacy.trackingprotection.fingerprinting.enabled", true);
@@ -37,3 +44,12 @@ user_pref("app.shield.optoutstudies.enabled", false);
 // Privacy > Clear history when Firefox closes > Settings > Browsing History:
 // False
 user_pref("privacy.clearOnShutdown.history", false);
+
+
+/******************************************************************************
+ * about:config                                                               *
+ ******************************************************************************/
+
+// Disable Pocket
+// https://support.mozilla.org/en-US/kb/disable-or-re-enable-pocket-for-firefox
+user_pref("extensions.pocket.enabled", false);

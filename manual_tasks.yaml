@@ -121,6 +121,15 @@ Applications:
     Sidebar:
       - Add Home folder above default user folders
 
+  Firefox:
+    All profiles:
+      Extensions:
+        uBlock Origin: https://addons.mozilla.org/en-GB/firefox/addon/ublock-origin/
+    default:
+      Preferences:
+        Sync:
+          - Bookmarks
+
   iTerm2:
     General:
       Preferences:
