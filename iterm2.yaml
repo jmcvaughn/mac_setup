@@ -38,7 +38,9 @@ Profiles:
     Colors:
       Preset: https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Gruvbox%20Dark.itermcolors
       Cursor: Foreground
-      Cursor text: Background Text:
+      Cursor text: Background
+    Text:
+      Enable subpixel anti-aliasing: True  # Affects all profiles
       Font: Source Code Pro Regular 12
     Window:
       Use transparency: False

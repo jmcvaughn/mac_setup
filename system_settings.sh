@@ -35,13 +35,6 @@ system_preferences() {  # {{{
 
   ## Default web browser: Firefox.app
   /Applications/Firefox.app/Contents/MacOS/firefox --setDefaultBrowser &
-
-  # Other
-  ## Use font smoothing when available: Medium
-  defaults -currentHost write -g AppleFontSmoothing -int 2
-
-  ## Enable sub-pixel rendering globally
-  defaults write -g CGFontRenderingFontSmoothingDisabled -bool false
   # }}}
 
 

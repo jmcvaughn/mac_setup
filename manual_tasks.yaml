@@ -18,6 +18,10 @@ System Preferences:
       Show in Notification Center: False
       Play sound for notifications: False
 
+  Screen Time:
+    Options:
+      Screen Time for this Mac: False
+
   Displays:
     Display:
       Automatically adjust brightness: False
