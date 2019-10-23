@@ -253,10 +253,10 @@ Applications:
       Show times with 24-hour clock: True
 
   SwitchResX:
-    Helper Modules:
-      - Update System Integrity Protection
+    About SwitchResX:
+      Check online for update (daily): False
     Acer B346CK:
-      Custom Resolutions:
+      Custom Resolutions:  # Changes require SIP to be disabled temporarily
         3440 x 1440, 50Hz:
           Use simplified settings: CVT-RB
           Vertical Scan Rate (Hz): 49.999
