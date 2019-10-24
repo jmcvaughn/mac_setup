@@ -25,6 +25,9 @@ user_pref("network.proxy.type", 1);
 user_pref("network.proxy.socks", "localhost");
 user_pref("network.proxy.socks_port", 58585);
 
+// General > Network Settings > Proxy DNS when using SOCKS v5
+user_pref("network.proxy.socks_remote_dns", true);
+
 // Home > Homepage and new windows: Blank Page
 user_pref("browser.startup.homepage", "about:blank");
 
