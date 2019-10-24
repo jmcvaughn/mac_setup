@@ -48,6 +48,7 @@ if [[ $os == 'macOS' ]]; then
   export MANPATH
 fi
 export PATH="$HOME/bin:$PATH"
+export CDPATH="$HOME:$HOME/git"
 # }}}
 
 
