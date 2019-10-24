@@ -333,20 +333,11 @@ other_preferences(){  # {{{
 }  # }}}
 
 
-ad_blocking(){  # {{{
-  adblock_url='https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts'
-
-  # Download blocking hosts file
-  sudo https_proxy=$https_proxy curl --show-error --silent "$adblock_url" --output /etc/hosts
-}  # }}}
-
-
 main() {  # {{{
   cd "$(dirname "$0")"  # Change to script's directory
 
   system_preferences
   other_preferences
-  ad_blocking
 }  # }}}
 
 main

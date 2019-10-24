@@ -61,7 +61,6 @@ brew 'gnu-tar'
 brew 'grep'
 brew 'gzip'
 # Zsh
-brew 'zsh'
 brew 'zsh-autosuggestions'
 brew 'zsh-completions'
 brew 'zsh-history-substring-search'
