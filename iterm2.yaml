@@ -27,7 +27,7 @@ Appearance:
   Windows:
     Show line under title bar when the tab bar is not visible: False
   Tabs:
-    Preserve window size when tab bar shows or hides: True
+    Show tab bar even when there is only one tab: True
   Dimming:
     Dim inactive split panes: False
 

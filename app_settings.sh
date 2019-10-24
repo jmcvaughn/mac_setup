@@ -46,6 +46,9 @@ finder() {
   ## Applies to window regardless of view
   defaults write com.apple.finder ShowPathbar -bool true
 
+  ## Show Tab Bar: True
+  defaults write com.apple.finder NSWindowTabbingShoudShowTabBarKey-com.apple.finder.TBrowserWindow -bool true
+
   ## For icon and list views only; column view is set as part of ColumnViewOptions
   defaults write com.apple.finder ShowPreviewPane -bool false  # default
   defaults write com.apple.finder ShowSidebar -bool true  # default
@@ -229,6 +232,9 @@ safari() {
   defaults write com.apple.Safari WebsiteSpecificSearchEnabled -bool false
 
   # Menu options
+  ## View > Show Tab Bar: True
+  defaults write com.apple.Safari AlwaysShowTabBar -bool true
+
   ## View > Show status bar: True
   defaults write com.apple.Safari ShowOverlayStatusBar -bool true
 

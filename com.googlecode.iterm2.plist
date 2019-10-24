@@ -473,6 +473,8 @@
 	</dict>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
+	<key>HideTab</key>
+	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>IRMemory</key>
@@ -525,9 +527,9 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 877 0 0 1440 877 </string>
+	<string>1720 0 1719 1417 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>720 0 718 877 0 0 1440 877 </string>
+	<string>2293 0 1145 1417 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>1720 0 1719 1417 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -2003,14 +2005,14 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1440, 900}}</string>
+		<string>{{0, 0}, {3440, 1440}}</string>
 		<key>topLeft</key>
-		<string>{254, 825}</string>
+		<string>{1046, 999}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>3D830185-C97B-4414-9EE8-82EB7B9EEFA1</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>55</integer>
+	<integer>62</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>587984299.68548405</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2827,7 +2829,7 @@
 	<key>PrefsCustomFolder</key>
 	<string>~/git/mac_setup/</string>
 	<key>PreserveWindowSizeWhenTabBarVisibilityChanges</key>
-	<true/>
+	<false/>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
