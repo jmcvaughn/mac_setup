@@ -237,8 +237,10 @@ Applications:
         GIFs: False
         Videos: False
     Appearance:
-      System Dark Mode: Dark Mojave
-      Chat View: Bubbles
+      Bubbles Mode: True
+      Auto-Night Mode:
+        Mode: System
+        Preferred Night Theme: System
 
   Word:
     Preferences:
