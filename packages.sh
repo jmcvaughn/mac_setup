@@ -7,6 +7,10 @@ install_packages() {
   brew cask list libreoffice-language-pack > /dev/null 2>&1
   lolang_instbefore=$?
 
+  # Check Docker Desktop for Mac installed before brew bundle
+  brew cask list docker > /dev/null 2>&1
+  docker_instbefore=$?
+
   # Install packages
   brew bundle && hash -r
 
@@ -21,6 +25,9 @@ install_packages() {
     open -j /Applications/LibreOffice.app/ && sleep 10 && pkill -x soffice
     open "/usr/local/Caskroom/libreoffice-language-pack/$lolang_vers/LibreOffice Language Pack.app/"
   fi
+
+  # Run Docker on initial install to complete post-installation tasks
+  open /Applications/Docker.app/
 
   # Symlink avr-gcc 7 to avr-gcc (QMK)
   brew link --force avr-gcc@8
