@@ -2,10 +2,6 @@
 # been run.
 
 System Preferences:
-  Desktop \& Screen Saver:
-    Desktop:
-      Custom Colour: '#282828'  # gruvbox bg0
-
   Security \& Privacy:
     Advanced:
       Require an administrator password to access system-wide preferences: True
