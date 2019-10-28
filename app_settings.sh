@@ -199,7 +199,6 @@ skype_for_business() {
 
 disable_autoupdates() {
   apps_disable_update_check='
-    com.docker.docker
     com.mortennn.Dozer
     net.sourceforge.skim-app.skim'
 

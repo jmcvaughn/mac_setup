@@ -114,6 +114,16 @@ Applications:
           - desktop.ini
           - .DS_Store
 
+  Docker:
+    General:
+      Start Docker Desktop when you log in: False
+      Automatically check for updates: False
+      Send usage statistics: False
+    Proxies:
+      Manual proxy configuration:
+        HTTP: http://proxy-chain.intel.com:911
+        HTTPS: http://proxy-chain.intel.com:912
+
   Finder:
     Home:
       View Options:
