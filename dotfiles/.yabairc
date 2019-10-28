@@ -46,10 +46,6 @@ yabai -m rule --add label=slack_float \
   app='Slack' \
   manage=off
 
-yabai -m rule --add label=spotify_float \
-  app='Spotify' \
-  manage=off
-
 yabai -m rule --add label=sysprefs_float \
   app='System Preferences' \
   manage=off
