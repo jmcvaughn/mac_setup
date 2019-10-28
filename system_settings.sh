@@ -21,12 +21,6 @@ system_preferences() {  # {{{
   ## Appearance: Dark
   defaults write -g AppleInterfaceStyle -string 'Dark'
 
-  ## Sidebar icon size: Small
-  defaults write -g NSTableViewDefaultSizeMode -int 1
-
-  ## Automatically hide and show the menu bar: True
-  #defaults write -g _HIHideMenuBar -bool true
-
   ## Show scroll bars: Always
   defaults write -g AppleShowScrollBars -string 'Always'
 
@@ -88,16 +82,6 @@ system_preferences() {  # {{{
 
   ## Displays have separate Spaces: False
   defaults write com.apple.spaces spans-displays -bool false
-  # }}}
-
-
-  #-----------------------------------------------------------------------------
-  # Displays {{{
-  #-----------------------------------------------------------------------------
-
-  # System Preferences
-  ## Show mirroring options in the menu bar when available
-  #defaults write com.apple.airplay showInMenuBarIfPresent -bool false
   # }}}
 
 
