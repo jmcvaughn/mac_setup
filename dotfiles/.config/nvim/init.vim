@@ -1,42 +1,27 @@
-" Set 'runtimepath' first for any files installed under Vim's directories, e.g.
-" colourschemes
-set runtimepath+=/usr/share/vim/vimfiles
+"-----------------------------------------------------------------------------
+" Options {{{
+"-----------------------------------------------------------------------------
 
-
-" Theming
-" gruvbox theme: https://github.com/morhetz/gruvbox/wiki/Configuration/
-let g:gruvbox_italic = 1
-let g:gruvbox_number_column = 'bg1'
-let g:gruvbox_italicize_comments = 0
-let g:gruvbox_invert_selection = 0
-let g:gruvbox_invert_tabline = 1  " Tab line background matches status line
-
-colorscheme gruvbox
-
-set background=dark  " Dark mode
-set termguicolors  " Enable true-colour support
-
-
-" Options
 " File saving and undo history
 set confirm
 set undofile
 
 " Visual guides
-set cursorline
+set colorcolumn=+1
+set cursorline  " Highlight the screen line of the cursor
 set guicursor=
 set number
 set relativenumber
+set noruler  " More detail in Ctrl-G with both this and statusline set
 
-" Completion
-set dictionary+=/usr/share/hunspell/en_GB.dic
-set thesaurus+=/usr/share/mythes/th_en_GB_v2.dat
+" Spelling
+set spelllang=en_gb,en_us
 
 " Formatting
 set formatoptions+=1  " Insert line break after one letter word
 
 " Buffers
-set hidden
+set hidden  " Hide rather than unload buffers when abandoned
 
 " Searching
 set ignorecase
@@ -50,43 +35,64 @@ set noshowmode
 set splitbelow
 set splitright
 
-" statusline
-set statusline=
-set statusline+=Col:\ %v
-set statusline+=\ \ 
-set statusline+=Mode:\ %{mode()}
-set statusline+=%=
-set statusline+=%.40F\ %m%r%y
-
 " Directory searching
 set path+=**  " Add recursive directory searching
 
-" Spelling
-set spelllang=en_gb,en_us
+" Wrapping and side scrolling
+set sidescroll=10
+
+" Status line
+set statusline=Col:\ %v  " Column
+set statusline+=\ \   " 2 spaces
+set statusline+=Mode:\ %{mode()}  " Mode
+set statusline+=%=  " Right-justify
+set statusline+=%.40f\   " Relative path
+set statusline+=%m  " Modified flag: [+], [-]
+set statusline+=%r  " Read-only flag: [RO]
+set statusline+=%y  " Filetype: [filetype]
+" }}}
 
 
-" Tabs
-set expandtab  " Expand tabs to spaces
-set shiftwidth=0  " Indent size always matches tab size ('tabstop')
-set tabstop=2  " Display tabs as n spaces 
+"-----------------------------------------------------------------------------
+" Theming {{{
+"-----------------------------------------------------------------------------
+
+" https://github.com/morhetz/gruvbox/wiki/Configuration/
+let g:gruvbox_italic=1
+let g:gruvbox_number_column='bg1'
+let g:gruvbox_italicize_comments=0
+let g:gruvbox_invert_selection=0
+let g:gruvbox_invert_tabline=1  " Tab line background matches status line
+
+colorscheme gruvbox
+
+set background=dark
+set termguicolors  " Enable true-colour support
+" }}}
 
 
-" Filetype-specific autocommands
+"-----------------------------------------------------------------------------
+" Filetype-specific autocommands {{{
+"-----------------------------------------------------------------------------
+
 " Programming languages
-autocmd FileType c,cpp set expandtab& shiftwidth& tabstop&
-autocmd FileType python set textwidth=79
-autocmd FileType yaml set shiftwidth=0 tabstop=2 textwidth=80
+autocmd FileType python set shiftwidth=0 tabstop=4 textwidth=79 nowrap
+autocmd FileType sh,bash,zsh set expandtab shiftwidth=0 tabstop=2 nowrap
 
 " LaTeX
-autocmd FileType bib,tex
-  \ set expandtab shiftwidth=0 spell tabstop=2
+autocmd FileType bib,tex set expandtab shiftwidth=0 tabstop=2 spell
 
 " Other written language
-autocmd FileType gitcommit,markdown set spell
-autocmd FileType gitcommit set expandtab& shiftwidth& tabstop&
+autocmd FileType gitcommit set expandtab shiftwidth=0 tabstop=2 spell
+autocmd FileType markdown set expandtab shiftwidth=0 tabstop=4 spell
+autocmd FileType text set expandtab shiftwidth=0 tabstop=2 spell
+" }}}
 
 
-" Custom commands
+"-----------------------------------------------------------------------------
+" Custom commands {{{
+"-----------------------------------------------------------------------------
+
 " Convert GitHub Flavored Markdown to HTML
 command Gitmd2html :write |
   \ !pandoc --from markdown_github-hard_line_breaks --to html5
@@ -103,3 +109,6 @@ command Gitmd2pdf :write |
 
 " LaTeX to PDF
 command Latex2pdf !latexmk -output-directory=aux -pdf main.tex
+" }}}
+
+" vim: set foldmethod=marker:
