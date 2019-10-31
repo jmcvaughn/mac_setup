@@ -78,6 +78,9 @@ set termguicolors  " Enable true-colour support
 " Default
 setfiletype text
 
+" Data serialisation
+autocmd FileType yaml set shiftwidth=0 tabstop=2 spell nowrap
+
 " Programming languages
 autocmd FileType python set shiftwidth=0 tabstop=4 textwidth=79 nowrap
 autocmd FileType sh,bash,zsh set expandtab shiftwidth=0 tabstop=2 nowrap
