@@ -72,8 +72,11 @@ set termguicolors  " Enable true-colour support
 
 
 "-----------------------------------------------------------------------------
-" Filetype-specific autocommands {{{
+" Filetype configuration {{{
 "-----------------------------------------------------------------------------
+
+" Default
+setfiletype text
 
 " Programming languages
 autocmd FileType python set shiftwidth=0 tabstop=4 textwidth=79 nowrap
@@ -111,5 +114,6 @@ command Gitmd2pdf :write |
 " LaTeX to PDF
 command Latex2pdf !latexmk -output-directory=aux -pdf main.tex
 " }}}
+
 
 " vim: set foldmethod=marker:
