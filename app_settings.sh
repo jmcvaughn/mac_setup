@@ -197,9 +197,26 @@ skype_for_business() {
 }
 
 
+vagrant_manager() {
+  # Preferences
+  ## Terminal Preference: iTerm/iTerm2
+  defaults write lanayo.Vagrant-Manager terminalPreference -string 'iTerm'
+
+  ## Terminal Editor Preference: vim
+  defaults write lanayo.Vagrant-Manager terminalEditorPreference -string 'vim'
+
+  ## Auto-close task window: True
+  defaults write lanayo.Vagrant-Manager autoCloseTaskWindows -bool true
+
+  ## Send anonymous profile data: False
+  defaults write lanayo.Vagrant-Manager sendProfileData -bool false
+}
+
+
 disable_autoupdates() {
   apps_disable_update_check='
     com.mortennn.Dozer
+    lanayo.Vagrant-Manager
     net.sourceforge.skim-app.skim'
 
   for app in $apps_disable_update_check; do
@@ -215,6 +232,7 @@ main() {
   launchbar
   safari
   skype_for_business
+  vagrant_manager
   disable_autoupdates
 }
 
