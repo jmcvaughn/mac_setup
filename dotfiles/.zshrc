@@ -214,7 +214,7 @@ alias lesn='less --LINE-NUMBERS'
 alias o='open'
 
 # Process management
-alias top='htop'
+alias top='htop || top'
 
 # Applications
 alias aria2c='aria2c --seed-time=0'
