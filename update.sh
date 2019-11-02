@@ -16,20 +16,9 @@ linn_konfig_outdated() {
 # Fetch newest version of Homebrew and formulae
 brew update
 
-# Get LibreOffice Language Pack version after update and check if was (is)
-# outdated. Will also be "not outdated" if package is not installed.
-lolang_newvers=$(brew cask outdated libreoffice-language-pack | gawk 'BEGIN {rc=1} {rc=0; print $4} END {exit rc}')
-lolang_wasoutdated=$?
-
 # Update Homebrew packages
 brew upgrade
 brew cask upgrade
-
-# If LibreOffice Language Pack was outdated (now updated in previous step), run
-# installer. Also skips if package not installed.
-if [ "$lolang_wasoutdated" -eq 0 ]; then
-  open "/usr/local/Caskroom/libreoffice-language-pack/$lolang_newvers/LibreOffice Language Pack.app/"
-fi
 
 # Update "greedy" packages individually
 linn_konfig_outdated && brew cask upgrade --greedy linn-konfig

@@ -3,28 +3,12 @@
 login_items='Dozer LaunchBar'
 
 install_packages() {
-  # Check LibreOffice Language Pack installed before brew bundle
-  brew cask list libreoffice-language-pack > /dev/null 2>&1
-  lolang_instbefore=$?
-
   # Check Docker Desktop for Mac installed before brew bundle
   brew cask list docker > /dev/null 2>&1
   docker_instbefore=$?
 
   # Install packages
   brew bundle && hash -r
-
-  # Get LibreOffice Language Pack version and check if installed after
-  # brew bundle
-  lolang_vers=$(brew cask list --versions libreoffice-language-pack 2> /dev/null | gawk 'BEGIN {rc=1} {rc=0; print $2} END {exit rc}')
-  lolang_instafter=$?
-
-  # If the Cask has just been installed, run LibreOffice Language Pack
-  # installer. Also skips if package not in Brewfile.
-  if [ "$lolang_instbefore" -ne 0 ] && [ "$lolang_instafter" -eq 0 ]; then
-    open -j /Applications/LibreOffice.app/ && sleep 10 && pkill -x soffice
-    open "/usr/local/Caskroom/libreoffice-language-pack/$lolang_vers/LibreOffice Language Pack.app/"
-  fi
 
   # Run Docker on initial install to complete post-installation tasks
   open /Applications/Docker.app/
