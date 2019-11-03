@@ -220,9 +220,6 @@ alias top='htop || top'
 alias aria2c='aria2c --seed-time=0'
 alias dl='aria2c'
 alias ddi='sudo dd bs=16K conv=fsync status=progress'
-alias gitpullall='for i in $HOME/git/*; do
-  git -C $i pull
-done'
 alias hist='fc -liD -31'
 alias scpk='scp -o UserKnownHostsFile=/dev/null StrictHostKeyChecking=off'
 alias sshk='ssh -o UserKnownHostsFile=/dev/null StrictHostKeyChecking=off'
