@@ -34,6 +34,10 @@ yabai -m rule --add label=appstore_float \
   app='App Store' \
   manage=off
 
+yabai -m rule --add label=calculator_float \
+  app='Calculator' \
+  manage=off
+
 yabai -m rule --add label=finder_float \
   app='Finder' \
   manage=off
