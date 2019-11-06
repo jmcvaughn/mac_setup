@@ -258,6 +258,8 @@ Applications:
           Vertical Scan Rate (Hz): 49.999
 
 File associations:
+  Skim.app:
+    - .pdf
   termedit.app:
     - .cfg
     - .csv
