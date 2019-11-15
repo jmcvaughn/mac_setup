@@ -1,6 +1,9 @@
 # The following tasks must be performed manually after all other scripts have
 # been run.
 
+Manual install:
+  OpenWebStart: https://openwebstart.com/
+
 System Preferences:
   Security \& Privacy:
     Advanced:
@@ -256,9 +259,6 @@ Applications:
         3440 x 1440, 50Hz:
           Use simplified settings: CVT-RB
           Vertical Scan Rate (Hz): 49.999
-
-Manual install:
-  OpenWebStart: https://openwebstart.com/
 
 File associations:
   OpenWebStart\ javaws.app:
