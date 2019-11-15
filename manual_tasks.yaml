@@ -257,7 +257,12 @@ Applications:
           Use simplified settings: CVT-RB
           Vertical Scan Rate (Hz): 49.999
 
+Manual install:
+  OpenWebStart: https://openwebstart.com/
+
 File associations:
+  OpenWebStart\ javaws.app:
+    - .jnlp
   Skim.app:
     - .pdf
   termedit.app:
