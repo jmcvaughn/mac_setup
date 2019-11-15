@@ -59,6 +59,11 @@ yabai -m rule --add label=telegram_float \
   manage=off
 
 # Float windows
+yabai -m rule --add label=firefoxopening_float \
+  app='Firefox' \
+  title='^Opening .+' \
+  manage=off
+
 yabai -m rule --add label=skypemainsplash_float \
   app='Skype for Business' \
   title='^(Skype for Business|Sign In)$' \
