@@ -221,8 +221,8 @@ alias aria2c='aria2c --seed-time=0'
 alias dl='aria2c'
 alias ddi='sudo dd bs=16K conv=fsync status=progress'
 alias hist='fc -liD -31'
-alias scpk='scp -o UserKnownHostsFile=/dev/null StrictHostKeyChecking=off'
-alias sshk='ssh -o UserKnownHostsFile=/dev/null StrictHostKeyChecking=off'
+alias scpk='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
+alias sshk='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
 
 # cp
 alias cpr='cp --recursive --reflink=auto --sparse=always'
