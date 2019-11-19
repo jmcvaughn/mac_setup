@@ -17,60 +17,10 @@ yabai -m config layout bsp
 # Rule domain
 #-------------------------------------------------------------------------------
 
-# Launch to Display 1, Space 1 and float
-yabai -m rule --add label=anyconnect_d1s1 \
-  app='Cisco AnyConnect Secure Mobility Client' \
-  space=1 \
-  manage=off
-
-# Launch main window to Display 1, Space 3
-yabai -m rule --add label=outlookmain_d1s3 \
-  app='Microsoft Outlook' \
-  title='^(Inbox .+\@.+$|Calendar$|People$|Tasks$|Notes$)' \
-  space=3
-
-# Float applications
-yabai -m rule --add label=appstore_float \
-  app='App Store' \
-  manage=off
-
-yabai -m rule --add label=calculator_float \
-  app='Calculator' \
-  manage=off
-
-yabai -m rule --add label=finder_float \
-  app='Finder' \
-  manage=off
-
-yabai -m rule --add label=installer_float \
-  app='Installer' \
-  manage=off
-
-yabai -m rule --add label=slack_float \
-  app='Slack' \
-  manage=off
-
-yabai -m rule --add label=sysprefs_float \
-  app='System Preferences' \
-  manage=off
-
-yabai -m rule --add label=telegram_float \
-  app='Telegram' \
-  manage=off
-
-# Float windows
-yabai -m rule --add label=firefoxopening_float \
-  app='Firefox' \
-  title='^Opening .+' \
-  manage=off
-
-yabai -m rule --add label=skypemainsplash_float \
-  app='Skype for Business' \
-  title='^(Skype for Business|Sign In)$' \
-  manage=off
-
-## Both splash screen and main window
-yabai -m rule --add label=webexmain_float \
-  app='Cisco Webex Meetings' \
-  title='^(Cisco Webex Meetings|$)' \
-  manage=off
+yabai -m rule --add app='Cisco AnyConnect Secure Mobility Client' space=1 manage=off
+yabai -m rule --add app='Finder' manage=off grid=20:20:3:3:14:14
+yabai -m rule --add app='Firefox' title='^Opening .+' manage=off
+yabai -m rule --add app='Microsoft Outlook' title='^(Inbox .+\@.+$|Calendar$|People$|Tasks$|Notes$)' space=3
+yabai -m rule --add app='Skype for Business' title='^(Skype for Business|Sign In)$' manage=off
+yabai -m rule --add app='Cisco Webex Meetings' title='^(Cisco Webex Meetings|$)' manage=off
+yabai -m rule --add app='^(App Store|Calculator|Installer|Slack|System Preferences|Telegram)$' manage=off
