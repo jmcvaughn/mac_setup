@@ -1,5 +1,15 @@
 #!/usr/bin/env sh
 
+calculator() {
+  # Menu options
+  ## View > Show Thousands Separators: True
+  defaults write com.apple.calculator SeparatorsDefaultsKey -bool true
+
+  ## Window > Show Paper Tape: True
+  defaults write com.apple.calculator PaperTapeVisibleDefaultsKey -bool true
+}
+
+
 dozer() {
   # Hide status bar icons after 10 seconds: True
   defaults write com.mortennn.Dozer hideAfterDelayEnabled -bool true
