@@ -225,6 +225,7 @@ vagrant_manager() {
 
 disable_autoupdates() {
   apps_disable_update_check='
+    com.coconut-flavour.coconutBattery
     com.mortennn.Dozer
     lanayo.Vagrant-Manager
     net.sourceforge.skim-app.skim'
