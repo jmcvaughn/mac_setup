@@ -34,9 +34,6 @@ user_pref("browser.startup.homepage", "about:blank");
 // Home > New tabs: Blank Page
 user_pref("browser.newtabpage.enabled", false);
 
-// Search > Default Search Engine: DuckDuckGo
-user_pref("browser.urlbar.placeholderName", "DuckDuckGo");
-
 // Privacy > Enhanced Tracking Protection: Strict
 user_pref("privacy.trackingprotection.enabled", true);
 user_pref("privacy.trackingprotection.fingerprinting.enabled", true);
