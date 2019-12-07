@@ -483,8 +483,12 @@
 	<true/>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Downloads</string>
+	<key>NSNavLastUserSetHideExtensionButtonState</key>
+	<false/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
+	<string>{841, 779}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -526,14 +530,18 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSNavPanelAutosaveName</key>
+	<string>1347 352 841 605 0 0 3440 1417 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>1410 768 620 392 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>1720 0 1719 1417 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>2293 0 1145 1417 0 0 3440 1417 </string>
+	<string>0 3 718 874 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>1720 0 1719 1417 0 0 3440 1417 </string>
+	<string>0 0 718 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>2293 0 1145 1417 0 0 3440 1417 </string>
+	<string>0 35 1418 842 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1994,25 +2002,34 @@
 		<string>3.3.2</string>
 		<string>3.3.1</string>
 		<string>3.3.4</string>
+		<string>3.3.7</string>
 		<string>3.3.3</string>
 	</array>
 	<key>NoSyncAutoBurialReveal</key>
 	<true/>
 	<key>NoSyncBFPRecents</key>
 	<array>
+		<string>Hasklig</string>
 		<string>Source Code Pro</string>
 	</array>
+	<key>NoSyncFrame_SessionsPreferences</key>
+	<dict>
+		<key>screenFrame</key>
+		<string>{{0, 0}, {1440, 900}}</string>
+		<key>topLeft</key>
+		<string>{417, 787}</string>
+	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {3440, 1440}}</string>
 		<key>topLeft</key>
-		<string>{1046, 999}</string>
+		<string>{938, 852}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>3D830185-C97B-4414-9EE8-82EB7B9EEFA1</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>62</integer>
+	<integer>76</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>587984299.68548405</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2538,11 +2555,11 @@
 		<array>
 			<dict>
 				<key>isTerminal</key>
-				<true/>
+				<false/>
 				<key>name</key>
-				<string>tmuxWindow</string>
+				<string>currentSession</string>
 				<key>nonterminalContext</key>
-				<integer>0</integer>
+				<integer>1</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -2559,6 +2576,14 @@
 				<string>currentSession.terminalIconName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>title</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -2581,6 +2606,14 @@
 				<true/>
 				<key>name</key>
 				<string>currentSession.presentationName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>title</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -2740,6 +2773,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>tmuxWindow</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentSession.terminalWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -2751,14 +2792,6 @@
 				<string>currentSession</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>currentSession</string>
-				<key>nonterminalContext</key>
-				<integer>1</integer>
 			</dict>
 		</array>
 		<key>4</key>
@@ -2834,15 +2867,21 @@
 	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
-	<key>SUEnableAutomaticChecks</key>
+	<key>SUAutomaticallyUpdate</key>
 	<false/>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
 	<string>https://iterm2.com/appcasts/final_new.xml?shard=93</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
+	<key>SULastCheckTime</key>
+	<date>2019-12-07T14:34:43Z</date>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
 	<false/>
@@ -2859,7 +2898,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.4</string>
+	<string>3.3.7</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

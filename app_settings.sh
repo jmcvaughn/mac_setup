@@ -119,9 +119,6 @@ launchbar() {
   ## Actions > Create emails with: Microsoft Outlook
   defaults write at.obdev.LaunchBar EmailHandler -string 'com.microsoft.Outlook'
 
-  ## Update > Automatically check for updates: False
-  defaults write at.obdev.LaunchBar SoftwareUpdateCheckAutomatically -bool false
-
   ## Advanced > Show Dock Icon: False
   defaults write at.obdev.LaunchBar ShowDockIcon -bool false
 
@@ -220,20 +217,6 @@ vagrant_manager() {
 }
 
 
-disable_autoupdates() {
-  apps_disable_update_check='
-    com.coconut-flavour.coconutBattery
-    com.mortennn.Dozer
-    lanayo.Vagrant-Manager
-    net.sourceforge.skim-app.skim'
-
-  for app in $apps_disable_update_check; do
-    defaults write $app SUEnableAutomaticChecks -bool false
-    defaults write $app SUHasLaunchedBefore -bool true
-  done
-}
-
-
 main() {
   dozer
   finder
@@ -241,7 +224,6 @@ main() {
   safari
   skype_for_business
   vagrant_manager
-  disable_autoupdates
 }
 
 main

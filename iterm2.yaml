@@ -10,8 +10,6 @@ General:
     GPU rendering:
       Advanced:
         Maximize throughput (may increase latency): False
-  Services:
-    Check for updates automatically: False
   Selection:
     Copy to pasteboard on selection: False
   Window:
