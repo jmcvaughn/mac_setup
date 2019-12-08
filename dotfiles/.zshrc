@@ -223,6 +223,7 @@ alias ddi='sudo dd bs=16K conv=fsync status=progress'
 alias hist='fc -liD -31'
 alias scpk='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
 alias sshk='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
+alias virsh='virsh -c qemu:///system'
 
 # cp
 alias cpr='cp --recursive --reflink=auto --sparse=always'
