@@ -267,7 +267,7 @@ alias vim='$EDITOR'
 if [[ $os == 'macOS' ]]; then
   alias ud='$HOME/git/mac_setup/update.sh'
 elif [[ $os == 'Arch Linux' ]]; then
-  alias ud='pikaur -Syu $@ && sudo pacman -Rsn --noconfirm $(pacman -Qdtq) 2> /dev/null'
+  alias ud='pacman -Syu $@ && sudo pacman -Rsn --noconfirm $(pacman -Qdtq) 2> /dev/null'
 fi
 # }}}
 
