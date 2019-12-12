@@ -203,6 +203,7 @@ alias pod='popd'
 alias s='sudo '
 alias se='sudo -e'
 alias si='sudo -i'
+alias siu='sudo -iu'
 alias sudo='sudo '
 
 # File viewing/editing
