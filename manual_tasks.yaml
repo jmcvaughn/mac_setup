@@ -151,6 +151,10 @@ Applications:
     bswinnerton/launchbar-github:
       - Grant access: https://github.com/bswinnerton/launchbar-github#github-access-token
 
+  Linn Kazoo:
+    App Settings:
+      Network Interface: Set to system interface
+
   Microsoft Office:
     Cloud Storage: Skip
     Preferences:
