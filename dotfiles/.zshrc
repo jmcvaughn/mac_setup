@@ -201,9 +201,10 @@ alias pod='popd'
 
 # sudo
 alias s='sudo '
-alias se='sudo -e'
-alias si='sudo -i'
-alias siu='sudo -iu'
+alias se='sudo --edit'
+alias si='sudo --login'
+alias siu='sudo --login --user'
+alias sk='sudo --reset-timestamp'
 alias sudo='sudo '
 
 # File viewing/editing
