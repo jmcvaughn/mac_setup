@@ -180,6 +180,19 @@ safari() {
 }
 
 
+skim() {
+  # Menu options
+  ## View > Show Tab Bar: True
+  defaults write net.sourceforge.skim-app.skim NSWindowTabbingShoudShowTabBarKey-SKMainWindow-SKMainWindowController-SKMainWindowController-VT-FS -bool true
+
+  ## View > Show Contents Pane: False
+  defaults write net.sourceforge.skim-app.skim SKLeftSidePaneWidth -float 0
+
+  ## View > Show Notes Pane: False
+  defaults write net.sourceforge.skim-app.skim SKRightSidePaneWidth -float 0
+}
+
+
 skype_for_business() {
   # Preferences
   ## General > Prompt me before leaving a call: False
