@@ -281,10 +281,10 @@ fi
 # Prompt colour set at line 1
 if [[ $os == 'macOS' ]]; then
   # Presume Mac is local machine, don't show hostname
-  PROMPT='%F{$PROMPT_COLOUR}%B%3~%b%f ${vcs_info_msg_0_}%B%#%b '
+  PROMPT='%F{$PROMPT_COLOUR}%B%3~%b%f ${vcs_info_msg_0_}%B%(?.%#.%F{red}%#%f)%b '
 else
   # Show full hostname
-  PROMPT='%F{$PROMPT_COLOUR}%B%M:%3~%b%f ${vcs_info_msg_0_}%B%#%b '
+  PROMPT='%F{$PROMPT_COLOUR}%B%M:%3~%b%f ${vcs_info_msg_0_}%B%(?.%#.%F{red}%#%f)%b '
 fi
 # }}}
 
