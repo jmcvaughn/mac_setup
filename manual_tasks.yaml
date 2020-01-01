@@ -141,6 +141,7 @@ Applications:
       Preferences:
         Sync:
           - Bookmarks
+          - Open Tabs
 
   iTerm2:
     General:
