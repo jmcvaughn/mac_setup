@@ -305,6 +305,9 @@ if [[ $os == 'macOS' ]]; then
 elif [[ $os == 'Arch Linux' ]]; then
   source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
   autosuggestions=$?
+elif [[ $os == 'Ubuntu'* ]]; then
+  source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  autosuggestions=$?
 fi
 # }}}
 
@@ -318,6 +321,8 @@ if [[ $os == 'macOS' ]]; then
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 elif [[ $os == 'Arch Linux' ]]; then
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [[ $os == 'Ubuntu'* ]]; then
+  source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 # }}}
 
