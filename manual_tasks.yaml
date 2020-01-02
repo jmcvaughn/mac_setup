@@ -137,6 +137,10 @@ Applications:
     All profiles:
       Extensions:
         uBlock Origin: https://addons.mozilla.org/en-GB/firefox/addon/ublock-origin/
+      Extension Preferences:
+        uBlock Origin:
+          Filter lists:
+            uBlock filters \- Annoyances: True
     default:
       Preferences:
         Sync:
