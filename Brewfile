@@ -21,6 +21,7 @@ cask 'the-unarchiver'
 cask 'vagrant'
 cask 'vagrant-manager'
 cask 'virtualbox'
+cask 'virtualbox-extension-pack'
 cask 'osxfuse'  # Required by sshfs
 cask 'wkhtmltopdf'  # Used by pandoc to create files
 # Drivers
