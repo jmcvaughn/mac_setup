@@ -56,3 +56,4 @@ Keys:
 
 Advanced:
   Swap Find Next and Find Previous: False
+  Warn about short-lived sessions that live less than this many seconds: 0
