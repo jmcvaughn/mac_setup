@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 login_items='Dozer LaunchBar'
 

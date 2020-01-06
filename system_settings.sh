@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 system_preferences() {  # {{{
   systemuiserver_plist="$HOME/Library/Preferences/com.apple.systemuiserver.plist"

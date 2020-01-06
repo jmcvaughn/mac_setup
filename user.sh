@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 cd "$(dirname "$0")"  # Change to script's directory
 

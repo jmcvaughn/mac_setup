@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 # Fetch newest version of Homebrew and formulae
 brew update
