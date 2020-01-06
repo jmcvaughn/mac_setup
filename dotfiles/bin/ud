@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+# Fetch newest version of Homebrew and formulae
+brew update
+
+# Update Homebrew packages
+brew upgrade
+
+# Update Launchbar Actions
+cd "$HOME/Library/Application Support/LaunchBar/Actions/"
+for action in *; do
+  git -C "$action" pull
+done

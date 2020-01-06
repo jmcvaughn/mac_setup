@@ -266,9 +266,7 @@ alias vi='$EDITOR'
 alias vim='$EDITOR'
 [[ -z $EDITOR ]] && alias vimdiff='$EDITOR -d'
 
-if [[ $os == 'macOS' ]]; then
-  alias ud='$HOME/git/mac_setup/update.sh'
-elif [[ $os == 'Arch Linux' ]]; then
+if [[ $os == 'Arch Linux' ]]; then
   alias ud='sudo pacman -Syu && sudo pacman -Rsn --noconfirm $(pacman -Qdtq) 2> /dev/null'
 fi
 # }}}
