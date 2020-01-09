@@ -78,6 +78,9 @@ set termguicolors  " Enable true-colour support
 " Default
 setfiletype text
 
+" Configuration files
+autocmd FileType sshconfig set expandtab shiftwidth=0 tabstop=2
+
 " Data serialisation
 autocmd FileType yaml set shiftwidth=0 tabstop=2 spell nowrap
 
