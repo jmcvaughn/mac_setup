@@ -199,10 +199,6 @@ Applications:
         Show week numbers: True
         Show current weather on calendar: False
 
-  Microsoft Teams:
-    General:
-      Theme: Dark
-
   Safari:
     Favourites: Delete defaults
 

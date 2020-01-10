@@ -12,7 +12,6 @@ cask 'google-chrome'
 cask 'iterm2'
 cask 'karabiner-elements'
 cask 'launchbar'
-cask 'microsoft-teams'
 cask 'openwebstart'  # Installed using --no-quarantine by script
 cask 'skim'
 cask 'slack'
