@@ -1,9 +1,6 @@
 # The following tasks must be performed manually after all other scripts have
 # been run.
 
-Manual install:
-  OpenWebStart: https://openwebstart.com/
-
 System Preferences:
   Security \& Privacy:
     Advanced:

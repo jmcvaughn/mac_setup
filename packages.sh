@@ -3,6 +3,10 @@
 login_items='Dozer LaunchBar'
 
 install_packages() {
+  # Install OpenWebStart with --no-quarantine. Note that this is technically
+  # a security issue!
+  brew cask install --no-quarantine openwebstart
+
   # Check Docker Desktop for Mac installed before brew bundle
   brew cask list docker > /dev/null 2>&1
   docker_instbefore=$?
