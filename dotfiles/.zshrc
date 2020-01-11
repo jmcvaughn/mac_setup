@@ -226,6 +226,7 @@ alias hist='fc -liD -31'
 alias scpk='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
 alias sshk='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
 alias virsh='virsh -c qemu:///system'
+alias virt-install='virt-install --connect qemu:///system'
 
 # cp
 alias cpr='cp --recursive --reflink=auto --sparse=always'
