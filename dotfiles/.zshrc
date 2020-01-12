@@ -213,20 +213,22 @@ alias grep='grep --color=auto'
 alias igrep='grep --ignore-case --color=auto'
 alias les='less'
 alias lesn='less --LINE-NUMBERS'
-alias o='open'
 
 # Process management
 alias top='htop || top'
 
 # Applications
 alias aria2c='aria2c --seed-time=0'
-alias dl='aria2c'
 alias ddi='sudo dd bs=16K conv=fsync status=progress'
 alias hist='fc -liD -31'
 alias scpk='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
 alias sshk='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
 alias virsh='virsh -c qemu:///system'
 alias virt-install='virt-install --connect qemu:///system'
+if [[ $os == 'macOS' ]]; then
+  alias o='open'
+  alias oh='open .'
+fi
 
 # cp
 alias cpr='cp --recursive --reflink=auto --sparse=always'
