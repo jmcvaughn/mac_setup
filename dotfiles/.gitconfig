@@ -11,3 +11,5 @@
 	dt = difftool
 	igrep = grep -i
 	stat = status
+[core]
+	excludesFile = ~/.gitignore
