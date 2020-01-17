@@ -224,7 +224,9 @@ alias hist='fc -liD -31'
 alias scpk='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
 alias sshk='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
 alias virsh='virsh -c qemu:///system'
-alias virt-install='virt-install --connect qemu:///system'
+for tool in virt-clone virt-convert virt-install virt-xml; do
+  alias $tool="$tool --connect qemu:///system"
+done
 if [[ $os == 'macOS' ]]; then
   alias o='open'
   alias oh='open .'
