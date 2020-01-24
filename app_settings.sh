@@ -235,6 +235,7 @@ main() {
   finder
   launchbar
   safari
+  skim
   skype_for_business
   vagrant_manager
 }
