@@ -131,6 +131,16 @@ launchbar() {
 }
 
 
+preview() {
+  # Menu options
+  ## View > Show Tab Bar: True
+  defaults write com.apple.Preview NSWindowTabbingShoudShowTabBarKey-PVWindow-PVWindowController-PVWindowController-VT-FS -bool true
+
+  ## View > Hide Sidebar: True
+  defaults write com.apple.Preview PVSidebarViewModeForNewDocuments -int 0
+}
+
+
 safari() {
   safari_plist="$HOME/Library/Containers/com.apple.Safari/Data/Library/Preferences/com.apple.Safari.plist"
 
@@ -234,6 +244,7 @@ main() {
   dozer
   finder
   launchbar
+  preview
   safari
   skim
   skype_for_business
