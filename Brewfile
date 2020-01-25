@@ -86,6 +86,7 @@ brew 'avrdude'
 brew 'dfu-programmer'
 brew 'dfu-util'
 tap 'osx-cross/avr'
+brew 'avr-binutils'  # Explicitly install to fix error during `brew bundle cleanup`
 brew 'avr-gcc@8'
 tap 'PX4/homebrew-px4'
 brew 'gcc-arm-none-eabi'
