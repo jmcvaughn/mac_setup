@@ -49,6 +49,8 @@ Profiles:
       \"Undo" can revive a session that has been closed for up to: 10 seconds
       # This option seems backwards. Should be "Only if the following jobs"
       Prompt before closing: If there are jobs besides  # Use default list
+    Keys:
+      Left Option Key: Esc+
 
 Keys:
   Ctrl + Shift + Tab: Cycle Tabs Forward

@@ -537,9 +537,9 @@
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>720 0 718 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>720 0 720 439 0 0 1440 877 </string>
+	<string>720 3 718 874 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>720 2 718 875 0 0 1440 877 </string>
+	<string>0 3 1439 874 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>0 35 1418 842 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
@@ -1198,7 +1198,7 @@
 			<key>Normal Font</key>
 			<string>SourceCodePro-Regular 12</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<integer>2</integer>
 			<key>Right Option Key Sends</key>
@@ -2026,12 +2026,12 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{38, 877}</string>
+		<string>{51, 761}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>3D830185-C97B-4414-9EE8-82EB7B9EEFA1</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>84</integer>
+	<integer>97</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>587984299.68548405</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2841,7 +2841,12 @@
 		</array>
 	</dict>
 	<key>NoSyncSearchHistory2</key>
-	<array/>
+	<array>
+		<string>history</string>
+		<string>gray</string>
+		<string>poll</string>
+		<string>in_port</string>
+	</array>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>587671119.72396398</real>
 	<key>PointerActions</key>
@@ -2896,7 +2901,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-01-05T17:20:36Z</date>
+	<date>2020-01-26T16:43:44Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
