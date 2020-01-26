@@ -10,12 +10,6 @@ calculator() {
 }
 
 
-dozer() {
-  # Hide status bar icons after 10 seconds: True
-  defaults write com.mortennn.Dozer hideAfterDelayEnabled -bool true
-}
-
-
 finder() {
   # Finder Preferences
   ## General > Show these items on the desktop
@@ -152,11 +146,6 @@ safari() {
   defaults write com.apple.Safari NewWindowBehavior -int 1
   defaults write com.apple.Safari NewTabBehavior -int 1
 
-  ## General > Homepage: Intel Circuit
-  if hostname | ggrep -q '.intel.com'; then
-    defaults write com.apple.Safari HomePage -string 'https://employeecontent.intel.com/content/news/home/circuithome.html'
-  fi
-
   ## General > Open "safe" files after downloading: False
   defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
@@ -203,27 +192,6 @@ skim() {
 }
 
 
-skype_for_business() {
-  # Preferences
-  ## General > Prompt me before leaving a call: False
-  defaults write com.microsoft.SkypeForBusiness showEndCallDialog -bool false
-
-  ## General > Show my video for incoming calls: False
-  defaults write com.microsoft.SkypeForBusiness showVideoPreviewForIncomingCalls -bool false
-
-  ## Contacts > Prompt me before deleting a contact group
-  defaults write com.microsoft.SkypeForBusiness showDeleteGroupDialog -bool false
-
-  ## Calls > Before joining a meeting, ask me which audio device I want to use: False, Use Skype for Business
-  defaults write com.microsoft.SkypeForBusiness shouldPromptForJoinMeetingType -bool false
-  defaults write com.microsoft.SkypeForBusiness joinWithAudioKind -int 0
-
-  # Other
-  ## Get rid of first run welcome screen
-  defaults write com.microsoft.SkypeForBusiness firstRun -bool false
-}
-
-
 vagrant_manager() {
   # Preferences
   ## Terminal Preference: iTerm/iTerm2
@@ -241,13 +209,11 @@ vagrant_manager() {
 
 
 main() {
-  dozer
   finder
   launchbar
   preview
   safari
   skim
-  skype_for_business
   vagrant_manager
 }
 

@@ -176,12 +176,6 @@ if src_hilite_path=$(whence -p src-hilite-lesspipe.sh 2> /dev/null); then
   export LESSOPEN="| $src_hilite_path %s"
 fi
 unset src_hilite_path
-
-# Intel proxies
-if [[ $HOST == *'.intel.com' ]]; then
-  export http_proxy='http://proxy-chain.intel.com:911'
-  export https_proxy='http://proxy-chain.intel.com:912'
-fi
 # }}}
 
 
