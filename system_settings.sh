@@ -26,9 +26,6 @@ system_preferences() {  # {{{
 
   ## Click in the scroll bar to: Jump to the spot that's clicked
   defaults write -g AppleScrollerPagingBehaviour -bool true
-
-  ## Default web browser: Firefox.app
-  /Applications/Firefox.app/Contents/MacOS/firefox --setDefaultBrowser &
   # }}}
 
 
