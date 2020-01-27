@@ -65,6 +65,7 @@ App Store:
     In-App Ratings \& Reviews: False
     Free Downloads: Save Password
   Install:
+    Ghostery Lite: https://apps.apple.com/gb/app/ghostery-lite/id1436953057
     Helium: https://apps.apple.com/gb/app/helium/id1054607607
     Keynote: https://apps.apple.com/gb/app/keynote/id409183694
     Keys for Safari: https://apps.apple.com/gb/app/keys-for-safari/id1494642810
@@ -204,6 +205,10 @@ Applications:
     Favourites: Delete defaults
     Preferences:
       Extensions:
+        - Ghostery Lite Content Blocker - Cosmetic Filters
+        - Ghostery Lite Content Blocker - Network Filters
+        - Ghostery Lite Content Blocker - Privacy Filters
+        - Ghostery Lite Safari Extension
         - Keys Extension
 
   Skype for Business:
