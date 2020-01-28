@@ -6,14 +6,6 @@ System Preferences:
     Advanced:
       Require an administrator password to access system-wide preferences: True
 
-  Notifications:
-    Microsoft AU Daemon:
-      Alert style: False
-      Show notifications on lock screen: False
-      Show notification preview: False
-      Show in Notification Center: False
-      Play sound for notifications: False
-
   Screen Time:
     Options:
       Screen Time for this Mac: False
@@ -73,54 +65,18 @@ App Store:
     Numbers: https://apps.apple.com/gb/app/numbers/id409203825
     Pages: https://apps.apple.com/gb/app/pages/id409201541
 
-Menu bar:
-  - Dozer:
-    - ...
-    - Spotlight
-  - Cisco AnyConnect
-  - System icons
-
 # Using 'All Desktops' instead of yabai rules means no SIP changes needed
 # Using PlistBuddy/defaults to set com.apple.spaces[app-bindings] doesn't work
 Dock:
-  Skype for Business:
-    Options:
-      Assign To: All Desktops
-  Slack:
-    Options:
-      Assign To: All Desktops
   Telegram:
     Options:
       Assign To: All Desktops
 
-Notification Centre:
-  World Clock:
-    - Hillsboro
-
 Applications:
-  Cisco AnyConnect:
-    Start VPN when AnyConnect is started: True
-
-  CrashPlan:
-    Preferences:
-      Show Code42 CrashPlan status in menu bar: False
-    (System Name) Backup:
-      Manage Files:
-        - ~/Documents/
-      Backup Set Settings:
-        File Exclusions:
-          - $RECYCLE.BIN
-          - desktop.ini
-          - .DS_Store
-
   Docker:
     General:
       Start Docker Desktop when you log in: False
       Send usage statistics: False
-    Proxies:
-      Manual proxy configuration:
-        HTTP: http://proxy-chain.intel.com:911
-        HTTPS: http://proxy-chain.intel.com:912
 
   Finder:
     Home:
@@ -159,48 +115,6 @@ Applications:
     App Settings:
       Network Interface: Set to system interface
 
-  Microsoft Office:
-    Cloud Storage: Skip
-    Preferences:
-      Privacy:
-        Office Intelligent Services: False
-
-  Microsoft Outlook:
-    Organise:
-      Conversations: True
-    Preferences:
-      Fonts:
-        Plain text:
-          Font: Source Code Pro
-          Size: 10
-      Auto-correct:
-        Auto-correct:
-          Capitalise first letter of sentences: False
-        Auto-format:
-          Dashes with en dashes and em dashes: False
-          Internet and network paths with links: False
-          Straight quotation marks with smart quotation marks: False
-      Reading:
-        Mark emails as read: When viewed in the reading pane
-      Composing:
-        Plain Text:
-          Indent each line of the original message: False
-          Attribution of original message: Include From, Date, To and Subject lines from original message
-        Compose message in HTML by default: False
-        When replying or forwarding, use the format of the original message: False
-        When sending messages, automatically Bcc myself: True
-        Only reply to selected text: True
-      Signatures:
-        Signatures:
-          - Default: Create and set as appropriate
-        New messages: Default
-        Replies/forwards: Default
-      Calendar:
-        Work day ends: 1730
-        First day of week: Monday
-        Show week numbers: True
-        Show current weather on calendar: False
-
   Safari:
     Favourites: Delete defaults
     Preferences:
@@ -211,15 +125,6 @@ Applications:
         - Ghostery Lite Safari Extension
         - Keys Extension
 
-  Skype for Business:
-    Switch to (audio device):
-      DisplayPort:
-        Switch: False
-        Don't show again for this device: True
-      WH-1000XM3:
-        Switch: True
-        Don't show again for this device: True
-
   Telegram:
     # First sign-in doesn't work with proxy
     General:
@@ -229,12 +134,6 @@ Applications:
       Message Preview: False
       Notification Tone: Pop
       Show notifications (when app is in focus): True
-    Privacy and Security:
-      Proxy:
-        proxy-ir.intel.com:
-          Type: SOCKS5
-          Port: 1080
-        Use for Calls: True  # Doesn't seem to work, but stops crash when trying
     Data and Storage:
       Auto-Download Media: False
       Auto-Play Media:
@@ -245,25 +144,6 @@ Applications:
       Auto-Night Mode:
         Mode: System
         Preferred Night Theme: System
-
-  Word:
-    Preferences:
-      AutoCorrect:
-        Capitalize first letter of sentences: False
-      User Information:
-        - Complete all
-
-  Slack:
-    Messages \& Media:
-      Theme: Compact
-      Show times with 24-hour clock: True
-
-  SwitchResX:
-    Acer B346CK:
-      Custom Resolutions:  # Changes require SIP to be disabled temporarily
-        3440 x 1440, 50Hz:
-          Use simplified settings: CVT-RB
-          Vertical Scan Rate (Hz): 49.999
 
 File associations:
   OpenWebStart\ javaws.app:

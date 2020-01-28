@@ -1,6 +1,6 @@
 #!/bin/sh
 
-login_items='Dozer LaunchBar'
+login_items='LaunchBar'
 
 install_packages() {
   # Install OpenWebStart with --no-quarantine. Note that this is technically

@@ -17,12 +17,8 @@ yabai -m config layout bsp
 # Rule domain
 #-------------------------------------------------------------------------------
 
-yabai -m rule --add app='Cisco AnyConnect Secure Mobility Client' space=1 manage=off
 yabai -m rule --add app='Firefox' title='^Opening .+' manage=off
-yabai -m rule --add app='Microsoft Outlook' title='^(Inbox .+\@.+$|Calendar$|People$|Tasks$|Notes$)' space=3
-yabai -m rule --add app='Skype for Business' title='^(Skype for Business|Sign In)$' manage=off
-yabai -m rule --add app='Cisco Webex Meetings' title='^(Cisco Webex Meetings|$)' manage=off
-yabai -m rule --add app='^(App Store|Calculator|Finder|Installer|Slack|System Preferences|Telegram)$' manage=off
+yabai -m rule --add app='^(App Store|Calculator|Finder|Installer|System Preferences|Telegram)$' manage=off
 
 
 #-------------------------------------------------------------------------------
