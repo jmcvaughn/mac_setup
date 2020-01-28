@@ -11,3 +11,12 @@ cd "$HOME/Library/Application Support/LaunchBar/Actions/"
 for action in *; do
   git -C "$action" pull
 done
+
+# Show outdated Casks
+casks=$(brew cask outdated --verbose | gsed 's/^/    /')
+[ ! -z "$casks" ] && cat << EOF
+The following Cask upgrades are available:
+$casks
+To upgrade:
+    brew cask upgrade [--force] [--greedy] [--dry-run] [--no-quarantine] token [ token ... ]
+EOF
