@@ -77,6 +77,7 @@ main() {
 
   install_packages
   install_launchbar_actions
+  vagrant plugin install scp  # Install Vagrant plugins
   set_login_items
 }
 
