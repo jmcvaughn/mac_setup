@@ -174,9 +174,6 @@ system_preferences() {  # {{{
 	#-----------------------------------------------------------------------------
 
 	# System Preferences
-	## Point & Click > Tap to click: True
-	defaults -currentHost write -g com.apple.mouse.tapBehavior -int 1
-
 	## Point & Click > Click: Light
 	defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
 	defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 0
@@ -301,13 +298,6 @@ other_preferences(){  # {{{
 
 	# Make Cocoa application resize time virtually instantaneous
 	defaults write -g NSWindowResizeTime -float 0.001
-
-	# Silence boot chime
-	# None of these seem to work on 13" MacBookAir6,2
-	#sudo nvram SystemAudioVolume=' '
-	#sudo nvram SystemAudioVolume=%00
-	#sudo nvram SystemAudioVolume=%01
-	#sudo nvram SystemAudioVolume=%80
 
 	# Unhide /Volumes/
 	sudo chflags nohidden /Volumes/
