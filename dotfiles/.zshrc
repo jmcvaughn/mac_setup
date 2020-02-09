@@ -23,8 +23,12 @@ esac
 
 # Paths
 if [[ $os == 'macOS' ]]; then
-	# Disable Homebrew analytics (https://docs.brew.sh/Analytics)
+	# Homebrew
+	## Disable analytics (https://docs.brew.sh/Analytics)
 	export HOMEBREW_NO_ANALYTICS=1
+	## Don't create Brewfile.lock.json
+	## (https://github.com/Homebrew/homebrew-bundle#install)
+	export HOMEBREW_BUNDLE_NO_LOCK=1
 
 	PATH="/usr/local/sbin:$PATH"  # Mainly for brew doctor
 	# curl

@@ -12,7 +12,7 @@ install_packages() {
 	docker_instbefore=$?
 
 	# Install packages
-	brew bundle && hash -r
+	brew bundle --no-lock && hash -r
 
 	# Run Docker on initial install to complete post-installation tasks
 	open /Applications/Docker.app/
