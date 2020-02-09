@@ -9,7 +9,7 @@ brew upgrade
 # Update Launchbar Actions
 cd "$HOME/Library/Application Support/LaunchBar/Actions/"
 for action in *; do
-  git -C "$action" pull
+	git -C "$action" pull
 done
 
 # Show outdated Casks
