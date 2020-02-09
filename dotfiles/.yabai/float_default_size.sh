@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 ratio=$(($(yabai -m query --displays --display | jq -r '.frame | del(.x, .y) | join("/")')))
 
