@@ -305,8 +305,6 @@ other_preferences(){  # {{{
 
 
 main() {  # {{{
-	cd "$(dirname "$0")"  # Change to script's directory
-
 	system_preferences
 	other_preferences
 }  # }}}
