@@ -30,90 +30,43 @@
 	<array>
 		<dict>
 			<key>className</key>
-			<string>ODLBNetworkLocationsRule</string>
+			<string>ODLBMountedVolumesRule</string>
 		</dict>
 		<dict>
-			<key>aliasName</key>
-			<string>Search Templates (ISO Latin 1)</string>
 			<key>className</key>
-			<string>ODLBSearchTemplatesRule</string>
-			<key>defaultStringEncoding</key>
-			<integer>5</integer>
-			<key>templates</key>
-			<array>
-				<dict>
-					<key>name</key>
-					<string>Apple Developer Connection</string>
-					<key>templateURL</key>
-					<string>https://developer.apple.com/cgi-bin/search.pl?q=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Cocoa Mailing List Archive</string>
-					<key>templateURL</key>
-					<string>http://www.cocoabuilder.com/archive/search/1?l=cocoa&amp;q=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Connect to Local AFP Server</string>
-					<key>templateURL</key>
-					<string>afp://*.local</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Excite</string>
-					<key>templateURL</key>
-					<string>http://msxml.excite.com/info.xcite/search/web/*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Internet Movie Database</string>
-					<key>templateURL</key>
-					<string>http://www.imdb.com/find?q=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Linguee</string>
-					<key>templateURL</key>
-					<string>http://www.linguee.de/search?direction=auto&amp;query=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Make TinyURL</string>
-					<key>templateURL</key>
-					<string>http://tinyurl.com/create.php?url=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Merriam-Webster Dictionary</string>
-					<key>templateURL</key>
-					<string>http://www.merriam-webster.com/cgi-bin/dictionary?book=Dictionary&amp;va=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Merriam-Webster Thesaurus</string>
-					<key>templateURL</key>
-					<string>http://www.merriam-webster.com/cgi-bin/thesaurus?book=Thesaurus&amp;va=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>PHP Documentation</string>
-					<key>templateURL</key>
-					<string>http://www.php.net/*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Xcode Mailing List Archive</string>
-					<key>templateURL</key>
-					<string>http://www.cocoabuilder.com/archive/search/1?l=xcode&amp;q=*</string>
-				</dict>
-			</array>
+			<string>ODLBUserAccountsRule</string>
 		</dict>
 		<dict>
 			<key>abbreviatedPath</key>
-			<string>_safariBookmarksPath</string>
+			<string>~/Desktop</string>
 			<key>className</key>
-			<string>ODLBBookmarksRule</string>
+			<string>ODLBFolderContentsRule</string>
+		</dict>
+		<dict>
+			<key>allowsActionURLs</key>
+			<integer>0</integer>
+			<key>className</key>
+			<string>ODLBActionsRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBEmojiRule</string>
+			<key>subsearchOnly</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>abbreviatedPath</key>
+			<string>~/Documents</string>
+			<key>className</key>
+			<string>ODLBFolderContentsRule</string>
+			<key>skipQualifiers</key>
+			<array>
+				<string>iTunes Music</string>
+			</array>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBThemesRule</string>
 		</dict>
 		<dict>
 			<key>className</key>
@@ -121,33 +74,21 @@
 		</dict>
 		<dict>
 			<key>abbreviatedPath</key>
-			<string>~</string>
+			<string>_safariHistoryPath</string>
 			<key>className</key>
-			<string>ODLBFolderContentsRule</string>
-			<key>subfolderLevels</key>
-			<integer>0</integer>
-			<key>typeCollectionIdentifier</key>
-			<string>@folder</string>
+			<string>ODLBHistoryRule</string>
 		</dict>
 		<dict>
 			<key>className</key>
-			<string>ODLBCategoriesRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBMusicRule</string>
-			<key>includeLovedSongsInBestOfLists</key>
-			<integer>0</integer>
-			<key>removeFormationFromArtistName</key>
-			<integer>0</integer>
-			<key>removeParenthesizedTextFromArtistName</key>
-			<integer>0</integer>
-			<key>splitArtists</key>
-			<integer>0</integer>
+			<string>ODLBSafariCloudTabsRule</string>
 		</dict>
 		<dict>
 			<key>className</key>
 			<string>ODLBWorkflowsRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBCategoriesRule</string>
 		</dict>
 		<dict>
 			<key>aliasName</key>
@@ -329,12 +270,6 @@
 					<string>Intel Drivers &amp; Software</string>
 					<key>templateURL</key>
 					<string>https://downloadcenter.intel.com/search?keyword=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Intel MARK</string>
-					<key>templateURL</key>
-					<string>https://mark.intel.com/search?q=*</string>
 				</dict>
 				<dict>
 					<key>name</key>
@@ -526,83 +461,17 @@
 		</dict>
 		<dict>
 			<key>className</key>
-			<string>ODLBEmojiRule</string>
-			<key>subsearchOnly</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBSafariCloudTabsRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
 			<string>ODLBTagsRule</string>
 		</dict>
 		<dict>
 			<key>abbreviatedPath</key>
-			<string>~/Documents</string>
+			<string>~</string>
 			<key>className</key>
 			<string>ODLBFolderContentsRule</string>
-			<key>skipQualifiers</key>
-			<array>
-				<string>iTunes Music</string>
-			</array>
-		</dict>
-		<dict>
-			<key>abbreviatedPath</key>
-			<string>_safariHistoryPath</string>
-			<key>className</key>
-			<string>ODLBHistoryRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBSafariTopSitesRule</string>
-		</dict>
-		<dict>
-			<key>allowsActionURLs</key>
+			<key>subfolderLevels</key>
 			<integer>0</integer>
-			<key>className</key>
-			<string>ODLBActionsRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBServicesRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBSafariReadingListRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBThemesRule</string>
-		</dict>
-		<dict>
-			<key>abbreviatedSpecificPlaces</key>
-			<array>
-				<string>/Applications</string>
-				<string>/Library/Application Support/Microsoft/MAU2.0</string>
-				<string>/System/Library/CoreServices</string>
-				<string>~/Applications</string>
-				<string>~/Library/Printers</string>
-			</array>
-			<key>className</key>
-			<string>ODLBApplicationsRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBMountedVolumesRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBSnippetsRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBDockRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBUserAccountsRule</string>
+			<key>typeCollectionIdentifier</key>
+			<string>@folder</string>
 		</dict>
 		<dict>
 			<key>aliasName</key>
@@ -630,6 +499,40 @@
 			</array>
 		</dict>
 		<dict>
+			<key>abbreviatedPath</key>
+			<string>_safariBookmarksPath</string>
+			<key>className</key>
+			<string>ODLBBookmarksRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBNetworkLocationsRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBSafariTopSitesRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBSnippetsRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBSafariReadingListRule</string>
+		</dict>
+		<dict>
+			<key>abbreviatedSpecificPlaces</key>
+			<array>
+				<string>/Applications</string>
+				<string>/Library/Application Support/Microsoft/MAU2.0</string>
+				<string>/System/Library/CoreServices</string>
+				<string>~/Applications</string>
+				<string>~/Library/Printers</string>
+			</array>
+			<key>className</key>
+			<string>ODLBApplicationsRule</string>
+		</dict>
+		<dict>
 			<key>aliasName</key>
 			<string>Unix Directories</string>
 			<key>className</key>
@@ -649,30 +552,105 @@
 			</array>
 		</dict>
 		<dict>
-			<key>abbreviatedPath</key>
-			<string>~/Desktop</string>
+			<key>aliasName</key>
+			<string>Search Templates (ISO Latin 1)</string>
 			<key>className</key>
-			<string>ODLBFolderContentsRule</string>
+			<string>ODLBSearchTemplatesRule</string>
+			<key>defaultStringEncoding</key>
+			<integer>5</integer>
+			<key>templates</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>Apple Developer Connection</string>
+					<key>templateURL</key>
+					<string>https://developer.apple.com/cgi-bin/search.pl?q=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Cocoa Mailing List Archive</string>
+					<key>templateURL</key>
+					<string>http://www.cocoabuilder.com/archive/search/1?l=cocoa&amp;q=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Connect to Local AFP Server</string>
+					<key>templateURL</key>
+					<string>afp://*.local</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Excite</string>
+					<key>templateURL</key>
+					<string>http://msxml.excite.com/info.xcite/search/web/*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Internet Movie Database</string>
+					<key>templateURL</key>
+					<string>http://www.imdb.com/find?q=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Linguee</string>
+					<key>templateURL</key>
+					<string>http://www.linguee.de/search?direction=auto&amp;query=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Make TinyURL</string>
+					<key>templateURL</key>
+					<string>http://tinyurl.com/create.php?url=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Merriam-Webster Dictionary</string>
+					<key>templateURL</key>
+					<string>http://www.merriam-webster.com/cgi-bin/dictionary?book=Dictionary&amp;va=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Merriam-Webster Thesaurus</string>
+					<key>templateURL</key>
+					<string>http://www.merriam-webster.com/cgi-bin/thesaurus?book=Thesaurus&amp;va=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>PHP Documentation</string>
+					<key>templateURL</key>
+					<string>http://www.php.net/*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Xcode Mailing List Archive</string>
+					<key>templateURL</key>
+					<string>http://www.cocoabuilder.com/archive/search/1?l=xcode&amp;q=*</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBMusicRule</string>
+			<key>includeLovedSongsInBestOfLists</key>
+			<integer>0</integer>
+			<key>removeFormationFromArtistName</key>
+			<integer>0</integer>
+			<key>removeParenthesizedTextFromArtistName</key>
+			<integer>0</integer>
+			<key>splitArtists</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBServicesRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBDockRule</string>
 		</dict>
 	</array>
 	<key>typeCollections</key>
 	<array>
-		<dict>
-			<key>definition</key>
-			<string>'RTF ', 'SLD8', 'TEXT', 'W6BN', 'W8BN', 'WDBN', 'XLS8', doc, docx, pps, ppsx, ppt, pptx, rtf, txt, xls, xlsx</string>
-			<key>identifier</key>
-			<string>4</string>
-			<key>name</key>
-			<string>MS Office Documents</string>
-		</dict>
-		<dict>
-			<key>definition</key>
-			<string>c, cpp, h, java, m, nib, php, php3, php4, pl</string>
-			<key>identifier</key>
-			<string>2</string>
-			<key>name</key>
-			<string>Source Files</string>
-		</dict>
 		<dict>
 			<key>definition</key>
 			<string>htm, html, htmld</string>
@@ -688,6 +666,22 @@
 			<string>3</string>
 			<key>name</key>
 			<string>AppleWorks Documents</string>
+		</dict>
+		<dict>
+			<key>definition</key>
+			<string>c, cpp, h, java, m, nib, php, php3, php4, pl</string>
+			<key>identifier</key>
+			<string>2</string>
+			<key>name</key>
+			<string>Source Files</string>
+		</dict>
+		<dict>
+			<key>definition</key>
+			<string>'RTF ', 'SLD8', 'TEXT', 'W6BN', 'W8BN', 'WDBN', 'XLS8', doc, docx, pps, ppsx, ppt, pptx, rtf, txt, xls, xlsx</string>
+			<key>identifier</key>
+			<string>4</string>
+			<key>name</key>
+			<string>MS Office Documents</string>
 		</dict>
 	</array>
 	<key>version</key>
