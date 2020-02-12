@@ -200,6 +200,7 @@ alias pod='popd'
 # sudo
 alias s='sudo '
 alias se='sudo --edit'
+alias sE='sudo --preserve-env'
 alias si='sudo --login'
 alias siu='sudo --login --user'
 alias sk='sudo --reset-timestamp'
