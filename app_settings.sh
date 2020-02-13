@@ -201,6 +201,12 @@ vagrant_manager() {
 	## Terminal Editor Preference: vim
 	defaults write lanayo.Vagrant-Manager terminalEditorPreference -string 'vim'
 
+	## Status Bar Icon Theme: Flat
+	defaults write lanayo.Vagrant-Manager statusBarIconTheme -string 'flat'
+
+	## Halt machines on exit: True
+	defaults write lanayo.Vagrant-Manager haltOnExit -bool true
+
 	## Auto-close task window: True
 	defaults write lanayo.Vagrant-Manager autoCloseTaskWindows -bool true
 
