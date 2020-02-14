@@ -187,9 +187,8 @@ unset src_hilite_path
 # Aliases and functions {{{
 #-------------------------------------------------------------------------------
 
-# Notes
-## Use single quotes; double quotes perform parameter expansion when sourced.
-## Regardless of quotes, aliases will be substituted in other aliases.
+# Double quotes perform parameter expansion when sourced
+# Regardless of quotes, aliases will be substituted in other aliases
 
 # Shell built-ins
 alias .='source'
@@ -240,6 +239,7 @@ alias top='htop || top'
 alias aria2c='aria2c --seed-time=0'
 alias ddi='sudo dd bs=16K conv=fsync status=progress'
 alias hist='fc -liD -31'
+alias scp='scp -r'
 alias scpk='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
 alias sshk='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
 alias virsh='virsh -c qemu:///system'
