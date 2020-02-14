@@ -206,6 +206,26 @@ alias siu='sudo --login --user'
 alias sk='sudo --reset-timestamp'
 alias sudo='sudo '
 
+# File operations/navigation
+alias mkdir='mkdir --parents'
+## cp
+alias cpr='cp --recursive --reflink=auto --sparse=always'
+alias cp='cp --reflink=auto --sparse=always'
+## ls
+alias l='ls --color=auto'
+alias la='ls --all --color=auto'
+alias lal='ls -l --all --color=auto --human-readable'
+alias lA='ls --almost-all --color=auto'
+alias lAl='ls -l --almost-all --color=auto --human-readable'
+alias ll='ls -l --color=auto --human-readable'
+alias lla='ls -l --all --color=auto --human-readable'
+alias llA='ls -l --almost-all --color=auto --human-readable'
+alias ls='ls --color=auto'
+## tree
+alias tre='tree -C'
+alias trea='tree -aC'
+alias tree='tree -C'
+
 # File viewing/editing
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
@@ -230,26 +250,6 @@ if [[ $os == 'macOS' ]]; then
 	alias o='open'
 	alias oh='open .'
 fi
-
-# cp
-alias cpr='cp --recursive --reflink=auto --sparse=always'
-alias cp='cp --reflink=auto --sparse=always'
-
-# ls
-alias l='ls --color=auto'
-alias la='ls --all --color=auto'
-alias lal='ls -l --all --color=auto --human-readable'
-alias lA='ls --almost-all --color=auto'
-alias lAl='ls -l --almost-all --color=auto --human-readable'
-alias ll='ls -l --color=auto --human-readable'
-alias lla='ls -l --all --color=auto --human-readable'
-alias llA='ls -l --almost-all --color=auto --human-readable'
-alias ls='ls --color=auto'
-
-# tree
-alias tre='tree -C'
-alias trea='tree -aC'
-alias tree='tree -C'
 
 # tmux
 alias ta='tmux -CC attach-session -dt'  # Detach other clients
