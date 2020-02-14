@@ -57,7 +57,7 @@ App Store:
     In-App Ratings \& Reviews: False
     Free Downloads: Save Password
   Install:
-    Ghostery Lite: https://apps.apple.com/gb/app/ghostery-lite/id1436953057
+    AdGuard for Safari: https://apps.apple.com/gb/app/adguard-for-safari/id1440147259
     Helium: https://apps.apple.com/gb/app/helium/id1054607607
     Keynote: https://apps.apple.com/gb/app/keynote/id409183694
     Keys for Safari: https://apps.apple.com/gb/app/keys-for-safari/id1494642810
@@ -73,6 +73,38 @@ Dock:
       Assign To: All Desktops
 
 Applications:
+  AdGuard for Safari:
+    General:
+      Notify about extension updates: False
+      Show AdGuard for Safari in the menu bar: False
+      Enable hardware acceleration: False
+    Filters:
+      Ad Blocking:
+        Enabled: True  # default
+        AdGuard Base filter: True  # default
+      Privacy:
+        Enabled: True  # default
+        AdGuard Tracking Protection filter: True  # default
+        EasyPrivacy: True
+        Fanboy's Enhanced Tracking List: True
+      Social Widgets:
+        Enabled: True
+        AdGuard Social Media filter: True  # default when Social Widgets first enabled
+        Fanboy's Social Blocking List: True
+      Annoyances:
+        Enabled: True
+        AdGuard Annoyances filter: True  # default when Annoyances first enabled
+        Fanboy's Annoyances: True
+        Web Annoyances Ultralist: True
+        Adblock Warning Removal List: True
+        I don't care about cookies: True
+      Security:
+        Enabled: True
+        Malware Domains: True
+        Spam404: True
+        NoCoin Filter List: True
+      Language-specific: False
+
   Docker:
     General:
       Start Docker Desktop when you log in: False
@@ -119,10 +151,14 @@ Applications:
     Favourites: Delete defaults
     Preferences:
       Extensions:
-        - Ghostery Lite Content Blocker - Cosmetic Filters
-        - Ghostery Lite Content Blocker - Network Filters
-        - Ghostery Lite Content Blocker - Privacy Filters
-        - Ghostery Lite Safari Extension
+        - AdGuard Advanced Blocking
+        - AdGuard Custom
+        - AdGuard General
+        - AdGuard Other
+        - AdGuard Privacy
+        - AdGuard Safari Icon
+        - AdGuard Security
+        - AdGuard Social
         - Keys Extension
 
   Telegram:
