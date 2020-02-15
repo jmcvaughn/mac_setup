@@ -232,9 +232,6 @@ alias igrep='grep --ignore-case --color=auto'
 alias les='less'
 alias lesn='less --LINE-NUMBERS'
 
-# Process management
-alias top='htop || top'
-
 # Applications
 alias aria2c='aria2c --seed-time=0'
 alias ddi='sudo dd bs=16K conv=fsync status=progress'
