@@ -17,9 +17,6 @@ install_packages() {
 	# Run Docker on initial install to complete post-installation tasks
 	open /Applications/Docker.app/
 
-	# Symlink avr-gcc 7 to avr-gcc (QMK)
-	brew link --force avr-gcc@8
-
 	# Install Python 3 packages
 	/usr/local/bin/python3 -m pip install -r requirements.txt
 }
@@ -38,8 +35,6 @@ install_launchbar_actions() {
 	if [ ! -d xkcdpass.lbaction ]; then
 		git clone https://github.com/v0rn/xkcdpass.lbaction xkcdpass.lbaction
 	fi
-
-	cd -
 }
 
 
@@ -64,8 +59,6 @@ set_login_items() {
 
 
 main() {
-	cd "$(dirname "$0")"  # Change to script's directory
-
 	export HOMEBREW_NO_ANALYTICS=1
 
 	# Install Homebrew
