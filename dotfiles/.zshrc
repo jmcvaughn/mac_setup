@@ -190,20 +190,10 @@ unset src_hilite_path
 # Double quotes perform parameter expansion when sourced
 # Regardless of quotes, aliases will be substituted in other aliases
 
-# Shell built-ins
-alias .='source'
-alias src='source $HOME/.zshrc'
-alias psd='pushd'
-alias pod='popd'
-
-# sudo
-alias s='sudo '
-alias se='sudo --edit'
-alias sE='sudo --preserve-env'
-alias si='sudo --login'
-alias siu='sudo --login --user'
-alias sk='sudo --reset-timestamp'
-alias sudo='sudo '
+# Editor
+alias vi='$EDITOR'
+alias vim='$EDITOR'
+[[ -z $EDITOR ]] && alias vimdiff='$EDITOR -d'
 
 # File operations/navigation
 alias mkdir='mkdir --parents'
@@ -232,21 +222,33 @@ alias igrep='grep --ignore-case --color=auto'
 alias les='less'
 alias lesn='less --LINE-NUMBERS'
 
-# Applications
-alias aria2c='aria2c --seed-time=0'
-alias ddi='sudo dd bs=16K conv=fsync status=progress'
-alias hist='fc -liD -31'
-alias scp='scp -r'
-alias scpk='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
-alias sshk='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
-alias virsh='virsh -c qemu:///system'
-for tool in virt-clone virt-convert virt-install virt-xml; do
-	alias $tool="$tool --connect qemu:///system"
-done
-if [[ $os == 'macOS' ]]; then
-	alias o='open'
-	alias oh='open .'
+# Package updates
+if [[ $os == 'Arch Linux' ]]; then
+	alias ud='sudo pacman -Syu && sudo pacman -Rsn --noconfirm $(pacman -Qdtq) 2> /dev/null'
 fi
+
+# Shell built-ins
+alias .='source'
+alias hist='fc -liD -31'
+alias src='source $HOME/.zshrc'
+alias psd='pushd'
+alias pod='popd'
+
+# ssh
+alias scpk='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
+alias scpkr='scpk -r'
+alias scpr='scp -r'
+alias scprk='scpkr'
+alias sshk='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
+
+# sudo
+alias s='sudo '
+alias se='sudo --edit'
+alias sE='sudo --preserve-env'
+alias si='sudo --login'
+alias siu='sudo --login --user'
+alias sk='sudo --reset-timestamp'
+alias sudo='sudo '
 
 # tmux
 alias ta='tmux -CC attach-session -dt'  # Detach other clients
@@ -262,13 +264,16 @@ tm() {
 	fi
 }
 
-# Editor
-alias vi='$EDITOR'
-alias vim='$EDITOR'
-[[ -z $EDITOR ]] && alias vimdiff='$EDITOR -d'
-
-if [[ $os == 'Arch Linux' ]]; then
-	alias ud='sudo pacman -Syu && sudo pacman -Rsn --noconfirm $(pacman -Qdtq) 2> /dev/null'
+# Miscellaneous
+alias aria2c='aria2c --seed-time=0'
+alias ddi='sudo dd bs=16K conv=fsync status=progress'
+alias virsh='virsh -c qemu:///system'
+for tool in virt-clone virt-convert virt-install virt-xml; do
+	alias $tool="$tool --connect qemu:///system"
+done
+if [[ $os == 'macOS' ]]; then
+	alias o='open'
+	alias oh='open .'
 fi
 # }}}
 
