@@ -243,7 +243,7 @@ alias sshk='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=off'
 
 # sudo
 alias s='sudo '
-alias se='sudo --edit'
+alias se='sudo -e'
 alias sE='sudo --preserve-env'
 alias si='sudo --login'
 alias siu='sudo --login --user'
