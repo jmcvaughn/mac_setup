@@ -223,9 +223,9 @@ alias les='less'
 alias lesn='less --LINE-NUMBERS'
 
 # Package updates
-if [[ $os == 'Arch Linux' ]]; then
-	alias ud='sudo pacman -Syu && sudo pacman -Rsn --noconfirm $(pacman -Qdtq) 2> /dev/null'
-fi
+[[ $os == 'Arch Linux' ]] && ud() {
+	sudo pacman -Syu $@ && sudo pacman -Rsn --noconfirm $(pacman -Qdtq) 2> /dev/null
+}
 
 # Shell built-ins
 alias .='source'
