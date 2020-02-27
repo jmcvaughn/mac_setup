@@ -7,15 +7,8 @@ install_packages() {
 	# a security issue!
 	brew cask install --no-quarantine openwebstart
 
-	# Check Docker Desktop for Mac installed before brew bundle
-	brew cask list docker > /dev/null 2>&1
-	docker_instbefore=$?
-
 	# Install packages
 	brew bundle --no-lock && hash -r
-
-	# Run Docker on initial install to complete post-installation tasks
-	open /Applications/Docker.app/
 
 	# Install Python 3 packages
 	/usr/local/bin/python3 -m pip install -r requirements.txt
