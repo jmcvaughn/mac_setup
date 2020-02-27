@@ -5,6 +5,8 @@ cd "$(dirname "$0")"  # Change to script's directory
 # Copy dotfiles
 gcp -r --dereference dotfiles/. "$HOME"
 
+mkdir "$HOME"/vagrant/
+
 # Fetch iTerm2 Zsh shell integration script
 curl -L https://iterm2.com/shell_integration/zsh -o "$HOME"/.iterm2_shell_integration.zsh
 
