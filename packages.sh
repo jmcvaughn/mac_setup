@@ -55,6 +55,10 @@ set_login_items() {
 	for app in $login_items; do
 		osascript -e "tell application \"System Events\" to make login item at end with properties {name: \"$app\", path: \"/Applications/$app.app\", hidden: false}" > /dev/null
 	done
+
+	# Enable skhd and yabai at login
+	brew services start skhd
+	brew services start yabai
 }
 
 

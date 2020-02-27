@@ -1,21 +1,72 @@
 # The following tasks must be performed manually after all other scripts have
 # been run.
 
+App Store:
+  Preferences:
+    In-App Ratings \& Reviews: False
+    Free Downloads: Save Password
+  Install:
+    AdGuard for Safari: https://apps.apple.com/gb/app/adguard-for-safari/id1440147259
+    Helium: https://apps.apple.com/gb/app/helium/id1054607607
+    Keynote: https://apps.apple.com/gb/app/keynote/id409183694
+    Keys for Safari: https://apps.apple.com/gb/app/keys-for-safari/id1494642810
+    Linn Kazoo: https://apps.apple.com/gb/app/linn-kazoo/id848937349
+    Numbers: https://apps.apple.com/gb/app/numbers/id409203825
+    Pages: https://apps.apple.com/gb/app/pages/id409201541
+
 System Preferences:
-  Security \& Privacy:
-    Advanced:
-      Require an administrator password to access system-wide preferences: True
+  Siri: False
 
   Screen Time:
     Options:
       Screen Time for this Mac: False
 
-  Displays:
-    Display:
-      Automatically adjust brightness: False
-    Night Shift:
-      Schedule: Sunset to Sunrise
-    Arrangement: Menu bar to external
+  Extensions:
+    Share Menu:
+      - Add to Reading List  # Always first in Safari Share Menu
+      - Open in Helium
+      - Telegram
+      - AirDrop
+      - Mail
+      - Messages
+      - Add People
+
+  Security \& Privacy:
+    General:
+      Require password after sleep or screen saver begins: 5 seconds
+    Advanced:
+      Require an administrator password to access system-wide preferences: True
+    Privacy:
+      Location Services:
+        Enabled: True
+        Apps:
+          - Weather
+          - Siri & Dictation  # default
+          - System Services:
+            Services:
+              # Disable Location-Based Apple Ads, in short
+              - Location-Based Suggestions  # default
+              - Time Zone & System Customisation  # default
+              - Significant Locations  # default
+              - Find My Mac  # default
+              - HomeKit  # default
+              - Wi-Fi Networking  # default
+            Show location icon in menu bar when System Services request your location: True
+      Accessibility:
+        - LaunchBar.app  # Required for certain features: https://www.obdev.at/products/launchbar/releasenotes.html
+        - skhd
+        - yabai
+      Input Monitoring:
+        - karabiner_grabber
+        - karabiner_observer
+      Full Disk Access:
+        - LaunchBar.app  # Required for certain indexing rules: https://www.obdev.at/products/launchbar/releasenotes.html
+        - iTerm.app
+      Automation:
+        iTerm.app:
+          - System Events.app
+      Advertising:
+        Limit Ad Tracking: True  # Click "Reset Advertising Identifier"
 
   Keyboard:
     Keyboard:
@@ -37,33 +88,20 @@ System Preferences:
         Move focus to the next window: Alt + Tab
       Spotlight:
         Show Spotlight search: Alt + Space
+    Input Sources:
+      Sources:
+        - British - PC
+      Show Input menu in menu bar: False  # Scriptable, but enabled by changing input sources
 
-  Extensions:
-    Share Menu:
-      - Add to Reading List  # Always first in Safari Share Menu
-      - Open in Helium
-      - Telegram
-      - AirDrop
-      - Mail
-      - Messages
-      - Add People
-
-  Users \& Groups:
-    Password:
-      Picture: Piano
-
-App Store:
-  Preferences:
-    In-App Ratings \& Reviews: False
-    Free Downloads: Save Password
-  Install:
-    AdGuard for Safari: https://apps.apple.com/gb/app/adguard-for-safari/id1440147259
-    Helium: https://apps.apple.com/gb/app/helium/id1054607607
-    Keynote: https://apps.apple.com/gb/app/keynote/id409183694
-    Keys for Safari: https://apps.apple.com/gb/app/keys-for-safari/id1494642810
-    Linn Kazoo: https://apps.apple.com/gb/app/linn-kazoo/id848937349
-    Numbers: https://apps.apple.com/gb/app/numbers/id409203825
-    Pages: https://apps.apple.com/gb/app/pages/id409201541
+  Displays:
+    Display:
+      Resolution:
+        Scaled: Looks like 2048x1280
+      Automatically adjust brightness: False
+      True Tone: False
+    Night Shift:
+      Schedule: Sunset to Sunrise
+    Arrangement: Menu bar to external
 
 # Using 'All Desktops' instead of yabai rules means no SIP changes needed
 # Using PlistBuddy/defaults to set com.apple.spaces[app-bindings] doesn't work
@@ -182,7 +220,7 @@ Applications:
         Preferred Night Theme: System
 
 File associations:
-  OpenWebStart\ javaws.app:
+  OpenWebStart javaws.app:
     - .jnlp
   Skim.app:
     - .pdf

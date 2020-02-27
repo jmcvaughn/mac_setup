@@ -1,17 +1,6 @@
 #!/bin/sh
 
 system_preferences() {  # {{{
-	systemuiserver_plist="$HOME/Library/Preferences/com.apple.systemuiserver.plist"
-
-	#-----------------------------------------------------------------------------
-	# Pre-tasks {{{
-	#-----------------------------------------------------------------------------
-
-	# Clear menu bar array
-	/usr/libexec/PlistBuddy -c 'Delete :menuExtras' "$systemuiserver_plist"
-	/usr/libexec/PlistBuddy -c 'Add :menuExtras array' "$systemuiserver_plist"
-	# }}}
-
 
 	#-----------------------------------------------------------------------------
 	# General {{{
@@ -83,45 +72,61 @@ system_preferences() {  # {{{
 
 
 	#-----------------------------------------------------------------------------
-	# Energy Saver {{{
+	# Accessibility {{{
 	#-----------------------------------------------------------------------------
 
 	# System Preferences
-	## Show battery status in menu bar
-	defaults write com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.battery' -bool true
-	/usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Battery.menu' "$systemuiserver_plist"
+	## Display > Reduce Transparency
+	defaults write com.apple.universalaccess reduceTransparency -bool true
 
-	## Battery > Turn display off after: 5 minutes
-	sudo pmset -b displaysleep 5
+	## Mouse & Trackpad > Trackpad Options > Enable dragging: three finger drag
+	defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+	defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
+	# }}}
 
-	## Battery > Slightly dim the display while on battery power: False
-	sudo pmset -b lessbright 0
 
-	## Battery > Enable Power Nap while on battery power: True
-	sudo pmset -b powernap 1
-
-	## Power Adapter > Prevent computer from sleeping automatically when the display is off: True
-	sudo pmset -c sleep 0
-
-	## Power Adapter > Turn display off after: 15 minutes
-	sudo pmset -c displaysleep 15
-
-	## Power Adapter > Enable Power Nap while plugged into a power adapter: True
-	sudo pmset -c powernap 1
+	#-----------------------------------------------------------------------------
+	# Network {{{
+	#-----------------------------------------------------------------------------
 
 	# Other
-	## Disable Sudden Motion Sensor
-	sudo pmset -a sms 0
+	## Wi-Fi menu position
+	defaults write com.apple.systemuiserver "NSStatusItem Preferred Position com.apple.menuextra.airport" -float 322
+	# }}}
 
-	## Restart on freeze
-	sudo systemsetup -setrestartfreeze on
 
-	# Battery menu
-	## Show Percentage: True
-	defaults write com.apple.menuextra.battery ShowPercent -string 'YES'
+	#-----------------------------------------------------------------------------
+	# Bluetooth {{{
+	#-----------------------------------------------------------------------------
 
-	## Position
-	defaults write com.apple.systemuiserver "NSStatusItem Preferred Position com.apple.menuextra.battery" -float 241
+	# System Preferences
+	## Show Bluetooth in menu bar
+	defaults write com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.bluetooth' -bool true
+	if ! defaults read com.apple.systemuiserver menuExtras | ggrep -q 'Bluetooth'; then
+		/usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu' "$HOME/Library/Preferences/com.apple.systemuiserver.plist"
+	fi
+
+	# Bluetooth menu position
+	defaults write com.apple.systemuiserver "NSStatusItem Preferred Position com.apple.menuextra.bluetooth" -float 292
+	# }}}
+
+
+	#-----------------------------------------------------------------------------
+	# Sound {{{
+	#-----------------------------------------------------------------------------
+
+	# System Preferences
+	## Sound Effects > Play user interface sound effects: False
+	defaults write -g com.apple.sound.uiaudio.enabled -int 0
+
+	## Show volume in menu bar
+	defaults write com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.volume' -bool true
+	if ! defaults read com.apple.systemuiserver menuExtras | ggrep -q 'Volume'; then
+		/usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Volume.menu' "$HOME/Library/Preferences/com.apple.systemuiserver.plist"
+	fi
+
+	# Volume menu position
+	defaults write com.apple.systemuiserver "NSStatusItem Preferred Position com.apple.menuextra.volume" -float 352
 	# }}}
 
 
@@ -143,16 +148,39 @@ system_preferences() {  # {{{
 	## Text > Add full stop with double space: False
 	defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false
 
+	## Text > Touch Bar typing suggestions: False
+	defaults write -g NSAutomaticTextCompletionEnabled -bool false
+
 	## Text > Use smart quotes and dashes: False
 	defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
 	defaults write -g NSAutomaticDashSubstitutionEnabled -bool false
 
-	## Shortcuts > Full Keyboard Access: All controls
-	defaults write -g AppleKeyboardUIMode -int 3
+	## Shortcuts > Use keyboard navigation to move focus between controls: True
+	defaults write -g AppleKeyboardUIMode -int 2
+	# }}}
 
-	# Other
-	## Automatic text completion - verify what this does, Touch Bar? Option-Esc?
-	defaults write -g NSAutomaticTextCompletionEnabled -bool false
+
+	#-----------------------------------------------------------------------------
+	# Trackpad {{{
+	#-----------------------------------------------------------------------------
+
+	# System Preferences
+	## Point & Click > Click: Light
+	defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
+	defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 0
+
+	## Point & Click > Tracking speed: 5
+	defaults write -g com.apple.trackpad.scaling -float 0.875
+
+	## More Gestures > Swipe between full-screen apps: Swipe left or right with four fingers
+	defaults write com.apple.AppleMultitouchTrackpad TrackpadFourFingerHorizSwipeGesture -int 2
+	defaults -currentHost write -g com.apple.trackpad.fourFingerHorizSwipeGesture -int 2
+
+	## More Gestures > Mission Control: Swipe up with four fingers
+	defaults write com.apple.dock showMissionControlGestureEnabled -bool true
+
+	## More Gestures > Launchpad: False
+	defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
 	# }}}
 
 
@@ -170,71 +198,30 @@ system_preferences() {  # {{{
 
 
 	#-----------------------------------------------------------------------------
-	# Trackpad {{{
+	# Energy Saver {{{
 	#-----------------------------------------------------------------------------
 
 	# System Preferences
-	## Point & Click > Click: Light
-	defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
-	defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 0
+	## Battery > Turn display off after: 5 minutes
+	sudo pmset -b displaysleep 5
+	sudo pmset -b sleep 5
 
-	## Point & Click > Tracking speed
-	defaults write -g com.apple.trackpad.scaling -float 0.875
+	## Battery > Slightly dim the display while on battery power: False
+	sudo pmset -b lessbright 0
 
-	## More Gestures > Swipe between full-screen apps: Swipe left or right with four fingers
-	defaults write com.apple.AppleMultitouchTrackpad TrackpadFourFingerHorizSwipeGesture -int 2
-	defaults -currentHost write -g com.apple.trackpad.fourFingerHorizSwipeGesture -int 2
+	## Power Adapter > Turn display off after: 15 minutes
+	sudo pmset -c displaysleep 15
 
-	## More Gestures > Mission Control: Swipe up with four fingers
-	defaults write com.apple.dock showMissionControlGestureEnabled -bool true
+	## Power Adapter > Prevent computer from sleeping automatically when the display is off: True
+	sudo pmset -c sleep 0
 
-	## More Gestures > Launchpad: False
-	defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
-	# }}}
+	# Other
+	# Battery menu
+	## Show Percentage: True
+	defaults write com.apple.menuextra.battery ShowPercent -string 'YES'
 
-
-	#-----------------------------------------------------------------------------
-	# Sound {{{
-	#-----------------------------------------------------------------------------
-
-	# System Preferences
-	## Sound Effects > Play user interface sound effects
-	defaults write -g com.apple.sound.uiaudio.enabled -int 0
-
-	## Show volume in menu bar
-	defaults write com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.volume' -bool true
-	/usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Volume.menu' "$systemuiserver_plist"
-
-	# Volume menu position
-	defaults write com.apple.systemuiserver "NSStatusItem Preferred Position com.apple.menuextra.volume" -float 352
-	# }}}
-
-
-	#-----------------------------------------------------------------------------
-	# Network {{{
-	#-----------------------------------------------------------------------------
-
-	# System Preferences
-	## Wi-Fi > Show Wi-Fi status in menu bar: True
-	defaults write com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.airport' -bool true
-	/usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/AirPort.menu' "$systemuiserver_plist"
-
-	# Wi-Fi menu position
-	defaults write com.apple.systemuiserver "NSStatusItem Preferred Position com.apple.menuextra.airport" -float 322
-	# }}}
-
-
-	#-----------------------------------------------------------------------------
-	# Bluetooth {{{
-	#-----------------------------------------------------------------------------
-
-	# System Preferences
-	## Show Bluetooth in menu bar
-	defaults write com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.bluetooth' -bool true
-	/usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu' "$systemuiserver_plist"
-
-	# Bluetooth menu position
-	defaults write com.apple.systemuiserver "NSStatusItem Preferred Position com.apple.menuextra.bluetooth" -float 292
+	## Position
+	defaults write com.apple.systemuiserver "NSStatusItem Preferred Position com.apple.menuextra.battery" -float 241
 	# }}}
 
 
@@ -243,36 +230,18 @@ system_preferences() {  # {{{
 	#-----------------------------------------------------------------------------
 
 	# System Preferences
-	## Clock > Show date and time in menu bar: True
-	defaults write com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.clock' -bool true
-	/usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Clock.menu' "$systemuiserver_plist"
-
-	## * indicates default
 	## Clock:
 	##   Time options:
 	##     Display the time with seconds: True
-	##     Use a 24-hour clock: True*
+	##     Use a 24-hour clock: True  # default
 	##   Date options
-	##     Show the day of the week: True*
+	##     Show the day of the week: True  # default
 	##     Show date: True
 	defaults write com.apple.menuextra.clock DateFormat -string 'EEE d MMM	HH:mm:ss'
 
-	# Clock menu position
+	# Other
+	## Clock menu position
 	defaults write com.apple.systemuiserver "NSStatusItem Preferred Position com.apple.menuextra.clock" -float 103.0273
-	# }}}
-
-
-	#-----------------------------------------------------------------------------
-	# Accessibility {{{
-	#-----------------------------------------------------------------------------
-
-	# System Preferences
-	## Display > Reduce Transparency
-	defaults write com.apple.universalaccess reduceTransparency -bool true
-
-	## Mouse & Trackpad > Trackpad Options > Enable dragging: three finger drag
-	defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
-	defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
 	# }}}
 }  # }}}
 
