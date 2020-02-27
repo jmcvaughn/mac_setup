@@ -78,7 +78,7 @@ main() {
 	install_packages
 	install_launchbar_actions
 	clone_git_repos
-	vagrant plugin install scp  # Install Vagrant plugins
+	vagrant plugin install vagrant-scp  # Install Vagrant plugins
 	set_login_items
 }
 
