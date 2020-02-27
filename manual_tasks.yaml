@@ -4,7 +4,6 @@
 App Store:
   Preferences:
     In-App Ratings \& Reviews: False
-    Free Downloads: Save Password
   Install:
     AdGuard for Safari: https://apps.apple.com/gb/app/adguard-for-safari/id1440147259
     Helium: https://apps.apple.com/gb/app/helium/id1054607607
@@ -15,12 +14,6 @@ App Store:
     Pages: https://apps.apple.com/gb/app/pages/id409201541
 
 System Preferences:
-  Siri: False
-
-  Screen Time:
-    Options:
-      Screen Time for this Mac: False
-
   Extensions:
     Share Menu:
       - Add to Reading List  # Always first in Safari Share Menu
@@ -34,8 +27,6 @@ System Preferences:
   Security \& Privacy:
     General:
       Require password after sleep or screen saver begins: 5 seconds
-    Advanced:
-      Require an administrator password to access system-wide preferences: True
     Privacy:
       Location Services:
         Enabled: True
@@ -63,10 +54,12 @@ System Preferences:
         - LaunchBar.app  # Required for certain indexing rules: https://www.obdev.at/products/launchbar/releasenotes.html
         - iTerm.app
       Automation:
-        iTerm.app:
+        iTerm.app:  # Will only appear when triggered
           - System Events.app
       Advertising:
         Limit Ad Tracking: True  # Click "Reset Advertising Identifier"
+    Advanced:
+      Require an administrator password to access system-wide preferences: True
 
   Keyboard:
     Keyboard:
@@ -80,7 +73,7 @@ System Preferences:
         Mission Control: Alt + M
         Show Notification Center: Alt + N
         Turn Do Not Disturb On/Off: Alt + Shift + N
-        Application Windows: Alt + A
+        Application windows: Alt + A
         Move left a space: False
         Move right a space: False
         Switch to Desktop \[1-10]: Alt + [q-p]
@@ -111,6 +104,20 @@ Dock:
       Assign To: All Desktops
 
 Applications:
+  Safari:
+    Favourites: Delete defaults
+    Preferences:
+      Extensions:
+        - AdGuard Advanced Blocking
+        - AdGuard Custom
+        - AdGuard General
+        - AdGuard Other
+        - AdGuard Privacy
+        - AdGuard Safari Icon
+        - AdGuard Security
+        - AdGuard Social
+        - Keys Extension
+
   AdGuard for Safari:
     General:
       Notify about extension updates: False
@@ -185,25 +192,11 @@ Applications:
     App Settings:
       Network Interface: Set to system interface
 
-  Safari:
-    Favourites: Delete defaults
-    Preferences:
-      Extensions:
-        - AdGuard Advanced Blocking
-        - AdGuard Custom
-        - AdGuard General
-        - AdGuard Other
-        - AdGuard Privacy
-        - AdGuard Safari Icon
-        - AdGuard Security
-        - AdGuard Social
-        - Keys Extension
-
   Telegram:
     # First sign-in doesn't work with proxy
     General:
-      Big Emoji: False
-      Menu Bar Item: False
+      Large Emoji: False
+      Show Icon in Menu Bar: False
     Notifications and Sounds:
       Message Preview: False
       Notification Tone: Pop
@@ -214,10 +207,8 @@ Applications:
         GIFs: False
         Videos: False
     Appearance:
-      Bubbles Mode: True
-      Auto-Night Mode:
-        Mode: System
-        Preferred Night Theme: System
+      Color Theme: System
+      Bubble Mode: True
 
 File associations:
   OpenWebStart javaws.app:
@@ -231,5 +222,4 @@ File associations:
     - .md
     - .txt
     - .xml
-    - .yaml
-    - .yml
+    - .yaml/.yml  # macOS is smart enough to know these are the same

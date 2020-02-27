@@ -38,6 +38,16 @@ install_launchbar_actions() {
 }
 
 
+clone_git_repos() {
+	gmkdir "$HOME/git/" > /dev/null 2>&1
+	cd "$HOME/git/"
+
+	if [ ! -d markdown-css ]; then
+		git clone https://github.com/otsaloma/markdown-css.git
+	fi
+}
+
+
 set_login_items() {
 	# Note: AppleScript only uses double quotes
 
@@ -74,6 +84,7 @@ main() {
 
 	install_packages
 	install_launchbar_actions
+	clone_git_repos
 	vagrant plugin install scp  # Install Vagrant plugins
 	set_login_items
 }
