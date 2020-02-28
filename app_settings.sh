@@ -193,6 +193,17 @@ skim() {
 }
 
 
+textual() {
+	# Preferences
+	## Style > General > Style: Equinox
+	defaults write com.codeux.apps.textual 'Theme -> Name' -string 'resource:Equinox'
+
+	## Style > General > Font: Source Code Pro 12pt
+	defaults write com.codeux.apps.textual 'Theme -> Font Name' -string 'SourceCodePro-Regular'
+	#defaults write com.codeux.apps.textual 'Theme -> Font Size' -float 12  # default, unset until modified
+}
+
+
 vagrant_manager() {
 	# Preferences
 	## Terminal Preference: iTerm/iTerm2
@@ -221,6 +232,7 @@ main() {
 	preview
 	safari
 	skim
+	textual
 	vagrant_manager
 }
 

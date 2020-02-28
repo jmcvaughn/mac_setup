@@ -105,6 +105,9 @@ Dock:
   Telegram:
     Options:
       Assign To: All Desktops
+  Textual:
+    Options:
+      Assign To: All Desktops
 
 Applications:
   Safari:

@@ -13,6 +13,7 @@ cask 'launchbar'
 cask 'openwebstart'  # Installed using --no-quarantine by script
 cask 'skim'
 cask 'telegram'
+cask 'textual'
 cask 'tunnelblick'
 cask 'the-unarchiver'
 cask 'vagrant'
