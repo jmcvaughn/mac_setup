@@ -96,6 +96,9 @@ System Preferences:
       Schedule: Sunset to Sunrise
     Arrangement: Menu bar to external
 
+  Sharing:
+    Computer Name: Set as appropriate
+
 # Using 'All Desktops' instead of yabai rules means no SIP changes needed
 # Using PlistBuddy/defaults to set com.apple.spaces[app-bindings] doesn't work
 Dock:
