@@ -35,14 +35,12 @@ System Preferences:
           - Siri & Dictation  # default
           - System Services:
             Services:
-              # Disable Location-Based Apple Ads, in short
+              # Disable Location-Based Apple Ads and Wi-Fi Networking
               - Location-Based Suggestions  # default
               - Time Zone & System Customisation  # default
               - Significant Locations  # default
               - Find My Mac  # default
               - HomeKit  # default
-              - Wi-Fi Networking  # default
-            Show location icon in menu bar when System Services request your location: True
       Accessibility:
         - LaunchBar.app  # Required for certain features: https://www.obdev.at/products/launchbar/releasenotes.html
         - skhd
@@ -94,6 +92,7 @@ System Preferences:
       True Tone: False
     Night Shift:
       Schedule: Sunset to Sunrise
+    Show mirroring options in the menu bar when available: False  # Scriptable, but the rest of the display options aren't
     Arrangement: Menu bar to external
 
   Sharing:
