@@ -1,6 +1,17 @@
 #!/bin/sh
 
 system_preferences() {  # {{{
+	systemuiserver_plist="$HOME/Library/Preferences/com.apple.systemuiserver.plist"
+
+	#-----------------------------------------------------------------------------
+	# Pre-tasks {{{
+	#-----------------------------------------------------------------------------
+
+	# Clear menu bar array
+	/usr/libexec/PlistBuddy -c 'Delete :menuExtras' "$systemuiserver_plist"
+	/usr/libexec/PlistBuddy -c 'Add :menuExtras array' "$systemuiserver_plist"
+	# }}}
+
 
 	#-----------------------------------------------------------------------------
 	# General {{{
@@ -89,6 +100,11 @@ system_preferences() {  # {{{
 	# Network {{{
 	#-----------------------------------------------------------------------------
 
+	# System Preferences
+	## Wi-Fi > Show Wi-Fi status in menu bar: True
+	defaults write com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.airport' -bool true  # default, cleared in pre-tasks
+	/usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/AirPort.menu' "$systemuiserver_plist"  # default, cleared in pre-tasks
+
 	# Other
 	## Wi-Fi menu position
 	defaults write com.apple.systemuiserver "NSStatusItem Preferred Position com.apple.menuextra.airport" -float 322
@@ -102,9 +118,7 @@ system_preferences() {  # {{{
 	# System Preferences
 	## Show Bluetooth in menu bar
 	defaults write com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.bluetooth' -bool true
-	if ! defaults read com.apple.systemuiserver menuExtras | ggrep -q 'Bluetooth'; then
-		/usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu' "$HOME/Library/Preferences/com.apple.systemuiserver.plist"
-	fi
+	/usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu' "$systemuiserver_plist"
 
 	# Bluetooth menu position
 	defaults write com.apple.systemuiserver "NSStatusItem Preferred Position com.apple.menuextra.bluetooth" -float 292
@@ -119,11 +133,9 @@ system_preferences() {  # {{{
 	## Sound Effects > Play user interface sound effects: False
 	defaults write -g com.apple.sound.uiaudio.enabled -int 0
 
-	## Show volume in menu bar
+	## Show volume in menu bar: True
 	defaults write com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.volume' -bool true
-	if ! defaults read com.apple.systemuiserver menuExtras | ggrep -q 'Volume'; then
-		/usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Volume.menu' "$HOME/Library/Preferences/com.apple.systemuiserver.plist"
-	fi
+	/usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Volume.menu' "$systemuiserver_plist"
 
 	# Volume menu position
 	defaults write com.apple.systemuiserver "NSStatusItem Preferred Position com.apple.menuextra.volume" -float 352
@@ -198,6 +210,18 @@ system_preferences() {  # {{{
 
 
 	#-----------------------------------------------------------------------------
+	# Displays {{{
+	#-----------------------------------------------------------------------------
+
+	# System Preferences
+	## Show mirroring options in the menu bar when available: False
+	defaults write com.apple.airplay showInMenuBarIfPresent -bool false
+	defaults delete com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.airplay' > /dev/null 2>&1
+	## Menu bar array cleared by pre-task
+	# }}}
+
+
+	#-----------------------------------------------------------------------------
 	# Energy Saver {{{
 	#-----------------------------------------------------------------------------
 
@@ -215,6 +239,10 @@ system_preferences() {  # {{{
 	## Power Adapter > Prevent computer from sleeping automatically when the display is off: True
 	sudo pmset -c sleep 0
 
+	## Show battery status in menu bar: True
+	defaults write com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.battery' -bool true  # default, cleared in pre-tasks
+	/usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Battery.menu' "$systemuiserver_plist"  # default, cleared in pre-tasks
+
 	# Other
 	# Battery menu
 	## Show Percentage: True
@@ -230,6 +258,10 @@ system_preferences() {  # {{{
 	#-----------------------------------------------------------------------------
 
 	# System Preferences
+	## Clock > Show date and time in menu bar: True
+	defaults write com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.clock' -bool true  # default, cleared in pre-tasks
+	/usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Clock.menu' "$systemuiserver_plist"  # default, cleared in pre-tasks
+
 	## Clock:
 	##   Time options:
 	##     Display the time with seconds: True

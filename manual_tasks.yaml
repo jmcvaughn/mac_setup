@@ -92,7 +92,6 @@ System Preferences:
       True Tone: False
     Night Shift:
       Schedule: Sunset to Sunrise
-    Show mirroring options in the menu bar when available: False  # Scriptable, but the rest of the display options aren't
     Arrangement: Menu bar to external
 
   Sharing:
