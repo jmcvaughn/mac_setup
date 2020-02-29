@@ -2,6 +2,7 @@
 
 system_preferences() {  # {{{
 	systemuiserver_plist="$HOME/Library/Preferences/com.apple.systemuiserver.plist"
+	controlstrip_plist="$HOME/Library/Preferences/com.apple.controlstrip.plist"
 
 	#-----------------------------------------------------------------------------
 	# Pre-tasks {{{
@@ -10,6 +11,10 @@ system_preferences() {  # {{{
 	# Clear menu bar array
 	/usr/libexec/PlistBuddy -c 'Delete :menuExtras' "$systemuiserver_plist"
 	/usr/libexec/PlistBuddy -c 'Add :menuExtras array' "$systemuiserver_plist"
+
+	# Clear Touch Bar customised control strip array
+	/usr/libexec/PlistBuddy -c 'Delete :MiniCustomized' "$controlstrip_plist" > /dev/null 2>&1
+	/usr/libexec/PlistBuddy -c 'Add :MiniCustomized array' "$controlstrip_plist"
 	# }}}
 
 
@@ -150,6 +155,11 @@ system_preferences() {  # {{{
 	## Keyboard > Key repeat: Fastest, Delay Until Repeat: Shortest
 	defaults write -g InitialKeyRepeat -int 15  # Seems to adjust both
 	defaults write -g KeyRepeat -int 2  # Seems to always be set to 2
+
+	## Keyboard > Customise Control Strip: Mute, Volume Slider, Brightness Slider, Night Shift
+	for item in mute volume brightness night-shift; do
+		/usr/libexec/PlistBuddy -c "Add :MiniCustomized: string com.apple.system.$item" "$controlstrip_plist"
+	done
 
 	## Text > Correct spelling automatically: False
 	defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
