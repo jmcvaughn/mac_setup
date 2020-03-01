@@ -40,7 +40,6 @@ brew 'gnupg'
 brew 'htop'
 brew 'ipmitool'
 brew 'jq'
-brew 'juju'
 brew 'less'
 brew 'letsencrypt'
 brew 'libosinfo'
@@ -70,6 +69,10 @@ brew 'zsh-autosuggestions'
 brew 'zsh-completions'
 brew 'zsh-history-substring-search'
 brew 'zsh-syntax-highlighting'
+# Canonical
+## Juju
+brew 'juju'
+brew 'charm-tools'
 # Utilities with Cask dependencies
 brew 'sshfs'
 
