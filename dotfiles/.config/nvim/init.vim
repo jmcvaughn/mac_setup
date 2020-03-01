@@ -72,6 +72,22 @@ set termguicolors  " Enable true-colour support
 
 
 "-----------------------------------------------------------------------------
+" Key mappings {{{
+"-----------------------------------------------------------------------------
+
+" Insert mode
+"" Mac-style Option-Backspace to delete word
+imap <M-BS> <C-w>
+
+" Visual mode
+"" Cut to clipboard
+vmap <C-x> "+d
+"" Copy to clipboard
+vmap <C-c> "+y
+" }}}
+
+
+"-----------------------------------------------------------------------------
 " Filetype configuration {{{
 "-----------------------------------------------------------------------------
 
