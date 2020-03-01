@@ -90,6 +90,8 @@ System Preferences:
         Scaled: Looks like 2048x1280
       Automatically adjust brightness: False
       True Tone: False
+    Colour:
+      Display profile: Set for displays
     Night Shift:
       Schedule: Sunset to Sunrise
     Arrangement: Menu bar to external
