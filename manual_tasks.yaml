@@ -7,7 +7,6 @@ App Store:
   Install:
     AdGuard for Safari: https://apps.apple.com/gb/app/adguard-for-safari/id1440147259
     Helium: https://apps.apple.com/gb/app/helium/id1054607607
-    Keynote: https://apps.apple.com/gb/app/keynote/id409183694
     Keys for Safari: https://apps.apple.com/gb/app/keys-for-safari/id1494642810
     Linn Kazoo: https://apps.apple.com/gb/app/linn-kazoo/id848937349
     Numbers: https://apps.apple.com/gb/app/numbers/id409203825
@@ -55,8 +54,6 @@ System Preferences:
           - System Events.app
       Advertising:
         Limit Ad Tracking: True  # Click "Reset Advertising Identifier"
-    Advanced:
-      Require an administrator password to access system-wide preferences: True
 
   Keyboard:
     Keyboard:
@@ -177,7 +174,20 @@ Applications:
       Extension Preferences:
         uBlock Origin:
           Filter lists:
-            uBlock filters \- Annoyances: True
+            Ads:
+              - Adblock Warning Removal
+              - AdGuard Base
+              - EasyList  # default
+            Privacy:
+              - AdGuard Tracking Protection
+              - EasyPrivacy  # default
+              - Fanboy's Enhanced Tracking List
+            Annoyances:
+              - AdGuard Annoyances
+              - AdGuard Social Media
+              - Fanboy's Annoyance
+              - Fanboy's Social
+              - uBlock filters - Annoyances
     default:
       Preferences:
         Sync:
@@ -200,16 +210,14 @@ Applications:
   Telegram:
     # First sign-in doesn't work with proxy
     General:
-      Large Emoji: False
       Show Icon in Menu Bar: False
     Notifications and Sounds:
       Message Preview: False
       Notification Tone: Pop
       Show notifications (when app is in focus): True
     Data and Storage:
-      Auto-Download Media: False
+      Download Folder: ~/Downloads/Telegram/
       Auto-Play Media:
-        GIFs: False
         Videos: False
     Appearance:
       Color Theme: System
