@@ -3,11 +3,18 @@ Configuration scripts for my Mac
 
 # Cloning
 ```
-$ git clone https://github.com/v0rn/mac_setup.git && git -C mac_setup submodule update --init
+$ git clone https://github.com/jmcvaughn/mac_setup.git && git -C mac_setup submodule update --init
 ```
 
 # macOS intial setup
-It is presumed that the most restrictive, least data-gathering, and least nuisance settings will be used (e.g. Ask Siri and Screen Time disabled) hence why these are not configured here.
+It is presumed during the setup process the following was performed:
+
+- Express Set Up was used (i.e. just click Continue)
+- Analytics data was not allowed to be shared (i.e. just click Continue)
+- Screen Time was not set up (click Set Up Later)
+- Enable Ask Siri was deselected
+
+Other settings are irrelevant.
 
 # Usage
 1) Go to System Preferences > Security & Privacy > Privacy > Full Disk Access, add and enable Terminal

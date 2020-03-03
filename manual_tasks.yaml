@@ -32,7 +32,6 @@ System Preferences:
         Enabled: True
         Apps:
           - Weather
-          - Siri & Dictation  # default
           - System Services:
             Services:
               # Disable Location-Based Apple Ads and Wi-Fi Networking
