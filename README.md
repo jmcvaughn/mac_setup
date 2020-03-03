@@ -11,13 +11,14 @@ It is presumed that the most restrictive, least data-gathering, and least nuisan
 
 # Usage
 1) Go to System Preferences > Security & Privacy > Privacy > Full Disk Access, add and enable Terminal
-2) Run `packages.sh`
-3) Run `user.sh`
-4) Run `system_settings.sh` and `app_settings.sh` in any order
-5) Reboot
-6) Launch applications:
+2) Run `xcode-select --install ` to install Xcode Command Line Tools
+3) Run `packages.sh`
+4) Run `user.sh`
+5) Run `system_settings.sh` and `app_settings.sh` in any order
+6) Reboot
+7) Launch applications:
   - Karabiner to set up the virtual keyboard device
   - Telegram to enable its Share Menu extension
-7) Perform tasks specified in `manual_tasks.yaml`
-8) Run `app_settings.sh` again to move AdGuard's toolbar icon to the correct location in Safari
-8) Launch LaunchBar
+8) Perform tasks specified in `manual_tasks.yaml`
+9) Run `app_settings.sh` again to move AdGuard's toolbar icon to the correct location in Safari
+10) Launch LaunchBar
