@@ -74,6 +74,8 @@ brew 'zsh-syntax-highlighting'
 ## Juju
 brew 'juju'
 brew 'charm-tools'
+brew 'lxc'
+brew 'snapcraft'
 # Utilities with Cask dependencies
 brew 'sshfs'
 
