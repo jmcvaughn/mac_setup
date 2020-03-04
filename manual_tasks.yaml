@@ -199,6 +199,9 @@ Applications:
       Preferences:
         Load preferences from a custom folder or URL: (path to mac_setup)
 
+  Keys:
+    Current Activation Key: F
+
   LaunchBar:
     bswinnerton/launchbar-github:
       - Grant access: https://github.com/bswinnerton/launchbar-github#github-access-token
