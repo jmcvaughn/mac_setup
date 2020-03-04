@@ -23,9 +23,9 @@ cask 'virtualbox-extension-pack'
 cask 'xquartz'
 cask 'osxfuse'  # Required by sshfs
 cask 'wkhtmltopdf'  # Used by pandoc to create files
-# Canonical
+## Canonical
 cask 'multipass'
-# Drivers
+## Drivers
 tap 'homebrew/cask-drivers'
 cask 'linn-konfig'  # Not a driver, here due to Cask rules: https://git.io/fjb4S
 
@@ -58,7 +58,7 @@ brew 'tree'
 brew 'unar'
 brew 'wget'
 brew 'xz'
-# GNU utilities
+## GNU utilities
 brew 'coreutils'
 brew 'diffutils'
 brew 'findutils'
@@ -67,23 +67,23 @@ brew 'gnu-sed'
 brew 'gnu-tar'
 brew 'grep'
 brew 'gzip'
-# Zsh
+## Zsh
 brew 'zsh-autosuggestions'
 brew 'zsh-completions'
 brew 'zsh-history-substring-search'
 brew 'zsh-syntax-highlighting'
-# Canonical
+## Canonical
 brew 'lxc'
 brew 'snapcraft'
-## Juju
+### Juju
 brew 'juju'
 brew 'charm-tools'
-# Utilities with Cask dependencies
+## Utilities with Cask dependencies
 brew 'sshfs'
 
 # Services
 tap 'homebrew/services'  # Explicitly tap to keep during `brew bundle cleanup`
-# Window manager
+## Window manager
 tap 'koekeishiya/formulae'
 brew 'yabai'
 brew 'skhd'
