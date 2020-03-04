@@ -221,6 +221,10 @@ vagrant_manager() {
 	## Auto-close task window: True
 	defaults write lanayo.Vagrant-Manager autoCloseTaskWindows -bool true
 
+	## Refresh every: 1 minute
+	defaults write lanayo.Vagrant-Manager refreshEvery -bool true
+	defaults write lanayo.Vagrant-Manager refreshEveryInterval -int 60
+
 	## Send anonymous profile data: False
 	defaults write lanayo.Vagrant-Manager sendProfileData -bool false
 }
