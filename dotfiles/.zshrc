@@ -272,6 +272,7 @@ for tool in virt-clone virt-convert virt-install virt-xml; do
 	alias $tool="$tool --connect qemu:///system"
 done
 if [[ $os == 'macOS' ]]; then
+	alias caf='caffeinate'
 	alias o='open'
 	alias oh='open .'
 fi

@@ -35,6 +35,17 @@ system_preferences() {  # {{{
 
 
 	#-----------------------------------------------------------------------------
+	# Desktop & Screen Saver
+	#-----------------------------------------------------------------------------
+
+	# System Preferences
+	## Screen Saver > Hot Corners > Bottom Left: Put Display to Sleep
+	defaults write com.apple.dock wvous-bl-corner -int 10
+	defaults write com.apple.dock wvous-bl-modifier -int 0
+	# }}}
+
+
+	#-----------------------------------------------------------------------------
 	# Dock {{{
 	#-----------------------------------------------------------------------------
 
