@@ -23,6 +23,8 @@ cask 'virtualbox-extension-pack'
 cask 'xquartz'
 cask 'osxfuse'  # Required by sshfs
 cask 'wkhtmltopdf'  # Used by pandoc to create files
+# Canonical
+cask 'multipass'
 # Drivers
 tap 'homebrew/cask-drivers'
 cask 'linn-konfig'  # Not a driver, here due to Cask rules: https://git.io/fjb4S
@@ -71,11 +73,11 @@ brew 'zsh-completions'
 brew 'zsh-history-substring-search'
 brew 'zsh-syntax-highlighting'
 # Canonical
+brew 'lxc'
+brew 'snapcraft'
 ## Juju
 brew 'juju'
 brew 'charm-tools'
-brew 'lxc'
-brew 'snapcraft'
 # Utilities with Cask dependencies
 brew 'sshfs'
 
