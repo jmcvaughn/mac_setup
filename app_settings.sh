@@ -218,12 +218,15 @@ vagrant_manager() {
 	## Halt machines on exit: True
 	defaults write lanayo.Vagrant-Manager haltOnExit -bool true
 
-	## Auto-close task window: True
-	defaults write lanayo.Vagrant-Manager autoCloseTaskWindows -bool true
+	## Don't show task windows: True
+	defaults write lanayo.Vagrant-Manager hideTaskWindows -bool true
 
 	## Refresh every: 1 minute
 	defaults write lanayo.Vagrant-Manager refreshEvery -bool true
 	defaults write lanayo.Vagrant-Manager refreshEveryInterval -int 60
+
+	## Show task notifications: True
+	defaults write lanayo.Vagrant-Manager showTaskNotification -bool true
 
 	## Send anonymous profile data: False
 	defaults write lanayo.Vagrant-Manager sendProfileData -bool false
