@@ -50,6 +50,8 @@ if [[ $os == 'macOS' ]]; then
 	PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 	MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
 	export MANPATH
+elif [[ $uname == 'Linux' ]]; then
+	PATH="$PATH:/snap/bin"  # Canonical snaps
 fi
 export PATH="$HOME/bin:$PATH"
 export CDPATH="$HOME:$HOME/git"
