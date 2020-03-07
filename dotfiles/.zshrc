@@ -231,7 +231,7 @@ alias lesn='less --LINE-NUMBERS'
 
 # Shell built-ins
 alias .='source'
-alias hist='fc -liD -31'
+alias history='fc -liD 0'
 alias src='source $HOME/.zshrc'
 alias psd='pushd'
 alias pod='popd'
