@@ -195,12 +195,72 @@ skim() {
 
 textual() {
 	# Preferences
+	## General > Request confirmation before quitting Textual: False
+	defaults write com.codeux.apps.textual ConfirmApplicationQuit -bool false
+
+	## Notifications > Alerts > Highlight (Mention) > Bounce dock icon: False
+	defaults write com.codeux.apps.textual 'NotificationType -> Highlight -> Bounce Dock Icon' -bool false
+
+	## Notifications > Alerts > Highlight (Mention) > Play sound on alert: Hero
+	defaults write com.codeux.apps.textual 'NotificationType -> Highlight -> Sound' -string 'Hero'
+
+	## Notifications > Alerts > Channel Invitation > Show notification for alert: True
+	defaults write com.codeux.apps.textual 'NotificationType -> Channel Invitation -> Enabled' -bool true
+
+	## Notifications > Alerts > Kicked from Channel > Show notification for alert: True
+	defaults write com.codeux.apps.textual 'NotificationType -> Kicked from Channel -> Enabled' -bool true
+
+	## Notifications > Alerts > Private Message (new) > Bounce dock icon: False
+	defaults write com.codeux.apps.textual 'NotificationType -> Private Message (New) -> Bounce Dock Icon' -bool false
+
+	## Notifications > Alerts > Private Message (new) > Play sound on alert: Pop
+	defaults write com.codeux.apps.textual 'NotificationType -> Private Message (New) -> Sound' -string 'Pop'
+
+	## Notifications > Alerts > Private Message > Bounce dock icon: False
+	defaults write com.codeux.apps.textual 'NotificationType -> Private Message -> Bounce Dock Icon' -bool false
+
+	## Notifications > Alerts > Private Message > Play sound on alert: Pop
+	defaults write com.codeux.apps.textual 'NotificationType -> Private Message -> Sound' -string 'Pop'
+
+	## Notifications > Alerts > Successful File Transfer (Sending) > Bounce dock icon: False
+	defaults write com.codeux.apps.textual 'NotificationType -> Successful File Transfer (Sending) -> Bounce Dock Icon' -bool false
+
+	## Notifications > Alerts > Successful File Transfer (Receiving) > Bounce dock icon: False
+	defaults write com.codeux.apps.textual 'NotificationType -> Successful File Transfer (Receiving) -> Bounce Dock Icon' -bool false
+
+	## Notifications > Alerts > Failed File Transfer (Sending) > Bounce dock icon: False
+	defaults write com.codeux.apps.textual 'NotificationType -> Failed File Transfer (Sending) -> Bounce Dock Icon' -bool false
+
+	## Notifications > Alerts > Failed File Transfer (Receiving) > Bounce dock icon: False
+	defaults write com.codeux.apps.textual 'NotificationType -> Failed File Transfer (Receiving) -> Bounce Dock Icon' -bool false
+
+	## Behavior > Automatically join a channel when invited: True
+	defaults write com.codeux.apps.textual AutojoinChannelOnInvite -bool true
+
+	## Controls > Keyboard & Mouse > Connect to server on double click: True
+	defaults write com.codeux.apps.textual ServerListDoubleClickConnectServer -bool true
+
+	## Controls > Keyboard & Mouse > Disconnect from server on double click: True
+	defaults write com.codeux.apps.textual ServerListDoubleClickDisconnectServer -bool true
+
+	## Controls > Keyboard & Mouse > Join channel on double click: True
+	defaults write com.codeux.apps.textual ServerListDoubleClickJoinChannel -bool true
+
+	## Controls > Keyboard & Mouse > Leave channel on double click: True
+	defaults write com.codeux.apps.textual ServerListDoubleClickLeaveChannel -bool true
+
 	## Style > General > Style: Equinox
 	defaults write com.codeux.apps.textual 'Theme -> Name' -string 'resource:Equinox'
 
 	## Style > General > Font: Source Code Pro 12pt
 	defaults write com.codeux.apps.textual 'Theme -> Font Name' -string 'SourceCodePro-Regular'
 	#defaults write com.codeux.apps.textual 'Theme -> Font Size' -float 12  # default, unset until modified
+
+	## Addons > Smiley Converter > Enable Smiley Converter: True
+	defaults write com.codeux.apps.textual 'Smiley Converter Extension -> Enable Service' -bool true
+
+	## Advanced > Inline Media > General > Show images, videos, and other media inline with chat: True
+	defaults write com.codeux.apps.textual 'DisplayEventInLogView -> Inline Media' -bool true
 }
 
 
