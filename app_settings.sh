@@ -139,7 +139,7 @@ safari() {
 	safari_plist="$HOME/Library/Containers/com.apple.Safari/Data/Library/Preferences/com.apple.Safari.plist"
 
 	# Start Safari to create fresh plist, required for toolbar configuration
-	open /Applications/Safari.app/ && sleep 10 && pkill -x Safari
+	open /Applications/Safari.app/ && sleep 5 && pkill -x Safari
 
 	# Preferences
 	## General > New windows/tabs open with: Empty Page
