@@ -210,6 +210,10 @@ Applications:
     App Settings:
       Network Interface: Set to system interface
 
+  Multipass:
+    About:
+      Autostart on login: False
+
   Telegram:
     # First sign-in doesn't work with proxy
     General:
