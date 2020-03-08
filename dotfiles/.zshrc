@@ -168,8 +168,8 @@ SAVEHIST=10000
 # Editor
 if whence -p nvim &> /dev/null; then
 	export EDITOR='nvim'
-elif whence -p nvim &> /dev/null; then
-	export EDITOR='nvim'
+elif whence -p vim &> /dev/null; then
+	export EDITOR='vim'
 else
 	export EDITOR='vi'
 fi
@@ -195,7 +195,7 @@ unset src_hilite_path
 # Editor
 alias vi='$EDITOR'
 alias vim='$EDITOR'
-[[ -z $EDITOR ]] && alias vimdiff='$EDITOR -d'
+[[ $EDITOR == *'vim' ]] && alias vimdiff='$EDITOR -d'
 
 # File operations/navigation
 alias mkdir='mkdir --parents'
