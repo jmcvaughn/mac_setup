@@ -264,35 +264,6 @@ textual() {
 }
 
 
-vagrant_manager() {
-	# Preferences
-	## Terminal Preference: iTerm/iTerm2
-	defaults write lanayo.Vagrant-Manager terminalPreference -string 'iTerm'
-
-	## Terminal Editor Preference: vim
-	defaults write lanayo.Vagrant-Manager terminalEditorPreference -string 'vim'
-
-	## Status Bar Icon Theme: Flat
-	defaults write lanayo.Vagrant-Manager statusBarIconTheme -string 'flat'
-
-	## Halt machines on exit: True
-	defaults write lanayo.Vagrant-Manager haltOnExit -bool true
-
-	## Don't show task windows: True
-	defaults write lanayo.Vagrant-Manager hideTaskWindows -bool true
-
-	## Refresh every: 1 minute
-	defaults write lanayo.Vagrant-Manager refreshEvery -bool true
-	defaults write lanayo.Vagrant-Manager refreshEveryInterval -int 60
-
-	## Show task notifications: True
-	defaults write lanayo.Vagrant-Manager showTaskNotification -bool true
-
-	## Send anonymous profile data: False
-	defaults write lanayo.Vagrant-Manager sendProfileData -bool false
-}
-
-
 main() {
 	finder
 	launchbar
@@ -300,7 +271,6 @@ main() {
 	safari
 	skim
 	textual
-	vagrant_manager
 }
 
 main
