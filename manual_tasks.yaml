@@ -54,6 +54,8 @@ System Preferences:
           - System Events.app
       Advertising:
         Limit Ad Tracking: True  # Click "Reset Advertising Identifier"
+      Analytics \& Improvements:
+        Share Mac Analytics: False  # Might be re-enabled when sharing crash reports
 
   Keyboard:
     Keyboard:
