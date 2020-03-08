@@ -30,132 +30,11 @@
 	<array>
 		<dict>
 			<key>className</key>
-			<string>ODLBNetworkLocationsRule</string>
-		</dict>
-		<dict>
-			<key>abbreviatedPath</key>
-			<string>~/Desktop</string>
-			<key>className</key>
-			<string>ODLBFolderContentsRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBDockRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
 			<string>ODLBMountedVolumesRule</string>
 		</dict>
 		<dict>
 			<key>className</key>
-			<string>ODLBSafariReadingListRule</string>
-		</dict>
-		<dict>
-			<key>aliasName</key>
-			<string>Search Templates (ISO Latin 1)</string>
-			<key>className</key>
-			<string>ODLBSearchTemplatesRule</string>
-			<key>defaultStringEncoding</key>
-			<integer>5</integer>
-			<key>templates</key>
-			<array>
-				<dict>
-					<key>name</key>
-					<string>Apple Developer Connection</string>
-					<key>templateURL</key>
-					<string>https://developer.apple.com/cgi-bin/search.pl?q=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Cocoa Mailing List Archive</string>
-					<key>templateURL</key>
-					<string>http://www.cocoabuilder.com/archive/search/1?l=cocoa&amp;q=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Connect to Local AFP Server</string>
-					<key>templateURL</key>
-					<string>afp://*.local</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Excite</string>
-					<key>templateURL</key>
-					<string>http://msxml.excite.com/info.xcite/search/web/*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Internet Movie Database</string>
-					<key>templateURL</key>
-					<string>http://www.imdb.com/find?q=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Linguee</string>
-					<key>templateURL</key>
-					<string>http://www.linguee.de/search?direction=auto&amp;query=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Make TinyURL</string>
-					<key>templateURL</key>
-					<string>http://tinyurl.com/create.php?url=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Merriam-Webster Dictionary</string>
-					<key>templateURL</key>
-					<string>http://www.merriam-webster.com/cgi-bin/dictionary?book=Dictionary&amp;va=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Merriam-Webster Thesaurus</string>
-					<key>templateURL</key>
-					<string>http://www.merriam-webster.com/cgi-bin/thesaurus?book=Thesaurus&amp;va=*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>PHP Documentation</string>
-					<key>templateURL</key>
-					<string>http://www.php.net/*</string>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Xcode Mailing List Archive</string>
-					<key>templateURL</key>
-					<string>http://www.cocoabuilder.com/archive/search/1?l=xcode&amp;q=*</string>
-				</dict>
-			</array>
-		</dict>
-		<dict>
-			<key>abbreviatedPath</key>
-			<string>~/Documents</string>
-			<key>className</key>
-			<string>ODLBFolderContentsRule</string>
-			<key>skipQualifiers</key>
-			<array>
-				<string>iTunes Music</string>
-			</array>
-		</dict>
-		<dict>
-			<key>className</key>
 			<string>ODLBCategoriesRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBUserAccountsRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBWorkflowsRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBSafariTopSitesRule</string>
-		</dict>
-		<dict>
-			<key>className</key>
-			<string>ODLBServicesRule</string>
 		</dict>
 		<dict>
 			<key>abbreviatedPath</key>
@@ -165,28 +44,25 @@
 		</dict>
 		<dict>
 			<key>className</key>
-			<string>ODLBEmojiRule</string>
-			<key>subsearchOnly</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>className</key>
 			<string>ODLBThemesRule</string>
 		</dict>
 		<dict>
 			<key>className</key>
-			<string>ODLBTagsRule</string>
+			<string>ODLBSnippetsRule</string>
 		</dict>
 		<dict>
-			<key>abbreviatedSpecificPlaces</key>
-			<array>
-				<string>/Applications</string>
-				<string>/System/Library/CoreServices</string>
-				<string>~/Applications</string>
-				<string>~/Library/Printers</string>
-			</array>
+			<key>allowsActionURLs</key>
+			<integer>0</integer>
 			<key>className</key>
-			<string>ODLBApplicationsRule</string>
+			<string>ODLBActionsRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBSafariTopSitesRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBSafariReadingListRule</string>
 		</dict>
 		<dict>
 			<key>aliasName</key>
@@ -564,6 +440,105 @@
 			</array>
 		</dict>
 		<dict>
+			<key>className</key>
+			<string>ODLBUserAccountsRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBPrefPanesRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBTagsRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBServicesRule</string>
+		</dict>
+		<dict>
+			<key>abbreviatedPath</key>
+			<string>_safariHistoryPath</string>
+			<key>className</key>
+			<string>ODLBHistoryRule</string>
+		</dict>
+		<dict>
+			<key>aliasName</key>
+			<string>Search Templates (ISO Latin 1)</string>
+			<key>className</key>
+			<string>ODLBSearchTemplatesRule</string>
+			<key>defaultStringEncoding</key>
+			<integer>5</integer>
+			<key>templates</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>Apple Developer Connection</string>
+					<key>templateURL</key>
+					<string>https://developer.apple.com/cgi-bin/search.pl?q=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Cocoa Mailing List Archive</string>
+					<key>templateURL</key>
+					<string>http://www.cocoabuilder.com/archive/search/1?l=cocoa&amp;q=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Connect to Local AFP Server</string>
+					<key>templateURL</key>
+					<string>afp://*.local</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Excite</string>
+					<key>templateURL</key>
+					<string>http://msxml.excite.com/info.xcite/search/web/*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Internet Movie Database</string>
+					<key>templateURL</key>
+					<string>http://www.imdb.com/find?q=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Linguee</string>
+					<key>templateURL</key>
+					<string>http://www.linguee.de/search?direction=auto&amp;query=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Make TinyURL</string>
+					<key>templateURL</key>
+					<string>http://tinyurl.com/create.php?url=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Merriam-Webster Dictionary</string>
+					<key>templateURL</key>
+					<string>http://www.merriam-webster.com/cgi-bin/dictionary?book=Dictionary&amp;va=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Merriam-Webster Thesaurus</string>
+					<key>templateURL</key>
+					<string>http://www.merriam-webster.com/cgi-bin/thesaurus?book=Thesaurus&amp;va=*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>PHP Documentation</string>
+					<key>templateURL</key>
+					<string>http://www.php.net/*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Xcode Mailing List Archive</string>
+					<key>templateURL</key>
+					<string>http://www.cocoabuilder.com/archive/search/1?l=xcode&amp;q=*</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
 			<key>aliasName</key>
 			<string>Unix Directories</string>
 			<key>className</key>
@@ -596,13 +571,25 @@
 		</dict>
 		<dict>
 			<key>abbreviatedPath</key>
-			<string>_safariHistoryPath</string>
+			<string>~/Documents</string>
 			<key>className</key>
-			<string>ODLBHistoryRule</string>
+			<string>ODLBFolderContentsRule</string>
+			<key>skipQualifiers</key>
+			<array>
+				<string>iTunes Music</string>
+			</array>
 		</dict>
 		<dict>
 			<key>className</key>
-			<string>ODLBSnippetsRule</string>
+			<string>ODLBNetworkLocationsRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBDockRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBWorkflowsRule</string>
 		</dict>
 		<dict>
 			<key>className</key>
@@ -619,14 +606,27 @@
 			<string>@folder</string>
 		</dict>
 		<dict>
+			<key>abbreviatedPath</key>
+			<string>~/Desktop</string>
 			<key>className</key>
-			<string>ODLBPrefPanesRule</string>
+			<string>ODLBFolderContentsRule</string>
 		</dict>
 		<dict>
-			<key>allowsActionURLs</key>
-			<integer>0</integer>
+			<key>abbreviatedSpecificPlaces</key>
+			<array>
+				<string>/Applications</string>
+				<string>/System/Library/CoreServices</string>
+				<string>~/Applications</string>
+				<string>~/Library/Printers</string>
+			</array>
 			<key>className</key>
-			<string>ODLBActionsRule</string>
+			<string>ODLBApplicationsRule</string>
+		</dict>
+		<dict>
+			<key>className</key>
+			<string>ODLBEmojiRule</string>
+			<key>subsearchOnly</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>aliasName</key>
@@ -635,22 +635,23 @@
 			<string>ODLBListRule</string>
 			<key>list</key>
 			<array>
-				<string>/bin/date</string>
-				<string>/sbin/ping</string>
 				<string>/usr/bin/cal</string>
+				<string>/bin/date</string>
 				<string>/usr/bin/dig</string>
 				<string>/usr/bin/ftp</string>
 				<string>/usr/bin/host</string>
 				<string>/usr/bin/hostinfo</string>
 				<string>/usr/bin/man</string>
+				<string>/usr/sbin/netstat</string>
+				<string>/sbin/ping</string>
 				<string>/usr/bin/sftp</string>
 				<string>/usr/bin/ssh</string>
 				<string>/usr/bin/su</string>
 				<string>/usr/bin/telnet</string>
 				<string>/usr/bin/top</string>
-				<string>/usr/bin/uptime</string>
-				<string>/usr/sbin/netstat</string>
 				<string>/usr/sbin/traceroute</string>
+				<string>/usr/bin/uptime</string>
+				<string>/usr/bin/caffeinate</string>
 			</array>
 		</dict>
 	</array>
@@ -666,19 +667,19 @@
 		</dict>
 		<dict>
 			<key>definition</key>
-			<string>'CWWP', cwk</string>
-			<key>identifier</key>
-			<string>3</string>
-			<key>name</key>
-			<string>AppleWorks Documents</string>
-		</dict>
-		<dict>
-			<key>definition</key>
 			<string>htm, html, htmld</string>
 			<key>identifier</key>
 			<string>1</string>
 			<key>name</key>
 			<string>HTML Files</string>
+		</dict>
+		<dict>
+			<key>definition</key>
+			<string>'CWWP', cwk</string>
+			<key>identifier</key>
+			<string>3</string>
+			<key>name</key>
+			<string>AppleWorks Documents</string>
 		</dict>
 		<dict>
 			<key>definition</key>
