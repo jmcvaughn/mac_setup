@@ -235,8 +235,6 @@ Applications:
 File associations:
   OpenWebStart javaws.app:
     - .jnlp
-  Skim.app:
-    - .pdf
   termedit.app:
     - .cfg
     - .csv
