@@ -1,4 +1,7 @@
+#-------------------------------------------------------------------------------
 # Casks
+#-------------------------------------------------------------------------------
+
 tap 'homebrew/cask'  # Explicitly tap to keep during `brew bundle cleanup`
 cask 'android-platform-tools'
 cask 'coconutbattery'
@@ -22,17 +25,26 @@ cask 'virtualbox-extension-pack'
 cask 'xquartz'
 cask 'osxfuse'  # Required by sshfs
 cask 'wkhtmltopdf'  # Used by pandoc to create files
-## Canonical
+# Canonical
 cask 'multipass'
-## Drivers
+
+# Drivers
 tap 'homebrew/cask-drivers'
 cask 'linn-konfig'  # Not a driver, here due to Cask rules: https://git.io/fjb4S
 
+
+#-------------------------------------------------------------------------------
 # Fonts
+#-------------------------------------------------------------------------------
+
 tap 'homebrew/cask-fonts'
 cask 'font-source-code-pro'
 
+
+#-------------------------------------------------------------------------------
 # Homebrew packages
+#-------------------------------------------------------------------------------
+
 brew 'ansible'
 brew 'aria2'
 brew 'curl'
@@ -58,7 +70,8 @@ brew 'tree'
 brew 'unar'
 brew 'wget'
 brew 'xz'
-## GNU utilities
+
+# GNU utilities
 brew 'coreutils'
 brew 'diffutils'
 brew 'findutils'
@@ -67,34 +80,62 @@ brew 'gnu-sed'
 brew 'gnu-tar'
 brew 'grep'
 brew 'gzip'
-## Zsh
-brew 'zsh-autosuggestions'
-brew 'zsh-completions'
-brew 'zsh-history-substring-search'
-brew 'zsh-syntax-highlighting'
-## Canonical
-brew 'lxc'
-brew 'snapcraft'
-### Juju
-brew 'juju'
-brew 'charm-tools'
-## Utilities with Cask dependencies
-brew 'sshfs'
 
-# Services
+# Window manager
 tap 'homebrew/services'  # Explicitly tap to keep during `brew bundle cleanup`
-## Window manager
 tap 'koekeishiya/formulae'
 brew 'yabai'
 brew 'skhd'
 
-# QMK build tools
-# https://docs.qmk.fm/#/getting_started_build_tools?id=macos
-brew 'avrdude'
-brew 'dfu-programmer'
+# Zsh
+brew 'zsh-autosuggestions'
+brew 'zsh-completions'
+brew 'zsh-history-substring-search'
+brew 'zsh-syntax-highlighting'
+
+# Canonical
+brew 'lxc'
+brew 'snapcraft'
+## Juju
+brew 'juju'
+brew 'charm-tools'
+
+# Utilities with Cask dependencies
+brew 'sshfs'
+
+
+#-------------------------------------------------------------------------------
+# QMK
+#-------------------------------------------------------------------------------
+
+# For each group, package dependencies are listed before the dependent package,
+# ensuring depedencies are kept during a `brew bundle cleanup`
+
+tap 'qmk/qmk'
+brew 'qmk'
+
+# Build tools
+# https://docs.qmk.fm/#/newbs_getting_started?id=set-up-your-environment
+brew 'bootloadhid', args: ['HEAD']
+brew 'clang-format'
 brew 'dfu-util'
+
+## avrdude
+brew 'libelf'
+brew 'libftdi0'
+brew 'libhid'
+brew 'avrdude'
+
+## dfu-programmer
+brew 'libusb-compat'
+brew 'dfu-programmer'
+
+tap 'osx-cross/arm'
+brew 'arm-gcc-bin@8'
+
+## avr-gcc
 tap 'osx-cross/avr'
-brew 'avr-binutils'  # Explicitly install to fix error during `brew bundle cleanup`
+brew 'avr-binutils'
+brew 'isl'
+brew 'libmpc'
 brew 'avr-gcc@8', link: true
-tap 'PX4/homebrew-px4'
-brew 'gcc-arm-none-eabi'
