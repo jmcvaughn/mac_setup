@@ -6,6 +6,7 @@ cd "$(dirname "$0")"  # Change to script's directory
 gcp -r --dereference dotfiles/. "$HOME"
 
 gmkdir "$HOME"/vagrant/ > /dev/null 2>&1
+gln -s "$HOME"/git/qmk_firmware/ "$HOME"/qmk_firmware > /dev/null 2>&1
 
 # Fetch iTerm2 Zsh shell integration script
 curl -L https://iterm2.com/shell_integration/zsh -o "$HOME"/.iterm2_shell_integration.zsh
