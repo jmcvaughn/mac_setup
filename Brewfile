@@ -131,7 +131,7 @@ brew 'libusb-compat'
 brew 'dfu-programmer'
 
 tap 'osx-cross/arm'
-brew 'arm-gcc-bin@8'
+brew 'arm-gcc-bin@8', link: true
 
 ## avr-gcc
 tap 'osx-cross/avr'
