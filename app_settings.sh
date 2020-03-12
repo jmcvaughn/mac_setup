@@ -198,6 +198,21 @@ textual() {
 	## General > Request confirmation before quitting Textual: False
 	defaults write com.codeux.apps.textual ConfirmApplicationQuit -bool false
 
+	## Highlights > Log highlights to separate window: False
+	defaults write com.codeux.apps.textual LogHighlights -bool false
+
+	## Highlights > Highlight words:
+	textual_highlight_words='sup-emea sup-help sup-new-case'
+	### Clear array
+	defaults write com.codeux.apps.textual 'Highlight List -> Primary Matches' -array
+	### Write array
+	for word in $textual_highlight_words; do
+		defaults write com.codeux.apps.textual 'Highlight List -> Primary Matches' -array-add \
+			"<dict>
+				<key>string</key><string>$word</string>
+			</dict>"
+	done
+
 	## Notifications > Alerts > Highlight (Mention) > Bounce dock icon: False
 	defaults write com.codeux.apps.textual 'NotificationType -> Highlight -> Bounce Dock Icon' -bool false
 
