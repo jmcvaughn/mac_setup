@@ -146,9 +146,6 @@ safari() {
 	defaults write com.apple.Safari NewWindowBehavior -int 1
 	defaults write com.apple.Safari NewTabBehavior -int 1
 
-	## General > Open "safe" files after downloading: False
-	defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
-
 	## General > Remove download list items: When Safari quits
 	defaults write com.apple.Safari DownloadsClearingPolicy -int 1
 
