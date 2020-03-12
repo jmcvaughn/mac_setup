@@ -17,8 +17,12 @@ yabai -m config layout bsp
 # Rule domain
 #-------------------------------------------------------------------------------
 
-yabai -m rule --add app='Firefox' title='^Opening .+' manage=off
+# Unmanaged/floating applications
 yabai -m rule --add app='^(App Store|Calculator|Finder|Installer|System Preferences|Telegram|Textual)$' manage=off
+
+# Unmanaged/floating windows
+yabai -m rule --add app='Firefox' title='^Opening .+' manage=off
+yabai -m rule --add app='VirtualBox' title='.+ - Soft Keyboard' manage=off
 
 
 #-------------------------------------------------------------------------------
