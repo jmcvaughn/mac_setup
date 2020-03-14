@@ -3,9 +3,10 @@
 login_items='LaunchBar'
 
 install_packages() {
-	# Install OpenWebStart with --no-quarantine. Note that this is technically
-	# a security issue!
-	brew cask install --no-quarantine openwebstart
+	# brew bundle doesn't support --no-quarantine. Note that this disables
+	# Gatekeeper for these Casks; automating this is technically a security
+	# issue!
+	brew cask install --no-quarantine android-platform-tools openwebstart
 
 	# Install packages
 	brew bundle --no-lock && hash -r

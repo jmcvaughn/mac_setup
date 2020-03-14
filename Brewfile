@@ -3,7 +3,7 @@
 #-------------------------------------------------------------------------------
 
 tap 'homebrew/cask'  # Explicitly tap to keep during `brew bundle cleanup`
-cask 'android-platform-tools'
+cask 'android-platform-tools'  # Installed using --no-quarantine by script
 cask 'coconutbattery'
 cask 'displaycal'
 cask 'docker'
