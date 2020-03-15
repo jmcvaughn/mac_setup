@@ -21,11 +21,12 @@ Other settings are irrelevant.
 2) Run `xcode-select --install ` to install Xcode Command Line Tools
 3) Run `packages.sh`
 4) Run `user.sh`
-5) Run `system_settings.sh` and `app_settings.sh` in any order
+5) Run `system_settings.sh`
 6) Reboot
 7) Launch applications:
+    - Bitwarden to enable its Safari extension
     - Karabiner to set up the virtual keyboard device
     - Telegram to enable its Share Menu extension
 8) Perform tasks specified in `manual_tasks.yaml`
-9) Run `app_settings.sh` again to move AdGuard's toolbar icon to the correct location in Safari
-10) Launch LaunchBar
+9) Run `app_settings.sh`
+10) Relaunch/launch applications as required that are managed by `app_settings.sh`
