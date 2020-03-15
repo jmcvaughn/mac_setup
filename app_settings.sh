@@ -138,9 +138,6 @@ preview() {
 safari() {
 	safari_plist="$HOME/Library/Containers/com.apple.Safari/Data/Library/Preferences/com.apple.Safari.plist"
 
-	# Start Safari to create fresh plist, required for toolbar configuration
-	open /Applications/Safari.app/ && sleep 5 && pkill -x Safari
-
 	# Preferences
 	## General > New windows/tabs open with: Empty Page
 	defaults write com.apple.Safari NewWindowBehavior -int 1
@@ -307,13 +304,36 @@ vagrant_manager() {
 
 
 main() {
+	calculator
+	pkill -x Calculator && open -a Calculator
+
 	finder
+	pkill -x Finder
+
 	launchbar
+	pkill -x LaunchBar && open -a LaunchBar
+
 	preview
+	pkill -x Preview && open -a Preview
+
+	# Start Safari if not running to create fresh plist; required for toolbar
+	# configuration
+	if ! pgrep -qx Safari; then
+		open -a Safari
+		sleep 5
+		pkill -x Safari
+	fi
 	safari
+	pkill -x Safari && open -a Safari
+
 	skim
+	pkill -x skim && open -a Skim
+
 	textual
+	pkill -x Textual && open -a Textual
+
 	vagrant_manager
+	pkill -x 'Vagrant Manager' && open -a 'Vagrant Manager'
 }
 
 main
