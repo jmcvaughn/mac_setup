@@ -13,6 +13,12 @@ App Store:
     Pages: https://apps.apple.com/gb/app/pages/id409201541
 
 System Preferences:
+  Internet Accounts:
+    Canonical:
+      - Mail
+      - Contacts
+      - Calendars
+
   Extensions:
     Share Menu:
       - Add to Reading List  # Always first in Safari Share Menu
