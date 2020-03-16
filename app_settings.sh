@@ -184,21 +184,17 @@ safari() {
 	defaults write com.apple.Safari ShowOverlayStatusBar -bool true
 
 	# Other
-	## Toolbar:
-	### Clear toolbar array
-	/usr/libexec/PlistBuddy -c 'Delete :"NSToolbar Configuration BrowserToolbarIdentifier-v2":"TB Item Identifiers"' "$safari_plist" > /dev/null 2>&1
-	/usr/libexec/PlistBuddy -c 'Add :"NSToolbar Configuration BrowserToolbarIdentifier-v2":"TB Item Identifiers" array' "$safari_plist"
-
-	### Add toolbar items:
-	# Back/Forward, Sidebar, Flexible Space, AdGuard for Safari, Address and Search, Bitwarden, Flexible Space, Share
-	/usr/libexec/PlistBuddy -c 'Add :"NSToolbar Configuration BrowserToolbarIdentifier-v2":"TB Item Identifiers": string BackForwardToolbarIdentifier' "$safari_plist"
-	/usr/libexec/PlistBuddy -c 'Add :"NSToolbar Configuration BrowserToolbarIdentifier-v2":"TB Item Identifiers": string SidebarToolbarIdentifier' "$safari_plist"
-	/usr/libexec/PlistBuddy -c 'Add :"NSToolbar Configuration BrowserToolbarIdentifier-v2":"TB Item Identifiers": string NSToolbarFlexibleSpaceItem' "$safari_plist"
-	/usr/libexec/PlistBuddy -c 'Add :"NSToolbar Configuration BrowserToolbarIdentifier-v2":"TB Item Identifiers": string "com.adguard.safari.AdGuard.Extension (TC3Q7MAJXF) Button"' "$safari_plist"
-	/usr/libexec/PlistBuddy -c 'Add :"NSToolbar Configuration BrowserToolbarIdentifier-v2":"TB Item Identifiers": string InputFieldsToolbarIdentifier' "$safari_plist"
-	/usr/libexec/PlistBuddy -c 'Add :"NSToolbar Configuration BrowserToolbarIdentifier-v2":"TB Item Identifiers": string "com.bitwarden.desktop.safari (LTZ2PFU5D6) Button"' "$safari_plist"
-	/usr/libexec/PlistBuddy -c 'Add :"NSToolbar Configuration BrowserToolbarIdentifier-v2":"TB Item Identifiers": string NSToolbarFlexibleSpaceItem' "$safari_plist"
-	/usr/libexec/PlistBuddy -c 'Add :"NSToolbar Configuration BrowserToolbarIdentifier-v2":"TB Item Identifiers": string ShareToolbarIdentifier' "$safari_plist"
+	## Toolbar: Back/Forward, Sidebar, Flexible Space, AdGuard for Safari, Address and Search, Bitwarden, Flexible Space, Share
+	defaults write com.apple.Safari 'NSToolbar Configuration BrowserToolbarIdentifier-v2' -dict 'TB Item Identifiers' '(
+		BackForwardToolbarIdentifier,
+		SidebarToolbarIdentifier,
+		NSToolbarFlexibleSpaceItem,
+		"com.adguard.safari.AdGuard.Extension (TC3Q7MAJXF) Button",
+		InputFieldsToolbarIdentifier,
+		"com.bitwarden.desktop.safari (LTZ2PFU5D6) Button",
+		NSToolbarFlexibleSpaceItem,
+		ShareToolbarIdentifier
+	)'
 }
 
 
@@ -224,16 +220,10 @@ textual() {
 	defaults write com.codeux.apps.textual LogHighlights -bool false
 
 	## Highlights > Highlight words:
-	textual_highlight_words='sup-emea sup-help sup-new-case'
-	### Clear array
-	defaults write com.codeux.apps.textual 'Highlight List -> Primary Matches' -array
-	### Write array
-	for word in $textual_highlight_words; do
-		defaults write com.codeux.apps.textual 'Highlight List -> Primary Matches' -array-add \
-			"<dict>
-				<key>string</key><string>$word</string>
-			</dict>"
-	done
+	defaults write com.codeux.apps.textual 'Highlight List -> Primary Matches' -array \
+		'{"string" = "sup-emea";}' \
+		'{"string" = "sup-help";}' \
+		'{"string" = "sup-new-case";}'
 
 	## Notifications > Alerts > Highlight (Mention) > Bounce dock icon: False
 	defaults write com.codeux.apps.textual 'NotificationType -> Highlight -> Bounce Dock Icon' -bool false
