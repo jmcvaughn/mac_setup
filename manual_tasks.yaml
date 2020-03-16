@@ -213,6 +213,11 @@ Applications:
     bswinnerton/launchbar-github:
       - Grant access: https://github.com/bswinnerton/launchbar-github#github-access-token
 
+  LibreOffice:
+    LibreOffice:
+      General:
+        Show \"Tip of the Day" dialogue box on start-up: False
+
   Linn Kazoo:
     App Settings:
       Network Interface: Set to system interface
