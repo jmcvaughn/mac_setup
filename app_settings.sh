@@ -10,6 +10,33 @@ calculator() {
 }
 
 
+calendar() {
+	# Preferences
+	## General > Day starts at: 09:00
+	defaults write com.apple.iCal 'first minute of work hours' -int 540
+
+	## General > Show Birthdays calendar: False
+	defaults write com.apple.iCal 'add holiday calendar' -bool false
+
+	## General > Show Holidays calendar: False
+	defaults write com.apple.iCal 'display birthdays calendar' -bool false
+
+	## Advanced: Turn on time zone support: True
+	defaults write com.apple.iCal 'TimeZone support enabled' -bool true
+
+	## Advanced > Show week numbers: True
+	defaults write com.apple.iCal 'Show Week Numbers' -bool true
+
+	# View menu options
+	## Show Calendar List: True
+	defaults write com.apple.iCal 'CalendarSidebarShown' -bool true
+
+	# Other
+	## Collapse "Other" section in calendar list
+	defaults write com.apple.iCal 'CollapsedTopLevelNodes' -dict 'MainWindow' '(Other)'
+}
+
+
 finder() {
 	# Finder Preferences
 	## General > Show these items on the desktop
@@ -306,6 +333,9 @@ vagrant_manager() {
 main() {
 	calculator
 	pkill -x Calculator && open -a Calculator
+
+	calendar
+	pkill -x Calendar && open -a Calculator
 
 	finder
 	pkill -x Finder
