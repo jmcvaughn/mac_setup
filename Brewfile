@@ -13,6 +13,8 @@ cask 'firefox'
 cask 'iterm2'
 cask 'karabiner-elements'
 cask 'launchbar'
+cask 'libreoffice'
+cask 'libreoffice-language-pack'
 cask 'openwebstart'  # Installed using --no-quarantine by script
 cask 'skim'
 cask 'telegram'

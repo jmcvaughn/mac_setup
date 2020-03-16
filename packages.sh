@@ -8,8 +8,25 @@ install_packages() {
 	# issue!
 	brew cask install --no-quarantine android-platform-tools openwebstart
 
+	# Check LibreOffice Language Pack installed before brew bundle
+	brew cask list libreoffice-language-pack &> /dev/null
+	lolang_instbefore=$?
+
 	# Install packages
 	brew bundle --no-lock && hash -r
+
+	# Get LibreOffice Language Pack version and check if installed after
+	# brew bundle
+	lolang_vers="$(brew cask list --versions libreoffice-language-pack 2> /dev/null | gawk 'BEGIN {rc=1} {rc=0; print $2} END {exit rc}')"
+	lolang_instafter=$?
+
+	# If the Cask has just been installed, run LibreOffice Language Pack
+	# installer. Also skips if package not in Brewfile. Launching LibreOffice
+	# also generates file associations.
+	if [ "$lolang_instbefore" -ne 0 ] && [ "$lolang_instafter" -eq 0 ]; then
+		open -ja LibreOffice && sleep 10 && pkill -x soffice
+		open /usr/local/Caskroom/libreoffice-language-pack/"$lolang_vers"/'LibreOffice Language Pack.app'/
+	fi
 
 	# Install Python 3 packages
 	/usr/local/bin/python3 -m pip install -r requirements.txt
