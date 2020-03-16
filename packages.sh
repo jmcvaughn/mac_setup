@@ -8,24 +8,37 @@ install_packages() {
 	# issue!
 	brew cask install --no-quarantine android-platform-tools openwebstart
 
-	# Check LibreOffice Language Pack installed before brew bundle
+	# Check if these applications are already installed. They need to run in
+	# order to complete installation; they will only be launched if newly
+	# installed.
+	cask_before=$(brew cask list bitwarden telegram 2> /dev/null)
+	## LibreOffice Language Pack doesn't install to /Applications/ so this
+	## returns nothing to stdout; exit code is sufficient
 	brew cask list libreoffice-language-pack &> /dev/null
 	lolang_instbefore=$?
 
 	# Install packages
 	brew bundle --no-lock && hash -r
 
-	# Get LibreOffice Language Pack version and check if installed after
-	# brew bundle
-	lolang_vers="$(brew cask list --versions libreoffice-language-pack 2> /dev/null | gawk 'BEGIN {rc=1} {rc=0; print $2} END {exit rc}')"
-	lolang_instafter=$?
+	# Run Bitwarden if newly installed, for Safari extension
+	if ! echo "$cask_before" | ggrep -q Bitwarden && brew cask list bitwarden > /dev/null 2>&1; then
+		open -a Bitwarden && sleep 3 && pkill -x Bitwarden
+	fi
 
-	# If the Cask has just been installed, run LibreOffice Language Pack
-	# installer. Also skips if package not in Brewfile. Launching LibreOffice
-	# also generates file associations.
-	if [ "$lolang_instbefore" -ne 0 ] && [ "$lolang_instafter" -eq 0 ]; then
-		open -ja LibreOffice && sleep 10 && pkill -x soffice
+	# Get LibreOffice Language Pack version and check if newly installed
+	lolang_vers="$(brew cask list --versions libreoffice-language-pack 2> /dev/null | gawk 'BEGIN {rc=1} {rc=0; print $2} END {exit rc}')"
+
+	# Run LibreOffice Language Pack installer if newly installed. Also skips if
+	# package not in Brewfile.
+	if [ "$lolang_instbefore" -ne 0 ] && [ -n "$lolang_vers" ]; then
+		# Launching LibreOffice also generates file associations
+		open -ja LibreOffice && sleep 5 && pkill -x soffice
 		open /usr/local/Caskroom/libreoffice-language-pack/"$lolang_vers"/'LibreOffice Language Pack.app'/
+	fi
+
+	# Run Telegram if newly installed, for Share menu extension
+	if ! echo "$cask_before" | ggrep -q Telegram && brew cask list telegram > /dev/null 2>&1; then
+		open -a Telegram && sleep 3 && pkill -x Telegram
 	fi
 
 	# Install Python 3 packages

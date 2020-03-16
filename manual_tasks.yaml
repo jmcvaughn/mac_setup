@@ -161,6 +161,8 @@ Applications:
         NoCoin Filter List: True
       Language-specific: False
 
+  Bitwarden: Sign in to both application and Safari extension
+
   Calendar:
     Calendars:
       - Delete all local calendars (On My Mac)
@@ -271,6 +273,16 @@ Applications:
     Appearance:
       Color Theme: System
       Bubble Mode: True
+
+  Textual:
+    Servers:
+      # https://help.codeux.com/textual/Connecting-to-ZNC-Bouncer.kb
+      Canonical:
+        General:
+          Connect when Textual opens: True
+          Perform reconnect on disconnect: True
+
+  Tunnelblick: Add Canonical VPN configuration
 
 File associations:
   OpenWebStart javaws.app:

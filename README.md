@@ -23,10 +23,7 @@ Other settings are irrelevant.
 4) Run `user.sh`
 5) Run `system_settings.sh`
 6) Reboot
-7) Launch applications:
-    - Bitwarden to enable its Safari extension
-    - Karabiner to set up the virtual keyboard device
-    - Telegram to enable its Share Menu extension
+7) Launch Karabiner to set up the virtual keyboard device
 8) Perform tasks specified in `manual_tasks.yaml`
 9) Run `app_settings.sh`
 10) Relaunch/launch applications as required that are managed by `app_settings.sh`
