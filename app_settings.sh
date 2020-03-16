@@ -149,6 +149,20 @@ launchbar() {
 }
 
 
+mail() {
+	# Preferences
+	## Fonts & Colours > Fixed-width font: Source Code Pro 11
+	defaults write com.apple.mail NSFixedPitchFont -string 'SourceCodePro-Regular'
+	defaults write com.apple.mail NSFixedPitchFontSize -string '11'  # Type IS string
+
+	## Fonts & Colours > Use fixed-width font for plain text messages: True
+	defaults write com.apple.mail AutoSelectFont -bool true
+
+	## Composing > Use the same message format as the original message: True
+	defaults write com.apple.mail AutoReplyFormat -bool true
+}
+
+
 preview() {
 	# Menu options
 	## View > Show Tab Bar: True
@@ -329,6 +343,9 @@ main() {
 
 	launchbar
 	pkill -x LaunchBar && open -a LaunchBar
+
+	mail
+	pkill -x Mail && open -a Mail
 
 	preview
 	pkill -x Preview && open -a Preview
