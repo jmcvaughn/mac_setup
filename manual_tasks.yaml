@@ -156,9 +156,6 @@ Applications:
       Language-specific: False
 
   Calendar:
-    Alerts:
-      Canonical:
-        Events: 15 minutes before
     Calendars:
       - Delete all local calendars (On My Mac)
 
