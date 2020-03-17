@@ -167,6 +167,14 @@ Applications:
     Calendars:
       - Delete all local calendars (On My Mac)
 
+  Contacts:
+    Preferences:
+      General:
+        Default Account: Canonical
+    Contacts:
+      - Delete 'Apple Inc.' contact
+      - Select Canonical Directory as default
+
   Docker:
     General:
       Start Docker Desktop when you log in: False

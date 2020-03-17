@@ -37,6 +37,13 @@ calendar() {
 }
 
 
+contacts() {
+	# Preferences
+	## General > Sort By: First Name
+	defaults write com.apple.AddressBook ABNameSortingFormat -string 'sortingFirstName sortingLastName'
+}
+
+
 finder() {
 	# Finder Preferences
 	## General > Show these items on the desktop
@@ -337,6 +344,9 @@ main() {
 
 	calendar
 	pkill -x Calendar && open -a Calculator
+
+	contacts
+	pkill -x Contacts && open -a Contacts
 
 	finder
 	pkill -x Finder
