@@ -72,6 +72,17 @@ clone_git_repos() {
 }
 
 
+install_vagrant_plugins() {
+	installed_vagrant_plugins=$(vagrant plugin list)
+
+	for plugin in vagrant-scp vagrant-vbguest; do
+		if ! echo  "$installed_vagrant_plugins" | ggrep -q "$plugin"; then
+			vagrant plugin install "$plugin"
+		fi
+	done
+}
+
+
 set_login_items() {
 	# Note: AppleScript only uses double quotes
 
@@ -109,7 +120,7 @@ main() {
 	install_packages
 	install_launchbar_actions
 	clone_git_repos
-	vagrant plugin install vagrant-scp  # Install Vagrant plugins
+	install_vagrant_plugins
 	set_login_items
 }
 
