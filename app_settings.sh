@@ -169,6 +169,9 @@ mail() {
 	defaults write com.apple.mail AutoReplyFormat -bool true
 
 	# Other
+	## Expand "Mailboxes" and "Smart Mailboxes" in mailbox list
+	defaults write com.apple.mail 'NSOutlineView Items Main Window Mailbox List-V2' -array 'MailboxesSection' 'SmartMailboxesSection'
+
 	## Single Message Viewer toolbar (same as main window middle section):
 	## Archive, Delete/Junk, Reply/Reply All/Forward, Flag, Move
 	defaults write com.apple.mail 'NSToolbar Configuration SingleMessageViewer' -dict 'TB Item Identifiers' '(
