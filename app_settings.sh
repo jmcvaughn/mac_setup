@@ -160,13 +160,24 @@ mail() {
 	# Preferences
 	## Fonts & Colours > Fixed-width font: Source Code Pro 11
 	defaults write com.apple.mail NSFixedPitchFont -string 'SourceCodePro-Regular'
-	defaults write com.apple.mail NSFixedPitchFontSize -string '11'  # Type IS string
+	defaults write com.apple.mail NSFixedPitchFontSize -string '11'
 
 	## Fonts & Colours > Use fixed-width font for plain text messages: True
 	defaults write com.apple.mail AutoSelectFont -bool true
 
 	## Composing > Use the same message format as the original message: True
 	defaults write com.apple.mail AutoReplyFormat -bool true
+
+	# Other
+	## Single Message Viewer toolbar (same as main window middle section):
+	## Archive, Delete/Junk, Reply/Reply All/Forward, Flag, Move
+	defaults write com.apple.mail 'NSToolbar Configuration SingleMessageViewer' -dict 'TB Item Identifiers' '(
+		archiveMessages:,
+		delete_junk,
+		reply_replyAll_forward,
+		FlaggedStatus,
+		moveMessagesFromToolbar:
+	)'
 }
 
 
