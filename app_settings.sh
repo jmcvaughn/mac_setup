@@ -165,6 +165,9 @@ mail() {
 	## Fonts & Colours > Use fixed-width font for plain text messages: True
 	defaults write com.apple.mail AutoSelectFont -bool true
 
+	## Fonts & Colours > Colour quoted text: False
+	defaults write com.apple.mail ColorQuoterColorIncoming -bool false
+
 	## Composing > Use the same message format as the original message: True
 	defaults write com.apple.mail AutoReplyFormat -bool true
 
