@@ -198,8 +198,6 @@ preview() {
 
 
 safari() {
-	safari_plist="$HOME/Library/Containers/com.apple.Safari/Data/Library/Preferences/com.apple.Safari.plist"
-
 	# Preferences
 	## General > New windows/tabs open with: Empty Page
 	defaults write com.apple.Safari NewWindowBehavior -int 1
