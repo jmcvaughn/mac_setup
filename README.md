@@ -17,7 +17,9 @@ It is presumed during the setup process the following was performed:
 Other settings are irrelevant.
 
 ## Usage
-1) Go to System Preferences > Security & Privacy > Privacy > Full Disk Access, add and enable Terminal
+1) Go to System Preferences > Security & Privacy > Privacy and give Terminal the following access:
+    - Contacts
+    - Full Disk Access
 2) Run `xcode-select --install ` to install Xcode Command Line Tools
 3) Run `packages.sh`
 4) Run `user.sh`

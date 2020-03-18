@@ -45,6 +45,8 @@ System Preferences:
               - Significant Locations  # default
               - Find My Mac  # default
               - HomeKit  # default
+      Contacts:
+        - iTerm.app  # For app_settings.sh to configure Contacts.app
       Accessibility:
         - LaunchBar.app  # Required for certain features: https://www.obdev.at/products/launchbar/releasenotes.html
         - skhd
