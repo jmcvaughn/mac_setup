@@ -259,8 +259,8 @@ Applications:
     Smart Mailboxes:
       Salesforce:
         Contains messages that match all of the following conditions:
-          - [ From, is equal to, noreply@canonical.com ]
           - [ Subject, begins with, '[SFDC]' ]
+        Include messages from Sent: True
     View Menu:
       Show Favourites Bar: False
 
