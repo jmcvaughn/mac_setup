@@ -114,6 +114,9 @@ Dock:
   Textual:
     Options:
       Assign To: All Desktops
+  WhatsApp:
+    Options:
+      Assign To: All Desktops
 
 Applications:
   Safari:
