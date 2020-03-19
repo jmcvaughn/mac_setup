@@ -141,6 +141,9 @@ launchbar() {
 	## Shortcuts > Browsing > Instant Info Browsing: True
 	defaults write at.obdev.LaunchBar InstantInfoBrowsing -bool true
 
+	## Actions > Options > Open URLs in current Safari window or tab: True
+	defaults write at.obdev.LaunchBar UseCurrentWebBrowserDocument -bool true
+
 	## Actions > Options > Preferred Terminal application: iTerm
 	defaults write at.obdev.LaunchBar PreferredTerminal -int 1
 
