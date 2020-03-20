@@ -30,7 +30,7 @@ system_preferences() {  # {{{
 	defaults write -g AppleShowScrollBars -string 'Always'
 
 	## Click in the scroll bar to: Jump to the spot that's clicked
-	defaults write -g AppleScrollerPagingBehaviour -bool true
+	defaults write -g AppleScrollerPagingBehavior -bool true
 	# }}}
 
 
@@ -103,9 +103,6 @@ system_preferences() {  # {{{
 	#-----------------------------------------------------------------------------
 
 	# System Preferences
-	## Display > Reduce Transparency
-	defaults write com.apple.universalaccess reduceTransparency -bool true
-
 	## Mouse & Trackpad > Trackpad Options > Enable dragging: three finger drag
 	defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
 	defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
