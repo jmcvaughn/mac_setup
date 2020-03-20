@@ -224,6 +224,18 @@ safari() {
 	## General > Remove download list items: When Safari quits
 	defaults write com.apple.Safari DownloadsClearingPolicy -int 1
 
+	## AutoFill > Using information from my contacts: False
+	defaults write com.apple.Safari AutoFillFromAddressBook -bool false
+
+	## AutoFill > Usernames and passwords: False
+	defaults write com.apple.Safari AutoFillPasswords -bool false
+
+	## AutoFill > Credit cards: False
+	defaults write com.apple.Safari AutoFillCreditCardData -bool false
+
+	## AutoFill > Other forms: False
+	defaults write com.apple.Safari AutoFillMiscellaneousForms -bool false
+
 	## Search > Enable Quick Website search
 	defaults write com.apple.Safari WebsiteSpecificSearchEnabled -bool false
 
