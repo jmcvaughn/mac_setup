@@ -271,6 +271,10 @@ Applications:
     About:
       Autostart on login: False
 
+  NetNewsWire:
+    General:
+      Default RSS reader: NetNewsWire (this app)
+
   Telegram:
     # First sign-in doesn't work with proxy
     General:
