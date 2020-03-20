@@ -7,9 +7,7 @@
 	path = nvim
 	prompt = false
 [alias]
-	df = diff
-	dt = difftool
+	egrep = grep -E
 	igrep = grep -i
-	stat = status
 [core]
 	excludesFile = ~/.gitignore
