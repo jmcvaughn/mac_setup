@@ -254,7 +254,6 @@ Applications:
       Rules:
         Salesforce Notifications:
           If all of the following conditions are met:
-            - [ From, is equal to, noreply@canonical.com ]
             - [ Subject, begins with, '[SFDC]' ]
           Perform the following actions:
             - [ Play sound, New Messages Sound ]
