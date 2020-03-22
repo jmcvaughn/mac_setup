@@ -51,6 +51,7 @@ System Preferences:
       Accessibility:
         - LaunchBar.app  # Required for certain features: https://www.obdev.at/products/launchbar/releasenotes.html
         - skhd
+        - SoundSource.app
         - yabai
       Input Monitoring:
         - karabiner_grabber
@@ -292,6 +293,9 @@ Applications:
   NetNewsWire:
     General:
       Default RSS reader: NetNewsWire (this app)
+
+  SoundSource:
+    License: (Add license)
 
   Telegram:
     # First sign-in doesn't work with proxy

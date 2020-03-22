@@ -1,7 +1,5 @@
 #!/bin/sh
 
-login_items='LaunchBar'
-
 install_packages() {
 	# brew bundle doesn't support --no-quarantine. Note that this disables
 	# Gatekeeper for these Casks; automating this is technically a security
@@ -11,7 +9,7 @@ install_packages() {
 	# Check if these applications are already installed. They need to run in
 	# order to complete installation; they will only be launched if newly
 	# installed.
-	cask_before=$(brew cask list bitwarden telegram 2> /dev/null)
+	cask_before=$(brew cask list bitwarden soundsource telegram 2> /dev/null)
 	## LibreOffice Language Pack doesn't install to /Applications/ so this
 	## returns nothing to stdout; exit code is sufficient
 	brew cask list libreoffice-language-pack &> /dev/null
@@ -34,6 +32,11 @@ install_packages() {
 		# Launching LibreOffice also generates file associations
 		open -ja LibreOffice && sleep 5 && pkill -x soffice
 		open /usr/local/Caskroom/libreoffice-language-pack/"$lolang_vers"/'LibreOffice Language Pack.app'/
+	fi
+
+	# If SoundSource newly installed, run Audio Capture Engine installer
+	if ! echo "$cask_before" | ggrep -q SoundSource && brew cask list soundsource > /dev/null 2>&1; then
+		sudo /Applications/SoundSource.app/Contents/Resources/aceinstaller install -s
 	fi
 
 	# Run Telegram if newly installed, for Share menu extension
@@ -95,11 +98,10 @@ set_login_items() {
 	unset IFS
 
 	# Add login items
-	## Separate osascript calls, otherwise you only get output from the last to
-	## run and order seems to change
-	for app in $login_items; do
-		osascript -e "tell application \"System Events\" to make login item at end with properties {name: \"$app\", path: \"/Applications/$app.app\", hidden: false}" > /dev/null
-	done
+	## Use separate osascript calls, otherwise you only get output from the last
+	## to run and order seems to change
+	osascript -e 'tell application "System Events" to make login item at end with properties {name: "LaunchBar", path: "/Applications/LaunchBar.app", hidden: false}' > /dev/null
+	osascript -e 'tell application "System Events" to make login item at end with properties {name: "SoundSource", path: "/Applications/SoundSource.app", hidden: true}' > /dev/null
 
 	# Enable skhd and yabai at login
 	brew services start skhd

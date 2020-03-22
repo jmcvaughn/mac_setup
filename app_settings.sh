@@ -277,6 +277,20 @@ skim() {
 }
 
 
+soundsource() {
+	# Preferences
+	## General > Super Volume Keys: True
+	defaults write com.rogueamoeba.soundsource keyboardVolume -bool true
+
+	## Appearance > Show output volume in menu bar: True
+	defaults write com.rogueamoeba.soundsource menuAdditions -array 'speaker'
+
+	# Other
+	## Skip tour on first launch
+	defaults write com.rogueamoeba.soundsource launchCount -int 1
+}
+
+
 textual() {
 	# Preferences
 	## General > Request confirmation before quitting Textual: False
@@ -421,6 +435,9 @@ main() {
 
 	skim
 	pkill -x skim && open -a Skim
+
+	soundsource
+	pkill -x soundsource && open -a SoundSource
 
 	textual
 	pkill -x Textual && open -a Textual

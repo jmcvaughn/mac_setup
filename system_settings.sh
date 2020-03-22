@@ -146,12 +146,10 @@ system_preferences() {  # {{{
 	## Sound Effects > Play user interface sound effects: False
 	defaults write -g com.apple.sound.uiaudio.enabled -int 0
 
-	## Show volume in menu bar: True
-	defaults write com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.volume' -bool true
-	/usr/libexec/PlistBuddy -c 'Add :menuExtras: string /System/Library/CoreServices/Menu\ Extras/Volume.menu' "$systemuiserver_plist"
-
-	# Volume menu position
-	defaults write com.apple.systemuiserver "NSStatusItem Preferred Position com.apple.menuextra.volume" -float 352
+	## Show volume in menu bar: False
+	### Set as False on fresh installs but if deleted, will come back and default
+	### to True
+	#defaults write com.apple.systemuiserver 'NSStatusItem Visible com.apple.menuextra.volume' -bool false
 	# }}}
 
 
@@ -317,6 +315,9 @@ other_preferences(){  # {{{
 
 	# Make Cocoa application resize time virtually instantaneous
 	defaults write -g NSWindowResizeTime -float 0.001
+
+	# Enable AptX
+	sudo defaults write bluetoothaudiod 'Enable AptX codec' -bool true
 
 	# Unhide /Volumes/
 	sudo chflags nohidden /Volumes/
