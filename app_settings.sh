@@ -175,7 +175,9 @@ mail() {
 	## Expand "Mailboxes" and "Smart Mailboxes" in mailbox list
 	defaults write com.apple.mail 'NSOutlineView Items Main Window Mailbox List-V2' -array 'MailboxesSection' 'SmartMailboxesSection'
 
-	## Main Window toolbar: New Message, Flexible Space, Archive, Unread/Read, Delete/Junk, Reply/Reply All/Forward, Flag, Mute, Move, Flexible Space, Search
+	## Main Window toolbar:
+	### Items: New Message, Flexible Space, Archive, Unread/Read, Delete/Junk, Reply/Reply All/Forward, Flag, Mute, Move, Flexible Space, Search
+	### Display Mode: Icon Only (should be default, but instead defaults to Icon and Text)
 	defaults write com.apple.mail 'NSToolbar Configuration MainWindow' -dict 'TB Item Identifiers' '(
 		showComposeWindow:,
 		NSToolbarFlexibleSpaceItem,
@@ -188,7 +190,7 @@ mail() {
 		moveMessagesFromToolbar:,
 		NSToolbarFlexibleSpaceItem,
 		Search
-	)'
+	)' 'TB Display Mode' 2
 
 	## Single Message Viewer toolbar: Archive, Unread/Read, Delete/Junk, Reply/Reply All/Forward, Flag, Move
 	defaults write com.apple.mail 'NSToolbar Configuration SingleMessageViewer' -dict 'TB Item Identifiers' '(
