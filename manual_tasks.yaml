@@ -11,6 +11,7 @@ App Store:
     Linn Kazoo: https://apps.apple.com/gb/app/linn-kazoo/id848937349
     Numbers: https://apps.apple.com/gb/app/numbers/id409203825
     Pages: https://apps.apple.com/gb/app/pages/id409201541
+    Tampermonkey: https://apps.apple.com/gb/app/tampermonkey/id1482490089
 
 System Preferences:
   Internet Accounts:
@@ -133,6 +134,7 @@ Applications:
         - AdGuard Social
         - Bitwarden
         - Keys Extension
+        - Tampermonkey
 
   AdGuard for Safari:
     General:
