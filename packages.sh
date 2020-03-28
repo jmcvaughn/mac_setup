@@ -6,7 +6,7 @@ install_packages() {
 	# brew bundle doesn't support --no-quarantine. Note that this disables
 	# Gatekeeper for these Casks; automating this is technically a security
 	# issue!
-	brew cask install --no-quarantine android-platform-tools openwebstart
+	brew cask install --no-quarantine android-platform-tools
 
 	# Check if these applications are already installed. They need to run in
 	# order to complete installation; they will only be launched if newly

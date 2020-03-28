@@ -303,8 +303,6 @@ Applications:
   Tunnelblick: Add Canonical VPN configuration
 
 File associations:
-  OpenWebStart javaws.app:
-    - .jnlp
   termedit.app:
     - .cfg
     - .csv
