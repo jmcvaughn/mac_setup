@@ -417,7 +417,9 @@ historyup-vicmd() {
 }
 zle -N historyup-vicmd
 bindkey -M main '^[[A' historyup-vicmd  # Up
+bindkey -M main '^[OA' historyup-vicmd  # Up (Set)
 bindkey -M vicmd '^[[A' historyup-vicmd  # Up
+bindkey -M vicmd '^[OA' historyup-vicmd  # Up (Set)
 bindkey -M vicmd 'k' historyup-vicmd
 
 historydown-vicmd() {
@@ -426,7 +428,9 @@ historydown-vicmd() {
 }
 zle -N historydown-vicmd
 bindkey -M main '^[[B' historydown-vicmd  # Down
+bindkey -M main '^[OB' historydown-vicmd  # Down (Set)
 bindkey -M vicmd '^[[B' historydown-vicmd  # Down
+bindkey -M vicmd '^[OB' historydown-vicmd  # Down (Set)
 bindkey -M vicmd 'j' historydown-vicmd
 
 expandorcomplete-vicmd() {
