@@ -284,6 +284,7 @@ textual() {
 
 	## Highlights > Highlight words:
 	defaults write com.codeux.apps.textual 'Highlight List -> Primary Matches' -array \
+		'{"string" = "sla-action-required";}' \
 		'{"string" = "sup-emea";}' \
 		'{"string" = "sup-help";}' \
 		'{"string" = "sup-new-case";}'
