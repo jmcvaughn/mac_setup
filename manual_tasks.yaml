@@ -109,6 +109,9 @@ System Preferences:
 # Using 'All Desktops' instead of yabai rules means no SIP changes needed
 # Using PlistBuddy/defaults to set com.apple.spaces[app-bindings] doesn't work
 Dock:
+  Calendar:
+    Options:
+      Assign To: All Desktops
   Telegram:
     Options:
       Assign To: All Desktops
