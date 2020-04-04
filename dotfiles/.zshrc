@@ -272,6 +272,7 @@ tm() {
 # Miscellaneous
 alias aria2c='aria2c --seed-time=0'
 alias ddi='sudo dd bs=16K conv=fsync status=progress'
+alias ju='juju'
 alias va='vagrant'
 alias virsh='virsh -c qemu:///system'
 for tool in virt-clone virt-convert virt-install virt-xml; do
