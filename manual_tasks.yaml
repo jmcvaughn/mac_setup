@@ -141,6 +141,8 @@ Applications:
         - Bitwarden
         - Keys Extension
         - Tampermonkey
+      Advanced:
+        Show Develop menu in menu bar: True
 
   AdGuard for Safari:
     General:
