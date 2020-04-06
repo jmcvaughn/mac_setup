@@ -18,7 +18,7 @@ yabai -m config layout bsp
 #-------------------------------------------------------------------------------
 
 # Unmanaged/floating applications
-yabai -m rule --add app='^(App Store|Bitwarden|Calculator|Calendar|Finder|Installer|System Preferences|Telegram|Textual|WhatsApp)$' manage=off
+yabai -m rule --add app='^(App Store|Archive Utility|Bitwarden|Calculator|Calendar|Finder|Installer|System Preferences|Telegram|Textual|WhatsApp)$' manage=off
 
 # Unmanaged/floating windows
 yabai -m rule --add app='Firefox' title='^Opening .+' manage=off
