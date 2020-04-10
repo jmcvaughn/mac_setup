@@ -76,7 +76,7 @@ set termguicolors  " Enable true-colour support
 "-----------------------------------------------------------------------------
 
 " Insert mode
-"" Mac-style Option-Backspace to delete word
+"" Meta-Backspace to delete word (Emacs)
 imap <M-BS> <C-w>
 
 " Visual mode
