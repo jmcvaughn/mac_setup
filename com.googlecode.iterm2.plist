@@ -531,11 +531,13 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>0 0 1024 1257 0 0 2048 1257 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1720 0 1719 1417 0 0 3440 1417 </string>
+	<string>1024 0 1019 1257 0 0 2048 1257 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 9 1717 1408 0 0 3440 1417 </string>
+	<string>0 11 1019 618 0 0 2048 1257 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>2293 11 1145 698 0 0 3440 1417 </string>
+	<string>1024 0 1019 1257 0 0 2048 1257 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>0 11 1018 618 0 0 2048 1257 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1918,7 +1920,7 @@
 			<key>Normal Font</key>
 			<string>SourceCodePro-Regular 12</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<integer>2</integer>
 			<key>Right Option Key Sends</key>
@@ -1999,17 +2001,24 @@
 	<true/>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
-	<key>NoSyncFrame_SharedPreferences</key>
+	<key>NoSyncFrame_SessionsPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {3440, 1440}}</string>
 		<key>topLeft</key>
-		<string>{1904, 1037}</string>
+		<string>{269, 595}</string>
+	</dict>
+	<key>NoSyncFrame_SharedPreferences</key>
+	<dict>
+		<key>screenFrame</key>
+		<string>{{0, 0}, {2048, 1280}}</string>
+		<key>topLeft</key>
+		<string>{7, 1060}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>DBA3EA5D-0A2B-4F34-AD92-3A09D03D3436</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>18</integer>
+	<integer>50</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>605384434.71288598</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2872,7 +2881,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-03-18T12:38:26Z</date>
+	<date>2020-04-10T13:44:12Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShortLivedSessionDuration</key>
