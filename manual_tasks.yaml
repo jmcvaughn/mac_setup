@@ -148,6 +148,7 @@ Applications:
     General:
       Notify about extension updates: False
       Show AdGuard for Safari in the menu bar: False
+      Launch AdGuard for Safari at Login: True
       Enable hardware acceleration: False
     Filters:
       Ad Blocking:
