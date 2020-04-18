@@ -531,11 +531,11 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>0 0 1024 1257 0 0 2048 1257 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1024 0 1019 1257 0 0 2048 1257 </string>
+	<string>0 0 2048 1257 0 0 2048 1257 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 11 1019 618 0 0 2048 1257 </string>
+	<string>0 0 2048 1257 0 0 2048 1257 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>1024 0 1019 1257 0 0 2048 1257 </string>
+	<string>0 11 1019 618 0 0 2048 1257 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>0 11 1018 618 0 0 2048 1257 </string>
 	<key>New Bookmarks</key>
@@ -543,6 +543,8 @@
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
+			<key>Allow Title Setting</key>
+			<false/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -1245,6 +1247,8 @@
 			<array/>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
+			<key>Title Components</key>
+			<integer>258</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
@@ -1576,7 +1580,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>No</string>
+			<string>Recycle</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -2013,12 +2017,12 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {2048, 1280}}</string>
 		<key>topLeft</key>
-		<string>{7, 1060}</string>
+		<string>{1057, 1194}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>DBA3EA5D-0A2B-4F34-AD92-3A09D03D3436</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>50</integer>
+	<integer>56</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>605384434.71288598</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2881,7 +2885,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-04-10T13:44:12Z</date>
+	<date>2020-04-18T15:38:23Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShortLivedSessionDuration</key>

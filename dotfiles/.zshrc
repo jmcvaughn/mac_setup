@@ -122,13 +122,7 @@ zstyle ':vcs_info:*' unstagedstr '%F{red}●%f'  # dot: Unicode U+25CF
 
 # Run before displaying prompt
 precmd() {
-	print -nP '\033]2;%n@%m:%3~\007'  # Window title
 	vcs_info  # Version control system prompt
-}
-
-# Run before running command
-preexec() {
-	print -nP '\033]2;$1 (%n@%m:%3~)\007'  # Window title
 }
 # }}}
 

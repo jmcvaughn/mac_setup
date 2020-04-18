@@ -29,8 +29,10 @@ Appearance:
   Dimming:
     Dim inactive split panes: False
 
+# Changing window title preferences in tmux profile doesn't seem to have an
+# effect
 Profiles:
-  Default:
+  All:
     General:
       Working Directory: Reuse previous session's directory
     Colors:
@@ -51,10 +53,10 @@ Profiles:
       Prompt before closing: If there are jobs besides  # Use default list
     Keys:
       Left Option Key: Esc+
-  tmux:
-    Keys:
-      Left Option Key: Esc+
-
+  Default:
+    General:
+      Title: Job — Host
+      Applications in terminal may change the title: False
 Keys:
   Ctrl + Shift + Tab: Cycle Tabs Forward
   Ctrl + Tab: Cycle Tabs Backward
