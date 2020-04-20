@@ -129,6 +129,11 @@ Applications:
   Safari:
     Favourites: Delete defaults
     Preferences:
+      Websites:
+        Camera:
+          meet.google.com: Allow
+        Microphone:
+          meet.google.com: Allow
       Extensions:
         - AdGuard Advanced Blocking
         - AdGuard Custom
