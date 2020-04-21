@@ -322,6 +322,7 @@ File associations:
     - .csv
     - .ini
     - .md
+    - .out
     - .txt
     - .xml
     - .yaml/.yml  # macOS is smart enough to know these are the same
