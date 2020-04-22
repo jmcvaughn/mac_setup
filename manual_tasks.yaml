@@ -115,6 +115,9 @@ Dock:
   Calendar:
     Options:
       Assign To: All Desktops
+  Podcasts:
+    Options:
+      Assign To: All Desktops
   Telegram:
     Options:
       Assign To: All Desktops
