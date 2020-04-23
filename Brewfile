@@ -50,6 +50,7 @@ cask 'font-source-code-pro'
 
 brew 'ansible'
 brew 'aria2'
+brew 'bitwarden-cli'
 brew 'curl'
 brew 'git'
 brew 'gnupg'
