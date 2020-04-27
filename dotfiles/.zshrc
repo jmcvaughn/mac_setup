@@ -54,7 +54,7 @@ elif [[ $uname == 'Linux' ]]; then
 	PATH="$PATH:/snap/bin"  # Canonical snaps
 fi
 export PATH="$HOME/bin:$PATH"
-export CDPATH="$HOME:$HOME/git:$HOME/cases"
+export CDPATH="$HOME:$HOME/cases"
 # }}}
 
 
