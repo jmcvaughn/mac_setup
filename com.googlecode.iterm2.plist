@@ -375,14 +375,14 @@
 		<key>0x19-0x60000</key>
 		<dict>
 			<key>Action</key>
-			<integer>32</integer>
+			<integer>2</integer>
 			<key>Text</key>
 			<string></string>
 		</dict>
 		<key>0x9-0x40000</key>
 		<dict>
 			<key>Action</key>
-			<integer>39</integer>
+			<integer>0</integer>
 			<key>Text</key>
 			<string></string>
 		</dict>
@@ -533,11 +533,13 @@
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 2048 1257 0 0 2048 1257 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 0 2048 1257 0 0 2048 1257 </string>
+	<string>1024 0 1019 1257 0 0 2048 1257 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 11 1019 618 0 0 2048 1257 </string>
+	<string>1024 0 1019 1257 0 0 2048 1257 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>0 11 1018 618 0 0 2048 1257 </string>
+	<string>1024 11 1019 618 0 0 2048 1257 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>1365 639 683 618 0 0 2048 1257 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2008,7 +2010,7 @@
 	<key>NoSyncFrame_SessionsPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {3440, 1440}}</string>
+		<string>{{0, 0}, {2048, 1280}}</string>
 		<key>topLeft</key>
 		<string>{269, 595}</string>
 	</dict>
@@ -2017,12 +2019,12 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {2048, 1280}}</string>
 		<key>topLeft</key>
-		<string>{1057, 1194}</string>
+		<string>{1018, 1117}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>DBA3EA5D-0A2B-4F34-AD92-3A09D03D3436</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>56</integer>
+	<integer>66</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>605384434.71288598</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2885,7 +2887,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-04-18T15:38:23Z</date>
+	<date>2020-04-29T15:50:59Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShortLivedSessionDuration</key>
