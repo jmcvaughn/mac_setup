@@ -70,6 +70,7 @@ brew 'source-highlight'
 brew 'speedtest-cli'
 brew 'sshuttle'
 brew 'tree'
+brew 'watch'
 brew 'wget'
 brew 'xz'
 
