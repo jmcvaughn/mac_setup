@@ -14,6 +14,10 @@ App Store:
     Tampermonkey: https://apps.apple.com/gb/app/tampermonkey/id1482490089
 
 System Preferences:
+  Spotlight:
+    Privacy:
+      - ~/cases/
+
   Internet Accounts:
     Canonical:
       - Mail
@@ -214,6 +218,7 @@ Applications:
         Show Library Folder: True
     Sidebar:
       - Add Home folder above default user folders
+      - Add cases folder after Home folder
 
   Firefox:
     All profiles:
