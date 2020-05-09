@@ -34,22 +34,24 @@ user_pref("browser.startup.homepage", "about:blank");
 // Home > New tabs: Blank Page
 user_pref("browser.newtabpage.enabled", false);
 
-// Privacy > Enhanced Tracking Protection: Strict
+// Privacy & Security > Enhanced Tracking Protection: Strict
 user_pref("privacy.trackingprotection.enabled", true);
 user_pref("privacy.trackingprotection.fingerprinting.enabled", true);
 user_pref("privacy.trackingprotection.socialtracking.enabled", true);
 
-// Privacy > Clear History > Time range to clear: Everything
+// Privacy & Security > Ask to save logins and passwords for web sites: False
+user_pref("signon.rememberSignons", false);
+
+// Privacy & Security > Clear History > Time range to clear: Everything
 user_pref("privacy.sanitize.timeSpan", 0);
 
-// Privacy > Allow Firefox to send technical and interaction data to Mozilla: False
+// Privacy & Security > Allow Firefox to send technical and interaction data to Mozilla: False
 user_pref("datareporting.healthreport.uploadEnabled", false);
 
-// Privacy > Allow Firefox to install and run studies: False
+// Privacy & Security > Allow Firefox to install and run studies: False
 user_pref("app.shield.optoutstudies.enabled", false);
 
-// Privacy > Clear history when Firefox closes > Settings > Browsing History:
-// False
+// Privacy & Security > Clear history when Firefox closes > Settings > Browsing History: False
 user_pref("privacy.clearOnShutdown.history", false);
 
 
