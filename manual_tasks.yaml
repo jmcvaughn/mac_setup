@@ -189,6 +189,8 @@ Applications:
         Spam404: True
         NoCoin Filter List: True
       Language-specific: False
+    Whitelist: |
+      canonical.my.salesforce.com
 
   Bitwarden: Sign in to application, Firefox extension and Safari extension
 
