@@ -269,6 +269,7 @@ tm() {
 alias aria2c='aria2c --seed-time=0'
 alias ddi='sudo dd bs=16K conv=fsync status=progress'
 alias ju='juju'
+alias oc='openstack --os-cloud'
 alias os='openstack'
 alias va='vagrant'
 alias virsh='virsh -c qemu:///system'
