@@ -98,12 +98,15 @@ System Preferences:
 
   Displays:
     Display:
-      Resolution:
-        Scaled: Looks like 2048x1280
-      Automatically adjust brightness: False
-      True Tone: False
+      Built-in Retina Display:
+        Resolution:
+          Scaled: Looks like 2048x1280
+        Automatically adjust brightness: False
+        True Tone: False
+      Acer X34:
+        Refresh Rate (Hz): 100
     Colour:
-      Display profile: Set for displays
+      Display profile: Set profile for each display
     Night Shift:
       Schedule: Sunset to Sunrise
     Arrangement: Menu bar to external
