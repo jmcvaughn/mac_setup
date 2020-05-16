@@ -90,7 +90,7 @@ System Preferences:
       Keyboard:
         Move focus to the next window: Alt + Tab
       Spotlight:
-        Show Spotlight search: Alt + Space
+        Show Spotlight search: False
     Input Sources:
       Sources:
         - British - PC
